@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Tuding布局系统参数速查</title>
+<style type="text/css">
+h1{ line-height:2em;margin:0; }
+table { border-collapse:collapse; border-spacing:0; margin-left:auto; margin-right:auto; }
+table .n { width:2em !important; }
+table td { text-align:right; font-family: Gulim, Consolas, Monaco, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace; }
+body, table, th, td { color:#000000; background-color:#ffffff; font-size:8pt; }
+img { border:0; }
+table, th, td { border-width:.1em; border-color:#ABD4E6; border-style:solid; }
+table { border-collapse:collapse; border-spacing:0; border-width:.2em; }
+th, td { padding:0.2em 0.6em; }
+th { font-weight:normal; background-color:#EFF8FC; color:#509AAF; text-align:right; }
+td { color:#666666; }
+address * { vertical-align:middle; font-family:Dotum; }
+pre { margin:0; padding:0.2em; font-family: Consolas "Courier New", Courier, monospace; text-align:left; }
+</style>
+</head>
+
+<body>
+<table class="tbl" summary="Tuding布局系统参数速查">
+  <caption>
+  <h1>Tuding布局系统参数速查</h1>
+  </caption>
+  <tbody>
+    <tr>
+      <th>栅格列数
+      <th>分数
+      <th>分数
+      <th>百分比
+      <th>基于960
+      <th>使用要点
+    <tr>
+      <th>1
+      <th>1/24
+      <th>&nbsp;
+      <td>4.1666%
+      <td>40px
+      <td rowspan="28"><table class="tbl">
+          <caption>
+          <h3>Tuding布局最特殊的部分是Fixed、Liquid的最左列居中，以及Hybrid的全部：</h3>
+          </caption>
+          <tr>
+            <th scope="col">&nbsp;
+            <th scope="col">&nbsp;
+            <th scope="col">&nbsp;
+            <th scope="col">&nbsp;
+          <tr>
+            <th rowspan="3" scope="row">Fixed
+            <th>L
+            <th>nmn
+            <td><pre class="prettyprint linenums">.nmn .ming { width:<span style="color:red;">560px</span>; left:<span style="color:red;">200px</span>; }
+.nmn .n1 { width:<span style="color:red;">200px</span>; }
+.nmn .n2 { width:<span style="color:red;">200px</span>; }</pre>
+          <tr>
+            <th>T
+            <th rowspan="2">mnn
+            <td rowspan="2"><pre class="prettyprint linenums">
+.mnn .n1 { width:<span style="color:red;">200px</span>; left:<span style="color:red;">560px</span>; }
+.mnn .ming { width:<span style="color:red;">560px</span>; }
+.mnn .n2 { width:<span style="color:red;">200px</span>; }</pre>
+          <tr>
+            <th>7
+          <tr>
+            <th rowspan="3" scope="row">Liquid
+            <th>L
+            <th>nmn
+            <td><pre class="prettyprint linenums">.nmn .ming { width:<span style="color:red;">60%</span>; left:<span style="color:red;">20%</span>; }
+.nmn .n1 { width:<span style="color:red;">20%</span>; }
+.nmn .n2 { width:<span style="color:red;">20%</span>; }</pre>
+          <tr>
+            <th>T
+            <th rowspan="2">mnn
+            <td rowspan="2"><pre class="prettyprint linenums">.mnn .n1 { width:<span style="color:red;">20%</span>; left:<span style="color:red;">60%</span>; }
+.mnn .ming { width:<span style="color:red;">60%</span>; }
+.mnn .n2 { width:<span style="color:red;">20%</span>; }</pre>
+          <tr>
+            <th>7
+          <tr>
+            <th rowspan="5" scope="row">Hybrid
+            <th colspan="2">mn
+            <td><pre class="prettyprint linenums">.mn .filling { padding-right:<span style="color:red;">240px</span>; }
+.mn .n1, .mn .n2 { width:<span style="color:red;">240px</span>; margin-left:<span style="color:red;">-240px</span>; right:<span style="color:red;">-240px</span>; }</pre>
+          <tr>
+            <th colspan="2">nm
+            <td><pre class="prettyprint linenums">.nm .filling { padding-left:<span style="color:red;">240px</span>; }
+.nm .n1, .nm .n2 { width:<span style="color:red;">240px</span>; margin-right:<span style="color:red;">-240px</span>; left:<span style="color:red;">-240px</span>; }</pre>
+          <tr>
+            <th colspan="2">mnn
+            <td><pre class="prettyprint linenums">.mnn .filling { padding-right:<span style="color:red;">480px</span>; }
+.mnn .n1 { width:<span style="color:red;">240px</span>; margin-left:<span style="color:red;">-240px</span>; right:<span style="color:red;">-240px</span>; }
+.mnn .n2 { width:<span style="color:red;">240px</span>; margin-left:<span style="color:red;">-240px</span>; right:<span style="color:red;">-480px</span>; }</pre>
+          <tr>
+            <th colspan="2">nmn
+            <td><pre class="prettyprint linenums">.nmn .filling { padding-left:<span style="color:red;">240px</span>; padding-right:<span style="color:red;">240px;</span> }
+.nmn .n1 { width:<span style="color:red;">240px</span>; margin-right:<span style="color:red;">-240px</span>; left:<span style="color:red;">-240px</span>; }
+.nmn .n2 { width:<span style="color:red;">240px</span>; margin-left:<span style="color:red;">-240px</span>; right:<span style="color:red;">-240px</span>; }</pre>
+          <tr>
+            <th colspan="2">nnm
+            <td><pre class="prettyprint linenums">.nnm .filling { padding-left:<span style="color:red;">480px</span>; }
+.nnm .n1 { width:<span style="color:red;">240px</span>; margin-right:<span style="color:red;">-240px</span>; left:<span style="color:red;">-480px</span>; }
+.nnm .n2 { width:<span style="color:red;">240px</span>; margin-right:<span style="color:red;">-240px</span>; left:<span style="color:red;">-240px</span>; }</pre>
+        </table>
+    <tr>
+      <th>2
+      <th>2/24
+      <th>1/12
+      <td>8.3333%
+      <td>80px
+    <tr>
+      <th>3
+      <th>3/24
+      <th>1/8
+      <td>12.5%
+      <td>120px
+    <tr>
+      <th>4
+      <th>4/24
+      <th>1/6
+      <td>16.656%
+      <td>160px
+    <tr>
+      <th>5
+      <th>5/24
+      <th>&nbsp;
+      <td>20.8333%
+      <td>200px
+    <tr>
+      <th>6
+      <th>6/24
+      <th>1/4
+      <td>25%
+      <td>240px
+    <tr>
+      <th>7
+      <th>7/24
+      <th>&nbsp;
+      <td>29.1666%
+      <td>280px
+    <tr>
+      <th>8
+      <th>8/24
+      <th>1/3
+      <td>33.3333%
+      <td>320px
+    <tr>
+      <th>9
+      <th>9/24
+      <th>3/8
+      <td>37.5%
+      <td>360px
+    <tr>
+      <th>10
+      <th>10/24
+      <th>5/12
+      <td>41.6666%
+      <td>400px
+    <tr>
+      <th>11
+      <th>11/24
+      <th>&nbsp;
+      <td>45.8333%
+      <td>440px
+    <tr>
+      <th>12
+      <th>12/24
+      <th>1/2
+      <td>50%
+      <td>480px
+    <tr>
+      <th>13
+      <th>13/24
+      <th>&nbsp;
+      <td>54.1666%
+      <td>520px
+    <tr>
+      <th>14
+      <th>14/24
+      <th>7/12
+      <td>58.3333%
+      <td>560px
+    <tr>
+      <th>15
+      <th>15/24
+      <th>5/8
+      <td>62.5%
+      <td>600px
+    <tr>
+      <th>16
+      <th>16/24
+      <th>2/3
+      <td>66.6666%
+      <td>640px
+    <tr>
+      <th>17
+      <th>17/24
+      <th>&nbsp;
+      <td>70.83333%
+      <td>680px
+    <tr>
+      <th>18
+      <th>18/24
+      <th>3/4
+      <td>75%
+      <td>720px
+    <tr>
+      <th>19
+      <th>19/24
+      <th>&nbsp;
+      <td>79.16666
+      <td>760px
+    <tr>
+      <th>20
+      <th>20/24
+      <th>5/6
+      <td>83.33%
+      <td>800px
+    <tr>
+      <th>21
+      <th>21/24
+      <th>7/8
+      <td>87.5%
+      <td>840px
+    <tr>
+      <th>22
+      <th>22/24
+      <th>11/12
+      <td>91.6666%
+      <td>880px
+    <tr>
+      <th>23
+      <th>23/24
+      <th>&nbsp;
+      <td>95.8333%
+      <td>920px
+    <tr>
+      <th>24
+      <th>24/24
+      <th>1
+      <td><span style="color:red;">n/a</span>
+      <td>960px
+    <tr>
+      <th>+
+      <th>1/5
+      <th>&nbsp;
+      <td>20%
+      <td>192px
+    <tr>
+      <th>+
+      <th>2/5
+      <th>&nbsp;
+      <td>40%
+      <td>384px
+    <tr>
+      <th>+
+      <th>3/5
+      <th>&nbsp;
+      <td>60%
+      <td>576px
+    <tr>
+      <th>+
+      <th>4/5
+      <th>&nbsp;
+      <td>80%
+      <td>768px
+  </tbody>
+</table>
+<hr />
+<table summary="">
+  <caption>
+  <h1>Tuding布局系统功能规划</h1></caption>
+  <tr>
+    <th scope="col">&nbsp;
+    <th scope="col">三列
+    <th scope="col">&nbsp;
+    <th scope="col">二列变形
+    <th scope="col">&nbsp;
+    <th scope="col">一列变形
+    <th scope="col">&nbsp;
+  <tr>
+    <th rowspan="3"><p>常规<br />精简<br />重设</p>
+    <th>三列普遍设置
+    <th><ul>
+        <li>tuding_h(<span style="color:red;">√</span>);</li>
+        <li>tuding_fl(<span style="color:red;">√</span>);</li>
+        <li>tuding_ft7(<span style="color:red;">√</span>);</li>
+      </ul>
+    <th>二列变形普遍设置
+    <td>
+      <ul>
+        <li>tuding_h_2cols(<span style="color:red;">√</span>);</li>
+        <li>tuding_fl_2cols(<span style="color:red;">√</span>);</li>
+        <li>tuding_ft7_2cols(<span style="color:red;">√</span>);</li>
+      </ul>
+    <th rowspan="3">一列变形
+    <td rowspan="3">
+      <ul>
+        <li>tuding_h_mn_1col(<span style="color:red;">√</span>);</li>
+        <li>tuding_h_nm_1col(<span style="color:red;">√</span>);</li>
+        <li>tuding_f_mn_1col(<span style="color:red;">√</span>);</li>
+        <li>tuding_f_nm_1col(<span style="color:red;">√</span>);</li>
+        <li>tuding_1col(<span style="color:red;">√</span>);</li>
+      </ul>
+  <tr>
+    <th>三列特殊页面
+    <td>
+      <ul>
+        <li>tuding_h_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_fl_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_ft7_reset(<span style="color:red;">√</span>);</li>
+      </ul>
+    <th>二列变形特殊页面<br />（仅重设参数）
+    <td>
+      <ul>
+        <li>tuding_h_2cols_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_fl_2cols_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_ft7_2cols_reset(<span style="color:red;">√</span>);</li>
+      </ul>
+  <tr>
+    <th>三列特殊区域
+    <td>
+      <ul>
+        <li>tuding_h_mn_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_h_nm_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_h_mnn_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_h_nmn_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_h_nnm_reset(<span style="color:red;">√</span>);</li>
+      </ul>
+      <hr />
+      <ul>
+        <li>tuding_f_mn_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_f_nm_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_fl_mnn_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_ft7_mnn_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_fl_nmn_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_ft7_nmn_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_f_nnm_reset(<span style="color:red;">√</span>);</li>
+      </ul>
+    <th>二列变形特殊区域
+    <p>仅重设参数？<br />还是完整属性？</p>
+    <td>
+      <ul>
+        <li>tuding_h_mnn_2cols_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_h_nmn_2cols_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_h_nnm_2cols_reset(<span style="color:red;">√</span>);</li>
+      </ul>
+      <hr />
+      <ul>
+        <li>tuding_fl_mnn_2cols_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_ft7_mnn_2cols_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_fl_nmn_2cols_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_ft7_nmn_2cols_reset(<span style="color:red;">√</span>);</li>
+        <li>tuding_f_nnm_2cols_reset(<span style="color:red;">√</span>);</li>
+      </ul>
+  <tr>
+    <th>附加<br />完整<br />采用
+    <th>三列附加采用
+    <td>
+      <ul>
+        <li>tuding_by_h_mn(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_h_nm(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_h_mnn(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_h_nmn(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_h_nnm(<span style="color:red;">√</span>);</li>
+      </ul>
+    <hr>
+      <ul>
+        <li>tuding_by_f_mn(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_f_nm(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_fl_mnn(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_ft7_mnn(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_fl_nmn(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_ft7_nmn(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_f_nnm(<span style="color:red;">√</span>);</li>
+      </ul>
+    <th>二列变形附加采用
+    <td>
+      <ul>
+        <li>tuding_by_h_mnn_2cols(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_h_nmn_2cols(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_h_nnm_2cols(<span style="color:red;">√</span>);</li>
+      </ul>
+      <hr />
+      <ul>
+        <li>tuding_by_fl_mnn_2cols(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_ft7_mnn_2cols(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_fl_nmn_2cols(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_ft7_nmn_2cols(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_f_nnm_2cols(<span style="color:red;">√</span>);</li>
+      </ul>
+    <th>一列变形
+    <td>
+      <ul>
+        <li>tuding_by_h_mn_1col(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_h_nm_1col(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_f_mn_1col(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_f_nm_1col(<span style="color:red;">√</span>);</li>
+        <li>tuding_by_1col(<span style="color:red;">√</span>);</li>
+      </ul>
+  <tr>
+    <th>备注
+    <td colspan="6">需特别注意常规使用时.n2、.v2作为补充项的情况！！！没有必要从“三列普遍设置”直接附加“二列变形特殊区域”变换！！！一列不需要Reset，其作用为否定之前！！！
+</table>
+<hr />
+<div class="wrapping">
+  <div id="colophon">
+    <address style="text-align:center;">
+    <img src="./img/logo_16px.gif" alt="">&nbsp;<em>Copyright ©</em> <span><a href="http://www.bubujie.net/" target="_blank">步步街工作室</a> 2008-2012 All Rights Reserved.</span>
+    </address>
+  </div>
+</div>
+</body>
+</html>

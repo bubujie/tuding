@@ -1,0 +1,41 @@
+@import "D:/Colophon/trunk/Sass/layout_v2";
+$layout:'fl';
+$wrapping:960px;
+$n1:200px;
+$n2:200px;
+$space:2px;
+$incInner:false;
+$v1:200px;
+$v2:200px;
+
+
+
+@include tuding($layout,$wrapping,$n1,$n2,$space,$incInner,$v1,$v2);
+
+
+
+@media screen and (max-width:1100px) {
+	/*响应式设计*/
+}
+
+@media screen and (max-width:900px) {
+	/* 响应式设计，此行注释有可能影响IE对之后首行CSS的解析 */
+	$wrapping:720px;
+	$n1:160px;
+	$n2:160px;
+	$space:1px;
+	@include tudingFl2cols($wrapping,$n1,$n2,$space,-1);
+	//@include tuding1col();
+}
+
+@media screen and (max-width:700px) {
+	/*响应式设计*/
+	//@include tudingFl2cols($wrapping,$n1,$n2,$space,-1);
+	//@include tuding1col();
+}
+
+@media screen and (max-width:400px) {
+	//*响应式设计*/
+	//@include tudingFl2cols($wrapping,$n1,$n2,$space,-1);
+	@include tuding1col();
+}
