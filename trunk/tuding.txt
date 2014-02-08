@@ -1,0 +1,59 @@
+#bhead(#bh1st,…,#bh5th,…,#bh9th)
+#bbody(#bb1st,…,#bb5th,…,#bb9th)
+#bfoot(#bf1st,…,#bf5th,…,#bf9th)
+
+
+
+.rowo
+.fillo
+.ming
+.ning
+.n1
+.n2
+
+
+
+.rowi
+.filli
+.wing
+.ving
+.v1
+.v2
+
+
+
+.ding
+
+
+
+m
+div#bhead>div.rowo.m>div.fillo>div.ming
+
+L Mode
+mn
+div#bhead>div.rowo.mn>div.fillo>div.ming+div.n1
+mnn
+div#bhead>div.rowo.mnn>div.fillo>div.ming+div.n1+div.n2
+
+T Mode
+mn
+div#bhead>div.rowo.mn>div.fillo>div.n1+div.ming
+mnn
+div#bhead>div.rowo.mnn>div.fillo>div.n1+div.ming+div.n2
+
+7 mode
+mn
+div#bhead>div.rowo.mn>div.fillo>div.n1+div.ming
+mnn
+div#bhead>div.rowo.mnn>div.fillo>div.n1+div.n2+div.ming
+
+
+
+原则：
+	定位仅使用left属性不使用right属性
+	仅为.n1/.v1定义margin-right属性以创建空隙，以避免在两列变换时调整.n2/.v2的空隙
+
+
+
+Bug：
+	/* 响应式设计，此行注释有可能影响IE对媒体查询之后首行CSS的解析，也许和编码格式有关 */

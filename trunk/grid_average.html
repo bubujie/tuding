@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>均分方案生成器</title>
+<link rel="stylesheet" href="../css/reset.css" type="text/css" />
+<link rel="stylesheet" href="../css/prettify.css" type="text/css" />
+<script type="text/javascript" src="../js/prettify.js"></script>
+<style type="text/css">
+body { font:12px verdana, arial, tahoma, lucida, 宋体 }
+#wrapping { margin:0 auto; width:960px; background:#ffffff; text-align:left }
+strong { font-size:120% }
+p { padding-top:20px; font-size:120% }
+#footer { color:#555 }
+a { text-decoration:none; outline:none; color:#555 }
+a:hover { text-decoration:underline }
+address *{vertical-align:middle;font-family:Dotum;}
+</style>
+</head>
+<body>
+<h1>均分方案生成器</h1>
+<hr />
+<div id="wrapping">
+  <div id="grid_div"></div>
+</div>
+<hr />
+<div id="wrapping">
+<form id="form1" method="get" action="#" onsubmit="return false;" class="center">
+    <label for="grid_width"> 网格总宽：</label>
+    <input name="grid_width" type="text" class="text" id="grid_width" value="950" />
+    <label for="grid_space"> 网格间隙：</label>
+    <input name="grid_space" type="text" class="text" id="grid_space" value="4" />
+    <br />
+    <br />
+    <input onclick="Grid($('grid_width').value,$('grid_space').value);return false;" type="submit" name="button" id="button" value="提交" />
+    <input type="reset" name="button2" id="button2" value="重置" />
+</form>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script type="text/javascript">
+	function $(id) {
+		return document.getElementById(id)
+	}
+	function Grid(mw, my) {
+		$('grid_div').innerHTML = "<strong>网格间距为 " + my + "px 时存在网格均分方式如下：</strong><br />";
+		for (var mx = 60; mx < mw; mx++) {
+			for (var mn = 1; mn < mw; mn++) {
+				if ((mx * mn + (mn - 1) * my) == mw) {
+					grid_text = "<p>单元格宽度: " + mx + " px；";
+					grid_text += "可存在单元格个数: " + mn + " 个。</p>";
+					grid_text += '<div style="width:' + mw + 'px;border:1px solid #999999;background:#CCCCCC;overflow:auto;" />';
+					for (var i = 1; i < mn; i++) {
+						grid_text += '<div style="background:#F1F1F1;width:' + mx + 'px;margin-right:' + my + 'px;float:left;">' + i + '</div>'
+					}
+					grid_text += '<div style="background:#F1F1F1;width:' + mx + 'px;float:left;">' + i + '</div>';
+					grid_text += '</div>';
+					$('grid_div').innerHTML = $('grid_div').innerHTML + grid_text;
+				}
+			}
+		}
+	}
+</script>
+</div>
+<hr />
+<div class="wrapping">
+  <div id="colophon">
+    <address style="text-align:center;">
+      <img src="./img/logo_16px.gif" alt="" />&nbsp;<em>Copyright ©</em> <span><a href="http://www.bubujie.net/" target="_blank">步步街工作室</a> 2008-2012 All Rights Reserved.</span>
+    </address>
+  </div>
+</div>
+</body>
+</html>

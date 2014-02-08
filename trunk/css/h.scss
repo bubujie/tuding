@@ -1,0 +1,49 @@
+
+@import "D:/Colophon/Sass/layout";
+@import "D:/Colophon/Sass/table";
+$layout:'h';
+$rowo:96%;
+$n1:160px;
+$n2:160px;
+$space:10px;
+$incInner:true;
+$v1:160px;
+$v2:160px;
+
+
+
+@include tuding($layout,$rowo,$n1,$n2,$space,$incInner,$v1,$v2);
+//@include tuding_by_h_nmn($selectorNMN:'.container',$selectorMING:'.main',$selectorN1:'.sidebar1',$selectorN2:'.sidebar2',$rowo:NULL,$n1:100px,$n2:100px,$space:20px);
+//IE6 || IE7 || IE8
+//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space,1);
+//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space);
+//@include tuding_1col(1);
+//@include tuding_1col();
+
+@media screen and (max-width:1100px) {
+	@include tuding_h_2cols($rowo,$v1,$v2,$space,null,1,-1);
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space);
+	//@include tuding_1col(1);
+	//@include tuding_1col();
+}
+
+@media screen and (max-width:900px) {
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space,1);
+	@include tuding_h_2cols($rowo,$v1,$v2,$space,'',0,-1);
+	//@include tuding_1col(1);
+	//@include tuding_1col();
+}
+
+@media screen and (max-width:700px) {
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space,1);
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space);
+	@include tuding_1col('',1);
+	//@include tuding_1col();
+}
+
+@media screen and (max-width:400px) {
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space,1);
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space);
+	//@include tuding_1col(1);
+	@include tuding_1col('',0);
+}

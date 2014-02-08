@@ -1,0 +1,102 @@
+@import "D:/Colophon/trunk/Sass/layout";
+@import "D:/Colophon/trunk/Sass/table";
+$layout:'fl';
+$wrapping:960px;
+$n1:111px;
+$n2:222px;
+$space:5px;
+$incInner:true;
+$v1:200px;
+$v2:200px;
+
+@include tuding($layout,$wrapping,$n1,$n2,$space,$incInner,$v1,$v2);
+
+@include tuding_f_mn_reset($wrapping,40px,$n2,$space,'#mn-n40');
+@include tuding_f_mn_reset($wrapping,80px,$n2,$space,'#mn-n80');
+@include tuding_f_mn_reset($wrapping,120px,$n2,$space,'#mn-n120');
+@include tuding_f_mn_reset($wrapping,160px,$n2,$space,'#mn-n160');
+@include tuding_f_mn_reset($wrapping,200px,$n2,$space,'#mn-n200');
+@include tuding_f_mn_reset($wrapping,240px,$n2,$space,'#mn-n240');
+@include tuding_f_mn_reset($wrapping,280px,$n2,$space,'#mn-n280');
+@include tuding_f_mn_reset($wrapping,320px,$n2,$space,'#mn-n320');
+@include tuding_f_mn_reset($wrapping,360px,$n2,$space,'#mn-n360');
+@include tuding_f_mn_reset($wrapping,400px,$n2,$space,'#mn-n400');
+@include tuding_f_mn_reset($wrapping,440px,$n2,$space,'#mn-n440');
+@include tuding_f_mn_reset($wrapping,480px,$n2,$space,'#mn-n480');
+
+@include tuding_f_nm_reset($wrapping,40px,$n2,$space,'#nm-n40');
+@include tuding_f_nm_reset($wrapping,80px,$n2,$space,'#nm-n80');
+@include tuding_f_nm_reset($wrapping,120px,$n2,$space,'#nm-n120');
+@include tuding_f_nm_reset($wrapping,160px,$n2,$space,'#nm-n160');
+@include tuding_f_nm_reset($wrapping,200px,$n2,$space,'#nm-n200');
+@include tuding_f_nm_reset($wrapping,240px,$n2,$space,'#nm-n240');
+@include tuding_f_nm_reset($wrapping,280px,$n2,$space,'#nm-n280');
+@include tuding_f_nm_reset($wrapping,320px,$n2,$space,'#nm-n320');
+@include tuding_f_nm_reset($wrapping,360px,$n2,$space,'#nm-n360');
+@include tuding_f_nm_reset($wrapping,400px,$n2,$space,'#nm-n400');
+@include tuding_f_nm_reset($wrapping,440px,$n2,$space,'#nm-n440');
+@include tuding_f_nm_reset($wrapping,480px,$n2,$space,'#nm-n480');
+
+@include tuding_fl_mnn_reset($wrapping,320px,320px,$space,'#mnn-1-1-1');
+@include tuding_fl_nmn_reset($wrapping,320px,320px,$space,'#nmn-1-1-1');
+@include tuding_f_nnm_reset($wrapping,320px,320px,$space,'#nnm-1-1-1');
+
+@include tuding_fl_mnn_reset($wrapping,240px,240px,$n2,$space,'#mnn-2-1-1');
+@include tuding_fl_nmn_reset($wrapping,240px,240px,$n2,$space,'#nmn-1-2-1');
+@include tuding_f_nnm_reset($wrapping,240px,240px,$n2,$space,'#nnm-1-1-2');
+//@include tuding_by_f_mn($selectorMN:'.new-mn',$selectorMING:'.ming',$selectorN1:'.n1',$wrapping:720px,$n1:100px,$space:10px);
+//@include tuding_by_f_nm($selectorNM:'.new-nm',$selectorMING:'.ming',$selectorN1:'.n1',$wrapping:720px,$n1:100px,$space:10px);
+//@include tuding_by_fl_mnn($selectorMNN:'.new-mnn',$selectorMING:'.ming',$selectorN1:'.n1',$selectorN2:'.n2',$n1:100px,$n2:100px,$space:10px);
+//@include tuding_by_fl_nmn($selectorNMN:'.new-nmn',$selectorMING:'.ming',$selectorN1:'.n1',$selectorN2:'.n2',$n1:100px,$n2:100px,$space:10px);
+//@include tuding_by_f_nnm( $selectorNNM:'.new-nnm',$selectorMING:'.ming',$selectorN1:'.n1',$selectorN2:'.n2',$n1:100px,$n2:100px,$space:10px);
+
+@media screen and (max-width:900px) {
+	$wrapping:720px;
+	$n1:160px;
+	$n2:160px;
+	$space:1px;
+	@include tuding_fl_2cols($wrapping,$n1:100px,$n2:100px,$space:0,$selector:'');
+	@include tuding_fl_2cols_reset($wrapping,$n1:250px,$n2:200px,$space:30px,$selector:'');
+	@include tuding_f_mn_reset($wrapping,$n1:111px,$n2:NULL,$space:10px,$selector:'');
+	@include tuding_f_nm_reset($wrapping,$n1:222px,$n2:NULL,$space:1px,$selector:'');
+	//.wrapping{ width:$wrapping !important; }
+	@include tuding_f_mn_reset($wrapping,40px,$n2,$space,'#mn-n40');
+	@include tuding_f_mn_reset($wrapping,80px,$n2,$space,'#mn-n80');
+	@include tuding_f_mn_reset($wrapping,120px,$n2,$space,'#mn-n120');
+	@include tuding_f_mn_reset($wrapping,160px,$n2,$space,'#mn-n160');
+	@include tuding_f_mn_reset($wrapping,200px,$n2,$space,'#mn-n200');
+	@include tuding_f_mn_reset($wrapping,240px,$n2,$space,'#mn-n240');
+	@include tuding_f_mn_reset($wrapping,280px,$n2,$space,'#mn-n280');
+	@include tuding_f_mn_reset($wrapping,320px,$n2,$space,'#mn-n320');
+	@include tuding_f_mn_reset($wrapping,360px,$n2,$space,'#mn-n360');
+	@include tuding_f_mn_reset($wrapping,400px,$n2,$space,'#mn-n400');
+	@include tuding_f_mn_reset($wrapping,440px,$n2,$space,'#mn-n440');
+	@include tuding_f_mn_reset($wrapping,480px,$n2,$space,'#mn-n480');
+
+	@include tuding_f_nm_reset($wrapping,40px,$n2,$space,'#nm-n40');
+	@include tuding_f_nm_reset($wrapping,80px,$n2,$space,'#nm-n80');
+	@include tuding_f_nm_reset($wrapping,120px,$n2,$space,'#nm-n120');
+	@include tuding_f_nm_reset($wrapping,160px,$n2,$space,'#nm-n160');
+	@include tuding_f_nm_reset($wrapping,200px,$n2,$space,'#nm-n200');
+	@include tuding_f_nm_reset($wrapping,240px,$n2,$space,'#nm-n240');
+	@include tuding_f_nm_reset($wrapping,280px,$n2,$space,'#nm-n280');
+	@include tuding_f_nm_reset($wrapping,320px,$n2,$space,'#nm-n320');
+	@include tuding_f_nm_reset($wrapping,360px,$n2,$space,'#nm-n360');
+	@include tuding_f_nm_reset($wrapping,400px,$n2,$space,'#nm-n400');
+	@include tuding_f_nm_reset($wrapping,440px,$n2,$space,'#nm-n440');
+	@include tuding_f_nm_reset($wrapping,480px,$n2,$space,'#nm-n480');
+
+	@include tuding_fl_mnn_2cols_reset($wrapping,111px,$n2,$space,'');
+	@include tuding_fl_nmn_2cols_reset($wrapping,222px,$n2,$space,'');
+	@include tuding_f_nnm_2cols_reset($wrapping,320px,$n2,$space,'');
+	@include tuding_fl_mnn_2cols_reset($wrapping,320px,$n2,$space,'#mnn-1-1-1');
+	@include tuding_fl_nmn_2cols_reset($wrapping,320px,$n2,$space,'#nmn-1-1-1');
+	@include tuding_f_nnm_2cols_reset($wrapping,320px,$n2,$space,'#nnm-1-1-1');
+
+	@include tuding_fl_mnn_2cols_reset($wrapping,240px,$n2,$space,'#mnn-2-1-1');
+	@include tuding_fl_nmn_2cols_reset($wrapping,240px,$n2,$space,'#nmn-1-2-1');
+	@include tuding_f_nnm_2cols_reset($wrapping,240px,$n2,$space,'#nnm-1-1-2');
+}
+@media screen and (max-width:400px) {
+	@include tuding_1col();
+}
