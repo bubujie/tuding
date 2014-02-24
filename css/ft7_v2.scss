@@ -1,4 +1,5 @@
-@import "D:/Colophon/trunk/Sass/layout_v2";
+@charset "utf-8";
+@import "E:/tuding/css/layout_v2";
 $layout:'ft7';
 $wrapping:960px;
 $n1:200px;
@@ -9,17 +10,17 @@ $v1:200px;
 $v2:200px;
 
 
-
+//ä¹±ç æµ‹è¯•
 @include tuding($layout,$wrapping,$n1,$n2,$space,$incInner,$v1,$v2);
 
 
 
 @media screen and (max-width:1100px) {
-	/*ÏìÓ¦Ê½Éè¼Æ*/
+	/*å“åº”å¼è®¾è®¡*/
 }
 
 @media screen and (max-width:900px) {
-	/*ÏìÓ¦Ê½Éè¼Æ*/
+	/*å“åº”å¼è®¾è®¡*/
 	$wrapping:720px;
 	$n1:160px;
 	$n2:160px;
@@ -29,13 +30,13 @@ $v2:200px;
 }
 
 @media screen and (max-width:700px) {
-	/*ÏìÓ¦Ê½Éè¼Æ*/
+	/*å“åº”å¼è®¾è®¡*/
 	//@include tudingFt72cols($wrapping,$n1,$n2,$space,-1);
 	//@include tuding1col();
 }
 
 @media screen and (max-width:400px) {
-	/*ÏìÓ¦Ê½Éè¼Æ*/
+	/*å“åº”å¼è®¾è®¡*/
 	//@include tudingFt72cols($wrapping,$n1,$n2,$space,-1);
 	@include tuding1col();
 }
