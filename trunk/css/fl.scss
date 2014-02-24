@@ -1,5 +1,6 @@
-@import "D:/Colophon/trunk/Sass/layout";
-@import "D:/Colophon/trunk/Sass/table";
+@charset "utf-8";
+@import "E:/tuding/css/layout";
+@import "E:/tuding/css/table";
 $layout:'fl';
 $wrapping:960px;
 $n1:111px;
@@ -8,7 +9,7 @@ $space:5px;
 $incInner:true;
 $v1:200px;
 $v2:200px;
-
+//乱码测试
 @include tuding($layout,$wrapping,$n1,$n2,$space,$incInner,$v1,$v2);
 
 @include tuding_f_mn_reset($wrapping,40px,$n2,$space,'#mn-n40');

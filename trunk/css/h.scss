@@ -1,6 +1,6 @@
-
-@import "D:/Colophon/Sass/layout";
-@import "D:/Colophon/Sass/table";
+@charset "utf-8";
+@import "E:/tuding/css/layout";
+@import "E:/tuding/css/table";
 $layout:'h';
 $rowo:96%;
 $n1:160px;
@@ -12,6 +12,7 @@ $v2:160px;
 
 
 
+//乱码测试
 @include tuding($layout,$rowo,$n1,$n2,$space,$incInner,$v1,$v2);
 //@include tuding_by_h_nmn($selectorNMN:'.container',$selectorMING:'.main',$selectorN1:'.sidebar1',$selectorN2:'.sidebar2',$rowo:NULL,$n1:100px,$n2:100px,$space:20px);
 //IE6 || IE7 || IE8
