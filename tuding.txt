@@ -1,6 +1,6 @@
-#bhead(#bh1st,…,#bh5th,…,#bh9th)
-#bbody(#bb1st,…,#bb5th,…,#bb9th)
-#bfoot(#bf1st,…,#bf5th,…,#bf9th)
+#bhead(#bhead-top,…,#bhead-mid,…,#bhead-btm)
+#bbody(#bbody-top,…,#bbody-mid,…,#bbody-btm)
+#bfoot(#bfoot-top,…,#bfoot-mid,…,#bfoot-btm)
 
 
 
