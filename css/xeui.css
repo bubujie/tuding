@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* NHN (developers@xpressengine.com) */
 /* Element Reset */
-body,table,input,textarea,select,button{font-family:Tahoma,Geneva,sans-serif;font-size:12px;color:#333}
+body,table,input,textarea,select,button{font-family:Tahoma,Geneva,sans-serif;font-size:14px;color:#333}
 header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption{display:block}
 button,input[type=submit],input[type=reset],input[type=button]{cursor:pointer;overflow:visible}
 img{border:0}
@@ -97,7 +97,7 @@ p{line-height:1.5}
 .gnb li{position:relative;float:left;border:1px solid #fff;border-top:0;border-bottom:0;margin:0 -1px 0 0}
 .gnb li li{float:none;clear:both;overflow:hidden;border:0;border-top:1px dotted #ccc;margin:0;padding:2px}
 .gnb li li:first-child{border:0}
-.gnb li a{float:left;font-weight:bold;color:#333;font-size:12px;padding:8px 18px;white-space:nowrap;text-decoration:none;text-shadow:0 1px 0 #fff;zoom:1}
+.gnb li a{float:left;font-weight:bold;color:#333;font-size:13px;padding:8px 18px;white-space:nowrap;text-decoration:none;text-shadow:0 1px 0 #fff;zoom:1}
 .gnb li a:hover,
 .gnb li a:active,
 .gnb li a:focus,
@@ -218,7 +218,7 @@ p{line-height:1.5}
 .vNav ul{margin:0;padding:0;list-style:none}
 .vNav li{position:relative;margin:0 0 -1px 0;vertical-align:top;zoom:1}
 .vNav li a{display:block;position:relative;padding:8px 10px;text-decoration:none;color:#666;font-weight:bold;background:#fafafa;border:1px solid #eee;zoom:1}
-.vNav li a .i{position:absolute;top:50%;left:100%;margin:-4px 0 0 -16px;width:8px;height:8px;color:#ccc;background:url(img/iconNavVr.gif) no-repeat left top}
+.vNav li a .i{position:absolute;top:50%;left:100%;margin:-4px 0 0 -16px;width:8px;height:8px;color:#ccc;background:url(../img/iconNavVr.gif) no-repeat left top}
 .vNav li ul{padding:5px 0;background:#fff}
 .vNav li li{margin:0}
 .vNav li li a{font-weight:normal;background:#fff;padding:5px 10px;border:0}
@@ -234,7 +234,7 @@ p{line-height:1.5}
 .tNav{position:relative;margin:1em 0;zoom:1}
 .tNav ul{list-style:none;margin:0;padding:0}
 .tNav ul ul{margin:0 0 0 -3px}
-.tNav li{position:relative;padding:0 0 0 22px;white-space:nowrap;line-height:20px;background:url(img/lineTree.gif) no-repeat 9px 0;*zoom:1}
+.tNav li{position:relative;padding:0 0 0 22px;white-space:nowrap;line-height:20px;background:url(../img/lineTree.gif) no-repeat 9px 0;*zoom:1}
 .tNav li.last{background-position:9px -1766px}
 .tNav li.active a{font-weight:bold;color:#333}
 .tNav li.active li a{font-weight:normal;color:#767676}
@@ -242,7 +242,7 @@ p{line-height:1.5}
 .tNav a:hover,
 .tNav a:active,
 .tNav a:focus{text-decoration:underline}
-.tNav .tNavToggle{position:absolute;top:0;left:0;width:19px;height:19px;padding:0;overflow:hidden;border:0;font-size:0;color:#fff;vertical-align:middle;text-indent:19px;*text-indent:0;background:transparent url(img/btnPlusMinus.gif) no-repeat;cursor:pointer}
+.tNav .tNavToggle{position:absolute;top:0;left:0;width:19px;height:19px;padding:0;overflow:hidden;border:0;font-size:0;color:#fff;vertical-align:middle;text-indent:19px;*text-indent:0;background:transparent url(../img/btnPlusMinus.gif) no-repeat;cursor:pointer}
 .tNav .tNavToggle.plus{background-position:5px -15px}
 .tNav .tNavToggle.minus{background-position:5px 5px}
 /* Pagination */
@@ -262,14 +262,14 @@ p{line-height:1.5}
 .pagination button{overflow:visible}
 /* Button */
 .btn{position:relative;display:inline-block;margin:2px;vertical-align:top}
-.btn *{display:inline-block;padding:0 8px;font-size:12px;height:24px;line-height:22px;margin:0;font-weight:bold !important;color:#fff;text-decoration:none !important;border:1px solid;cursor:pointer;overflow:visible;border-radius:3px;box-shadow:inset 0 0 1px #fff;-moz-box-shadow:inset 0 0 1px #fff;-webkit-box-shadow:inset 0 0 1px #fff;background-color:#666;text-shadow:0 -1px 0 #333;zoom:1}
+.btn *{display:inline-block;padding:0 8px;font-size:14px;height:24px;line-height:22px;margin:0;font-weight:bold !important;color:#fff;text-decoration:none !important;border:1px solid;cursor:pointer;overflow:visible;border-radius:3px;box-shadow:inset 0 0 1px #fff;-moz-box-shadow:inset 0 0 1px #fff;-webkit-box-shadow:inset 0 0 1px #fff;background-color:#666;text-shadow:0 -1px 0 #333;zoom:1}
 .btn a, 
 .btn button[type=button]{border-color:#ccc;color:#333 !important;background:#eee -webkit-gradient(linear,0% 0%,0% 100%,from(#fff),to(#ddd));background:#eee -moz-linear-gradient(top,#fff,#ddd);background-color:#eee;text-shadow:1px 1px 0 #fff;filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#ffffff, endColorStr=#dddddd)}
 .btn input, .btn button[type=submit]{border-color:#666;background:#333 -webkit-gradient(linear,0% 0%,0% 100%,from(#777),to(#777),color-stop(0.5,#333),color-stop(0.5,#000));background:#333 -moz-linear-gradient(top,#777,#000);background-color:#333;color:#ffc;filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#777777, endColorStr=#333333)}
 .btn a{height:22px}
-.btn.medium *{padding:0 12px;font-size:16px;height:30px;line-height:28px}
+.btn.medium *{padding:0 12px;font-size:18px;height:30px;line-height:28px}
 .btn.medium a{height:28px}
-.btn.large *{padding:0 18px;font-size:22px;height:36px;line-height:34px}
+.btn.large *{padding:0 18px;font-size:24px;height:36px;line-height:34px}
 .btn.large a{height:34px}
 /* FAQ */
 .faq{border-bottom:1px solid #ddd;margin:1em 0}
@@ -296,7 +296,7 @@ p{line-height:1.5}
 .vGraph .gBar{position:relative;display:inline-block;width:100%;margin:-1px 0 0 0;border:1px solid #ccc;border-bottom:0;background:#e9e9e9;vertical-align:bottom}
 .vGraph .gBar span{position:absolute;width:100%;top:-20px;left:0}
 /* Star Rating */
-.starRating, .starRating span{display:inline-block;height:14px;background:transparent url(img/iconStarRating.gif) no-repeat;overflow:hidden}
+.starRating, .starRating span{display:inline-block;height:14px;height:14px;background:transparent url(../img/iconStarRating.gif) no-repeat;overflow:hidden}
 .starRating{width:79px;vertical-align:top}
 .starRating span{font-size:0;line-height:0;vertical-align:top;text-indent:-100px;*text-indent:0;background-position:0 -14px}
 /* Progress */
@@ -318,14 +318,14 @@ p{line-height:1.5}
 .prgrs.prgrsLarge .pAction,
 .prgrs.prgrsLarge .pNum{height:34px;line-height:34px;font-size:14px}
 /* Layer */
-.layer{position:absolute;background:#fff;padding:0 1em;*padding:1em;border:8px solid #ddd;z-index:2;zoom:1;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5pxbox-shadow:0 0 6px #666;-moz-box-shadow:0 0 6px #666;-webkit-box-shadow:0 0 6px #666;filter:progid:DXImageTransform.Microsoft.Shadow(color=#999999,direction=135, strength=5)}
+.layer{position:absolute;background:#fff;padding:0 1em;*padding:1em;border:8px solid #ddd;z-index:2;zoom:1;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:0 0 6px #666;-moz-box-shadow:0 0 6px #666;-webkit-box-shadow:0 0 6px #666;filter:progid:DXImageTransform.Microsoft.Shadow(color=#999999,direction=135, strength=5)}
 .layer h2{margin-top:1em}
 .layer ul, .layer ol, .layer .lined, .layer .table{margin-bottom:1em}
 .layerClose{position:absolute;right:-8px;top:-8px;border:0;background:#ddd;padding:0;width:28px;height:28px;font-size:14px;font-weight:bold;cursor:pointer;color:#999;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
 .layerBlur{position:absolute;top:0;right:0;border:0;background:none;padding:0;width:1px;height:1px;overflow:hidden}
 /* Modal Window */
 .modal .bg{position:absolute;background:#000;_background:none;width:100%;height:100%;opacity:.5;z-index:2;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);zoom:1}
-.modal .fg{position:relative;width:50%;margin:5em auto;background:#fff;padding:0 1em;*padding:1em;border:8px solid #ddd;z-index:3;zoom:1;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5pxbox-shadow:0 0 6px #000;-moz-box-shadow:0 0 6px #000;-webkit-box-shadow:0 0 6px #000}
+.modal .fg{position:relative;width:50%;margin:5em auto;background:#fff;padding:0 1em;*padding:1em;border:8px solid #ddd;z-index:3;zoom:1;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:0 0 6px #000;-moz-box-shadow:0 0 6px #000;-webkit-box-shadow:0 0 6px #000}
 .modal h2{margin-top:1em}
 .modal ul, .modal ol, .modal .lined, .modal .table{margin-bottom:1em}
 .modal .ie6{position:absolute;left:0;top:0;width:100%;height:100%;border:0;opacity:0;filter:alpha(opacity=0);z-index:1}
