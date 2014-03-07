@@ -1,0 +1,2612 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>XE : User Interface Library</title>
+<link rel="stylesheet" href="./css/xeui.css">
+<!--[if lt IE 9]><script src="./js/html5.js"></script><![endif]-->
+</head>
+<body>
+<div class="xe">
+	<header class="header">
+		<h1>XE : User Interface Library</h1>
+		<p>The library is suitable for use in the XE admin page. But the end-user pages are also available.</p>
+	</header>
+	<hr />
+	<section class="body">
+		<nav class="nav">
+			<h2>Table of contents</h2>
+			<ul>
+				<li><a href="#namingRule">Naming Rule</a></li>
+				<li><a href="#usingJquery">Using jQuery</a></li>
+				<li><a href="#cssReset">CSS Reset</a></li>
+				<li><a href="#layout">Layout</a></li>
+				<li><a href="#section">Section/Heading</a></li>
+				<li><a href="#navigation">Navigation</a></li>
+				<li><a href="#table">Table</a></li>
+				<li><a href="#form">Form</a></li>
+				<li><a href="#button">Button</a></li>
+				<li><a href="#portlet">Portlet</a></li>
+				<li><a href="#faq">FAQ</a></li>
+				<li><a href="#graph">Graph</a></li>
+				<li><a href="#progress">Progress</a></li>
+				<li><a href="#layer">Layer</a></li>
+				<li><a href="#modalWindow">Modal Window</a></li>
+				<li><a href="#toggle">Toggle</a></li>
+			</ul>
+		</nav>
+		<hr />
+		<section class="content">
+			<article class="item" id="namingRule">
+				<h2>Naming Rule</h2>
+				<div class="container">
+					<ol>
+						<li>Make 'id, class' name must be 'camelCase' format. ex) xpressEngine</li>
+						<li>Make 'id, class' name must be semantic allow human understandable.  ex) content, comment, trackback</li>
+						<li>If 'id, class' name is too long, can be abbreviated to 3-4 characters. Subtracting the vowel is easy to making abbreviation. ex) description=dsc, descriptionToggle=dscTg</li>
+						<li>'class' is recommended to use than 'id'. ex) '.xe' is recommended than '#xe' </li>
+					</ol>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="usingJquery">
+				<h2>Using jQuery</h2>
+				<div class="container">
+					<ul>
+						<li>Using the latest version of the jQuery JavaScript framework is recommended. Is available for download from the link below.</li>
+						<li><a href="http://jquery.com/">http://jquery.com/</a></li>
+						<li><a href="http://code.jquery.com/jquery-latest.js">http://code.jquery.com/jquery-latest.js</a></li>
+						<li><a href="http://code.jquery.com/jquery-latest.min.js">http://code.jquery.com/jquery-latest.min.js</a></li>
+					</ul>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="cssReset">
+				<h2>CSS Reset</h2>
+				<div class="container">
+					<p>Override browser-supplied HTML styles should be minimized. The default font size is 14px.</p>
+<pre class="codeBlock">
+/* Element Reset */
+body,table,input,textarea,select,button{font-family:<em>Tahoma</em>,<em>Geneva</em>,<em>sans-serif</em>;font-size:<em>14px</em>;color:<em>#333</em>}
+header,footer,section,article,aside,nav,hgroup,details,menu,figure,figcaption{display:block}
+button,input[type=submit],input[type=reset],input[type=button]{cursor:pointer;overflow:visible}
+img{border:0}
+p{line-height:1.5}
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="layout">
+				<h2>Layout</h2>
+				<div class="container">
+					<p>The following HTML markup for the layout structure is recommended.</p>
+					<h3>Preview</h3>
+					<p>This example view is not compulsory. Suitable as an example.</p>
+					<div class="xe" style="border:1px solid; padding:1em">
+						.xe
+						<header class="header" style="border:1px solid; padding:1em">
+							.header
+							<nav class="nav" style="border:1px solid; padding:1em">.nav</nav>
+						</header>
+						<section class="body" style="border:1px solid; padding:1em; margin:1em 0; overflow:hidden; zoom:1">
+							<p style="margin:0">.body</p>
+							<nav class="nav" style="border:1px solid; padding:1em; margin:0 1em 0 0; width:20%; float:left">.nav</nav>
+							<section class="content" style="border:1px solid; padding:1em; margin:0 1em 0 0; width:50%; float:left">
+								.content
+								<section class="section" style="border:1px solid; padding:1em; margin:0 0 1em 0">.section</section>
+								<article class="article" style="border:1px solid; padding:1em">.article</article>
+							</section>
+							<aside class="aside" style="border:1px solid; padding:1em; width:10%; float:left">.aside</aside>
+						</section>
+						<footer class="footer" style="border:1px solid; padding:1em">.footer</footer>
+					</div>
+					<h3>XHTML</h3>
+					<ul>
+						<li>div.xe
+							<ul>
+								<li>div.header
+									<ul>
+										<li>div.nav</li>
+									</ul>
+								</li>
+								<li>div.body
+									<ul>
+										<li>div.nav</li>
+										<li>div.content
+											<ul>
+												<li>div.section or div.article</li>
+											</ul>
+										</li>
+										<li>div.aside</li>
+									</ul>
+								</li>
+								<li>div.footer</li>
+							</ul>
+						</li>
+					</ul>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>xe</em>&quot;&gt;
+	&lt;div class=&quot;<em>header</em>&quot;&gt;
+		&lt;div class=&quot;<em>nav</em>&quot;&gt;.header .nav&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;<em>body</em>&quot;&gt;
+		&lt;div class=&quot;<em>nav</em>&quot;&gt;.body .nav&lt;/div&gt;
+		&lt;div class=&quot;<em>content</em>&quot;&gt;
+			&lt;div class=&quot;<em>section</em>&quot;&gt;.content .section&lt;/div&gt;
+			&lt;div class=&quot;<em>article</em>&quot;&gt;.content .article&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;<em>aside</em>&quot;&gt;.body .aside&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;<em>footer</em>&quot;&gt;.footer&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+					<ul>
+						<li>.xe
+							<ul>
+								<li>.header
+									<ul>
+										<li>.nav</li>
+									</ul>
+									.body
+									<ul>
+										<li>.nav</li>
+										<li>.content
+											<ul>
+												<li>.section or .article</li>
+											</ul>
+											.aside</li>
+									</ul>
+									.footer</li>
+							</ul>
+						</li>
+					</ul>
+<pre class="codeBlock">
+/* Layout */
+.xe{}
+.header{}
+.header .nav{}
+.body{}
+.body .nav{}
+.content{}
+.content .section{}
+.content .article{}
+.body .aside{}
+.footer{}
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="section">
+				<h2>Section/Heading</h2>
+				<div class="container">
+					<h3>Preview</h3>
+					<p>Heading element and section element must always be matched. <strong>h1</strong>, <strong>h2</strong>, <strong>h3</strong> is recommended for use. But h4, h5, h6 is not recommended.</p>
+					<section class="section">
+						<h1 class="h1">h1: Page Title / Content Title</h1>
+						<p>Paragraph for h1 content.</p>
+						<section class="section">
+							<h2 class="h2">h2: Content Sub Title</h2>
+							<p>Paragraph for h2 content.</p>
+							<section class="section">
+								<h3 class="h3">h3: Content Sub Title</h3>
+								<p>Paragraph for h3 content.</p>
+								<section class="section">
+									<h4 class="h4">h4: Content Sub Title</h4>
+									<p>Paragraph for h4 content.</p>
+								</section>
+							</section>
+						</section>
+					</section>
+					<h3>XHTML</h3>
+					<ul>
+						<li>div.section
+							<ul>
+								<li>h1.h1</li>
+								<li>p</li>
+								<li>div.section
+									<ul>
+										<li>h2.h2</li>
+										<li>p</li>
+										<li>div.section
+											<ul>
+												<li>h3.h3</li>
+												<li>p</li>
+												<li>div.section
+													<ul>
+														<li>h4.h4</li>
+														<li>p</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>section</em>&quot;&gt;
+	&lt;h1 class=&quot;h1&quot;&gt;h1: Page Title / Content Title&lt;/h1&gt;
+	&lt;p&gt;Paragraph for h1 content.&lt;/p&gt;
+	&lt;div class=&quot;<em>section</em>&quot;&gt;
+		&lt;h2 class=&quot;h2&quot;&gt;h2: Content Sub Title&lt;/h2&gt;
+		&lt;p&gt;Paragraph for h2 content.&lt;/p&gt;
+		&lt;div class=&quot;<em>section</em>&quot;&gt;
+			&lt;h3 class=&quot;h3&quot;&gt;h3: Content Sub Title&lt;/h3&gt;
+			&lt;p&gt;Paragraph for h3 content.&lt;/p&gt;
+			&lt;div class=&quot;<em>section</em>&quot;&gt;
+				&lt;h4 class=&quot;h4&quot;&gt;h4: Content Sub Title&lt;/h4&gt;
+				&lt;p&gt;Paragraph for h4 content.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Section & Heading */
+.section{margin:1em 0;padding:0;border:0}
+.h1, .h2, .h3, .h4{position:relative;border-bottom-style:solid;border-bottom-color:#ccc;zoom:1}
+.h1{border-bottom-width:4px;font-size:24px}
+.h2{border-bottom-width:3px;font-size:20px}
+.h3{border-bottom-width:2px;font-size:16px}
+.h4{border-bottom-width:1px;font-size:12px}
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="navigation">
+				<h2>Navigation</h2>
+				<div class="container">
+					<p>Navigation is displayed differently in the resolution of 640px or less. Resizing the width of your browser, try it.</p>
+					<h3>Global Navigation Bar</h3>
+					<div class="gnb">
+						<ul>
+							<li class="activeOn"><a href="#"><span>Menu 1</span></a>
+								<ul>
+									<li><a href="#">Menu 1-1</a></li>
+									<li><a href="#">Menu 1-2</a></li>
+									<li><a href="#">Menu 1-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>Menu 2</span></a>
+								<ul>
+									<li><a href="#">Menu 2-1</a></li>
+									<li><a href="#">Menu 2-2</a></li>
+									<li><a href="#">Menu 2-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>메뉴 3</span></a>
+								<ul>
+									<li><a href="#">메뉴 3-1</a></li>
+									<li><a href="#">메뉴 3-2</a></li>
+									<li><a href="#">메뉴 3-3</a></li>
+								</ul>
+							</li>
+						</ul>
+						<a href="#" class="setting">GNB Setting</a>
+					</div>
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>gnb jx</em>&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;<em>activeOn</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu 1&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu 2&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;메뉴 3&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>setting</em>&quot;&gt;GNB Setting&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Global Navigation Bar */
+.gnb{position:relative;clear:both;border:1px solid #c1c1c1;border-left:0;border-right:0;background-color:#efefef;background:#efefef -webkit-gradient(linear, 0% 0%, 0% 100%, from(#efefef), to(#dcdcdc));background:#efefef -moz-linear-gradient(top, #efefef, #dcdcdc);filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#efefef, endColorStr=#dcdcdc);zoom:1}
+.gnb ul{margin:0;padding:0 0 0 2em;list-style:none;border:1px solid #fff;border-left:0;border-right:0;zoom:1}
+.gnb ul ul{position:absolute;top:33px;left:0;border:1px solid #ccc;padding:0;background:#fff}
+.gnb ul:after{content:"";display:block;clear:both}
+.gnb li{position:relative;float:left;border:1px solid #fff;border-top:0;border-bottom:0;margin:0 -1px 0 0}
+.gnb li li{float:none;clear:both;overflow:hidden;border:0;border-top:1px dotted #ccc;margin:0;padding:2px}
+.gnb li li:first-child{border:0}
+.gnb li a{float:left;font-weight:bold;color:#333;font-size:13px;padding:8px 18px;white-space:nowrap;text-decoration:none;text-shadow:0 1px 0 #fff;zoom:1}
+.gnb li a:hover,
+.gnb li a:active,
+.gnb li a:focus,
+.gnb li.active a,
+.gnb li.activeOn a{background:#fff;border:1px solid #ddd;padding:7px 17px}
+.gnb li li a{display:block;float:none;color:#555;padding:5px 15px !important;font-weight:normal !important;border:0 !important}
+.gnb li li a:hover,
+.gnb li li a:active,
+.gnb li li a:focus{border:0;background:#eee}
+.gnb .setting{position:absolute;top:8px;right:2em;width:16px;height:0;padding:16px 0 0 0;overflow:hidden;background:url(../img/iconSetting.gif) no-repeat center}
+.gnb.jx ul{display:block;position:static;padding:0}
+.gnb.jx li{float:none;clear:both;border-top:1px solid #ccc}
+.gnb.jx ul ul{border:0}
+.gnb.jx li li{border:0}
+.gnb.jx li a{float:none;display:block}
+.gnb.jx li a:hover,
+.gnb.jx li a:active,
+.gnb.jx li a:focus{background:none}
+.gnb.jx li.activeOn>a{background:#ddd}
+@media only all and (max-width:860px) {
+	.gnb ul{padding-left:1em}
+	.gnb .setting{right:1em}
+}
+@media only all and (max-width:640px) {
+	.gnb ul{display:block;position:static;padding:0}
+	.gnb li{float:none;clear:both;border-top:1px solid #ccc}
+	.gnb ul ul{border:0;position:static}
+	.gnb li li{border:0}
+	.gnb li a{float:none;display:block}
+	.gnb li a:hover,
+	.gnb li a:active,
+	.gnb li a:focus{background:none}
+	.gnb li.activeOn>a{background:#ddd}
+}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Global Navigation Bar
+	var gnb = $('div.gnb');
+	var gnb_i = gnb.find('&gt;ul&gt;li');
+	var gnb_a = gnb_i.find('&gt;a');
+	gnb.removeClass('jx');
+	gnb_i.find('&gt;ul').hide();
+	gnb.find('&gt;ul&gt;li[class=active]').find('&gt;ul').show();
+	function gnbToggle(event){
+		var t = $(this);
+		gnb_i.removeClass('active');
+		if (t.next('ul').is(':hidden')) {
+			gnb_i.find('&gt;ul').slideUp(100);
+			t.next('ul').slideDown(100);
+			t.parent('li').addClass('active');
+		} else if (t.next('ul').is(':visible')){
+			t.next('ul').show();
+			t.parent('li').addClass('active');
+		} else if (!t.next('ul').langth) {
+			gnb_i.find('&gt;ul').slideUp(100);
+			t.parent('li').removeClass('active');
+		};
+	}
+	gnb_a.focus(gnbToggle).click(gnbToggle).filter('[href=#]').click(function(){return false});
+	gnb_a.mouseover(function(){
+		if($(document).width()&gt;640){
+			$(this).click();
+		} else {
+			return false;
+		}
+	});
+	gnb.mouseleave(function(){
+		if($(document).width()&gt;640){
+			gnbToggle();
+		} else {
+			return false;
+		}
+	});
+	gnb.find('li:last-child&gt;a, li:last-child&gt;ul&gt;li:last-child&gt;a').blur(gnbToggle);
+});
+</pre>
+					<h3>Lined Tab Navigation</h3>
+					<div class="tab line jx">
+						<ul>
+							<li><a href="#"><span>Menu 1</span></a>
+								<ul>
+									<li class="active"><a href="#">Menu 1-1</a></li>
+									<li><a href="#">Menu 1-2</a></li>
+									<li><a href="#">Menu 1-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>Menu 2</span></a>
+								<ul>
+									<li><a href="#">Menu 2-1</a></li>
+									<li><a href="#">Menu 2-2</a></li>
+									<li><a href="#">Menu 2-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>메뉴 3</span></a>
+								<ul>
+									<li><a href="#">메뉴 3-1</a></li>
+									<li><a href="#">메뉴 3-2</a></li>
+									<li><a href="#">메뉴 3-3</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>tab line jx</em>&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu 1&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li class=&quot;<em>active</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu 2&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;메뉴 3&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Lined Tab Navigation */
+.tab.line{padding:0 0 35px 0;margin:1em 0}
+.tab.line ul{position:relative;margin:0;padding:0;list-style:none;border-bottom:1px solid #ccc;zoom:1}
+.tab.line ul:after{content:"";display:block;clear:both}
+.tab.line li{float:left;margin-bottom:-1px}
+.tab.line li a{position:relative;float:left;text-decoration:none;border:1px solid #eee;border-bottom-color:#ccc;background:#fafafa;color:#333}
+.tab.line li a span{display:inline-block;height:14px;padding:6px 25px 6px 25px;letter-spacing:-1px;cursor:pointer}
+.tab.line li ul{width:100%;position:absolute;top:40px;left:0;list-style:none;border:0;margin:0;padding:0;white-space:nowrap;overflow:hidden;zoom:1}
+.tab.line li ul:after{content:"";display:block;clear:both}
+.tab.line li li{position:relative;left:-1px;padding:0 10px;border-left:1px solid #ddd;overflow:visible}
+.tab.line li li a{padding:0;margin:0;border:0 !important;color:#666 !important;font-weight:normal;background:transparent;letter-spacing:normal}
+.tab.line li.active a{border:1px solid #ccc;border-bottom:1px solid #fff;margin-top:-1px;background:transparent}
+.tab.line li.active a span{padding-top:7px;font-weight:bold}
+.tab.line li li a:hover,
+.tab.line li li a:active,
+.tab.line li li a:focus,
+.tab.line li li.active a{font-weight:bold;letter-spacing:-1px;color:#333 !important}
+.tab.line.jx{padding:0}
+.tab.line.jx ul{border:0}
+.tab.line.jx li{float:none}
+.tab.line.jx li a{float:none;display:block;font-weight:bold;color:#333;border:1px solid #eee !important;border-bottom-color:#ccc !important;background:#fafafa !important}
+.tab.line.jx li ul{position:static;display:block !important;padding:5px 0;left:0;top:0}
+.tab.line.jx li li{display:inline}
+.tab.line.jx li li a{display:inline;letter-spacing:normal;border:0 !important;font-weight:normal !important;color:#666 !important;background:none !important}
+.tab.line.jx li li a:hover,
+.tab.line.jx li li a:active,
+.tab.line.jx li li a:focus{text-decoration:underline}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Lined Tab Navigation
+	var tab_line = $('div.tab.line');
+	var tab_line_i = tab_line.find('&lt;ul&lt;li');
+	var tab_line_ii = tab_line.find('&lt;ul&lt;li&lt;ul&lt;li');
+	tab_line.removeClass('jx');
+	if($(document).width()&lt;=640){
+		tab_line.addClass('jx');	
+	}
+	$(window).resize(function(){
+		if($(document).width()&lt;=640){
+		tab_line.addClass('jx');	
+		} else {
+		tab_line.removeClass('jx');
+		}
+	});
+	tab_line_i.find('&gt;ul').hide();
+	tab_line_i.find('&lt;ul&lt;li[class=active]').parents('li').attr('class','active');
+	tab_line.find('&lt;ul&lt;li[class=active]').find('&gt;ul').show();
+	function lineTabMenuToggle(event){
+		if (!tab_line.hasClass('jx')){
+			var t = $(this);
+			tab_line_i.find('&gt;ul').hide();
+			t.next('ul').show();
+			tab_line_i.removeClass('active');
+			t.parent('li').addClass('active');
+			return false;
+		}
+	}
+	function lineTabSubMenuActive(){
+		tab_line_ii.removeClass('active');
+		$(this).parent(tab_line_ii).addClass('active');
+		return false;
+	}; 
+	tab_line_i.find('&gt;a[href=#]').click(lineTabMenuToggle).focus(lineTabMenuToggle);
+	tab_line_ii.find('&gt;a[href=#]').click(lineTabSubMenuActive).focus(lineTabSubMenuActive);
+});
+</pre>
+					<h3>Faced Tab Navigation</h3>
+					<div class="tab face jx">
+						<ul>
+							<li><a href="#"><span>Menu 1</span></a>
+								<ul>
+									<li class="active"><a href="#">Menu 1-1</a></li>
+									<li><a href="#">Menu 1-2</a></li>
+									<li><a href="#">Menu 1-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>Menu 2</span></a>
+								<ul>
+									<li><a href="#">Menu 2-1</a></li>
+									<li><a href="#">Menu 2-2</a></li>
+									<li><a href="#">Menu 2-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>메뉴 3</span></a>
+								<ul>
+									<li><a href="#">메뉴 3-1</a></li>
+									<li><a href="#">메뉴 3-2</a></li>
+									<li><a href="#">메뉴 3-3</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>tab face jx</em>&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu 1&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li class=&quot;<em>active</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 1-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu 2&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu 2-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;메뉴 3&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Faced Tab Navigation */
+.tab.face{padding:0 0 35px 0;margin:1em 0}
+.tab.face ul{position:relative;margin:0;padding:0;_padding:2px 0 0 0;list-style:none;border-bottom:2px solid #315593;zoom:1}
+.tab.face ul:after{content:"";display:block;clear:both}
+.tab.face li{float:left;margin-right:1px;background:#4CB1E5}
+.tab.face li a,
+.tab.face li a span{position:relative;cursor:pointer}
+.tab.face li a{float:left;text-decoration:none}
+.tab.face li a span{display:inline-block;padding:6px 25px 6px 25px;color:#fff}
+.tab.face li ul{width:100%;position:absolute;top:40px;left:0;list-style:none;border:0;margin:0;padding:0;white-space:nowrap;overflow:hidden;zoom:1}
+.tab.face li ul:after{content:"";display:block;clear:both}
+.tab.face li li{position:relative;left:-1px;padding:0 10px;border-left:1px solid #ddd;overflow:visible;background:transparent !important}
+.tab.face li li a{padding:0;margin:0;font-weight:normal;color:#666}
+.tab.face li.active{background-color:#315593;margin-top:-1px}
+.tab.face li.active a span{padding-top:7px;padding-bottom:7px;font-weight:bold;letter-spacing:-1px}
+.tab.face li li a:hover,
+.tab.face li li a:active,
+.tab.face li li a:focus,
+.tab.face li li.active a{font-weight:bold;letter-spacing:-1px;color:#333}
+.tab.face.jx{padding:0}
+.tab.face.jx ul{border:0}
+.tab.face.jx li{float:none}
+.tab.face.jx li a{float:none;font-weight:bold}
+.tab.face.jx li ul{display:block !important;position:static;padding:5px 0;left:0;top:0;background:#fff}
+.tab.face.jx li li{display:inline}
+.tab.face.jx li li a{font-weight:normal !important;color:#666;letter-spacing:normal}
+.tab.face.jx li li a:hover,
+.tab.face.jx li li a:active,
+.tab.face.jx li li a:focus{text-decoration:underline}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Faced Tab Navigation
+	var tab_face = $('div.tab.face');
+	var tab_face_i = tab_face.find('&gt;ul&gt;li');
+	var tab_face_ii = tab_face.find('&gt;ul&gt;li&gt;ul&gt;li');
+	tab_face.removeClass('jx');
+	if($(document).width()&lt;=640){
+		tab_face.addClass('jx');	
+	}
+	$(window).resize(function(){
+		if($(document).width()&lt;=640){
+		tab_face.addClass('jx');	
+		} else {
+		tab_face.removeClass('jx');
+		}
+	});
+	tab_face_i.find('&gt;ul').hide();
+	tab_face_i.find('&gt;ul&gt;li[class=active]').parents('li').attr('class','active');
+	tab_face.find('&gt;ul&gt;li[class=active]').find('&gt;ul').show();
+	function faceTabMenuToggle(event){
+		if (!tab_face.hasClass('jx')){
+			var t = $(this);
+			tab_face_i.find('&gt;ul').hide();
+			t.next('ul').show();
+			tab_face_i.removeClass('active');
+			t.parent('li').addClass('active');
+			return false;
+		}
+	}
+	function faceTabSubMenuActive(){
+		tab_face_ii.removeClass('active');
+		$(this).parent(tab_face_ii).addClass('active');
+		return false;
+	}; 
+	tab_face_i.find('&gt;a[href=#]').click(faceTabMenuToggle).focus(faceTabMenuToggle);
+	tab_face_ii.find('&gt;a[href=#]').click(faceTabSubMenuActive).focus(faceTabSubMenuActive);
+});
+</pre>
+					<h3>List Tab Navigation</h3>
+					<div class="tab list jx">
+						<ul>
+							<li class="active"><a href="#"><span>공지사항</span></a>
+								<ul>
+									<li>&rsaquo; <a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li>&rsaquo; <a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li>&rsaquo; <a href="#">이것은 첫 번째 탭의 공지사항 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li class="more">&rsaquo; <a href="#">공지사항 더보기</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>보도자료</span></a>
+								<ul>
+									<li>&rsaquo; <a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li>&rsaquo; <a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li>&rsaquo; <a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li>&rsaquo; <a href="#">이것은 두 번째 탭의 보도자료 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li class="more">&rsaquo; <a href="#">보도자료 더보기</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>해명자료</span></a>
+								<ul>
+									<li>&rsaquo; <a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li>&rsaquo; <a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li>&rsaquo; <a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li>&rsaquo; <a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li>&rsaquo; <a href="#">이것은 세 번째 탭의 해명자료 목록 입니다.</a> <span class="side">2010.12.24</span></li>
+									<li class="more">&rsaquo; <a href="#">해명자료 더보기</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>tab list jx</em>&quot;&gt;
+	&lt;ul&gt;
+		&lt;li class=&quot;<em>active</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;공지사항&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 첫 번째 탭의 공지사항 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 첫 번째 탭의 공지사항 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 첫 번째 탭의 공지사항 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li class=&quot;more&quot;&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;공지사항 더보기&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;보도자료&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 두 번째 탭의 보도자료 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 두 번째 탭의 보도자료 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 두 번째 탭의 보도자료 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 두 번째 탭의 보도자료 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li class=&quot;more&quot;&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;보도자료 더보기&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;해명자료&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 세 번째 탭의 해명자료 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 세 번째 탭의 해명자료 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 세 번째 탭의 해명자료 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 세 번째 탭의 해명자료 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;이것은 세 번째 탭의 해명자료 목록 입니다.&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2010.12.24&lt;/span&gt;&lt;/li&gt;
+				&lt;li class=&quot;more&quot;&gt;&rsaquo; &lt;a href=&quot;#&quot;&gt;해명자료 더보기&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Tab + List */
+.tab.list{height:160px;margin:1em 0}
+.tab.list ul{position:relative;margin:0;padding:0;list-style:none;border-bottom:1px solid #ccc;zoom:1}
+.tab.list ul:after{content:"";display:block;clear:both}
+.tab.list li{float:left;margin-bottom:-1px}
+.tab.list li a{position:relative;float:left;text-decoration:none;border:1px solid #eee;border-bottom-color:#ccc;background:#fafafa;color:#666}
+.tab.list li a span{display:inline-block;padding:6px 25px 6px 25px;letter-spacing:-1px;cursor:pointer}
+.tab.list li ul{width:100%;position:absolute;top:40px;left:0;list-style:none;border:0;margin:0;padding:0;zoom:1}
+.tab.list li ul:after{content:"";display:block;clear:both}
+.tab.list li li{float:none;position:relative;margin:0 0 8px 0;color:#999}
+.tab.list li li a{float:none;padding:0;margin:0;border:0 !important;color:#666 !important;font-weight:normal;background:transparent;letter-spacing:normal}
+.tab.list li li a:hover,
+.tab.list li li a:active,
+.tab.list li li a:focus{color:#000 !important;text-decoration:underline}
+.tab.list li li .side{position:absolute;top:0;right:0;color:#767676}
+.tab.list li li.more{position:absolute;top:-30px;right:0;border:0 !important;background:transparent}
+.tab.list li.active a{border:1px solid #ccc;border-bottom:1px solid #fff;margin-top:-1px;background:transparent;color:#333}
+.tab.list li.active a span{padding-top:7px;font-weight:bold}
+.tab.list.jx{height:auto}
+.tab.list.jx ul{border:0}
+.tab.list.jx li{float:none;position:relative}
+.tab.list.jx li a{float:none;display:block;font-weight:bold;color:#333;border:1px solid #eee !important;border-bottom-color:#ccc !important;background:#fafafa !important}
+.tab.list.jx li ul{position:static;display:block !important;left:0;top:0;padding:5px 0}
+.tab.list.jx li li a{display:inline;border:0 !important;background:none !important;font-weight:normal}
+.tab.list.jx li li.more{top:7px;right:15px}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// List Tab Navigation
+	var tab_list = $('div.tab.list');
+	var tab_list_i = tab_list.find('&gt;ul&gt;li');
+	tab_list.removeClass('jx');
+	if($(document).width()&lt;=640){
+		tab_list.addClass('jx');	
+	}
+	$(window).resize(function(){
+		if($(document).width()&lt;=640){
+		tab_list.addClass('jx');
+		tab_list.css('height','auto');
+		} else {
+		tab_list.removeClass('jx');
+		tab_list.css('height', tab_list.find('&gt;ul&gt;li.active&gt;ul').height()+40);
+		}
+	});
+	tab_list_i.find('&gt;ul').hide();
+	tab_list.find('&gt;ul&gt;li[class=active]').find('&gt;ul').show();
+	if (!tab_list.hasClass('jx')){
+		tab_list.css('height', tab_list.find('&gt;ul&gt;li.active&gt;ul').height()+40);
+	} else {
+		tab_list.css('height','auto');
+	}
+	function listTabMenuToggle(event){
+		if (!tab_list.hasClass('jx')){
+			var t = $(this);
+			tab_list_i.find('&gt;ul').hide();
+			t.next('ul').show();
+			tab_list_i.removeClass('active');
+			t.parent('li').addClass('active');
+			tab_list.css('height', t.next('ul').height()+40);
+			return false;
+		}
+	}
+	tab_list_i.find('&gt;a[href=#]').click(listTabMenuToggle).focus(listTabMenuToggle);
+});
+</pre>
+					<h3>Vertical Navigation</h3>
+					<h3>XHTML</h3>
+					<div class="vNav">
+						<ul>
+							<li><a href="#"><span>동해물과</span></a>
+								<ul>
+									<li class="active"><a href="#"><span>동해물과</span></a></li>
+									<li><a href="#"><span>동해</span></a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>백두산이</span></a>
+					
+								<ul>
+									<li><a href="#"><span>백두산이 마르고 닳도록</span></a></li>
+									<li><a href="#"><span>백두산</span></a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>마르고</span></a></li>
+							<li><a href="#"><span>닳도록</span></a>
+					
+								<ul>
+									<li><a href="#"><span>닳도록</span></a></li>
+									<li><a href="#"><span>닳도</span></a></li>
+									<li><a href="#"><span>닳</span></a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>vNav</em>&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;동해물과&lt;/span&gt;&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li class=&quot;<em>active</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;동해물과&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;동해&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;백두산이&lt;/span&gt;&lt;/a&gt;
+
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;백두산이 마르고 닳도록&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;백두산&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;마르고&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;닳도록&lt;/span&gt;&lt;/a&gt;
+
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;닳도록&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;닳도&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;닳&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Vertical Navigation */
+.vNav{position:relative;margin:1em 0;line-height:normal;zoom:1}
+.vNav ul{margin:0;padding:0;list-style:none}
+.vNav li{position:relative;margin:0 0 -1px 0;vertical-align:top;zoom:1}
+.vNav li a{display:block;position:relative;padding:8px 10px;text-decoration:none;color:#666;font-weight:bold;background:#fafafa;border:1px solid #eee;zoom:1}
+.vNav li a .i{position:absolute;top:50%;left:100%;margin:-4px 0 0 -16px;width:8px;height:8px;color:#ccc;background:url(img/iconSub.gif) no-repeat left top}
+.vNav li ul{padding:5px 0;background:#fff}
+.vNav li li{margin:0}
+.vNav li li a{font-weight:normal;background:#fff;padding:5px 10px;border:0}
+.vNav li li a span{color:#666}
+.vNav li.active{border:1px solid #ccc;z-index:2}
+.vNav li li.active{border:0}
+.vNav li.active a{color:#000;border:0}
+.vNav li.active .i{background-position:0 -44px}
+.vNav li.active li a{border:0}
+.vNav li.active ul{display:block;border-top:1px solid #eee}
+.vNav li.active li.active a span{color:#13b200;font-weight:bold;letter-spacing:-1px}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Vertical Navigation
+	var vNav = $('div.vNav');
+	var vNav_i = vNav.find('&lt;ul&lt;li');
+	var vNav_ii = vNav.find('&lt;ul&lt;li&lt;ul&lt;li');
+	vNav_i.find('&gt;ul').hide();
+	vNav.find('&lt;ul&lt;li&lt;ul&lt;li[class=active]').parents('li').attr('class','active');
+	vNav.find('&lt;ul&lt;li[class=active]').find('&gt;ul').show();
+	function vNavToggle(event){
+		var t = $(this);
+		if (t.next('ul').is(':hidden')) {
+			vNav_i.find('&gt;ul').slideUp(100);
+			t.next('ul').slideDown(100);
+		} else if (t.next('ul').is(':visible')){
+			t.next('ul').show();
+		} else if (!t.next('ul').langth) {
+			vNav_i.find('&gt;ul').slideUp(100);
+		}
+		vNav_i.removeClass('active');
+		t.parent('li').addClass('active');
+		return false;
+	}
+	vNav_i.find('&gt;a[href=#]').click(vNavToggle).focus(vNavToggle);
+	function vNavActive(){
+		vNav_ii.removeClass('active');
+		$(this).parent(vNav_ii).addClass('active');
+		return false;
+	}; 
+	vNav_ii.find('&gt;a[href=#]').click(vNavActive).focus(vNavActive);
+	vNav.find('&lt;ul&lt;li&gt;ul').prev('a').append('&lt;span class="i"&gt;&lt;/span&gt;');
+});
+</pre>
+					<h3>Tree Navigation</h3>
+					<div class="tNav">
+						<ul>
+							<li><a href="#">메뉴 1</a>
+								<ul>
+									<li><a href="#">메뉴 1-2</a></li>
+									<li><a href="#">메뉴 1-3</a></li>
+								</ul>
+							</li>
+							<li><a href="#">메뉴 2</a></li>
+							<li><a href="#">메뉴 3</a>
+								<ul>
+									<li class="active"><a href="#">메뉴 3-1</a>
+										<ul>
+											<li><a href="#">메뉴 3-1-1</a></li>
+											<li><a href="#">메뉴 3-1-2</a></li>
+										</ul>
+									</li>
+									<li><a href="#">메뉴 3-2</a></li>
+								</ul>
+							</li>
+							<li><a href="#">메뉴 4</a></li>
+							<li><a href="#">메뉴 5</a>
+								<ul>
+									<li><a href="#">메뉴 4-1</a></li>
+									<li><a href="#">메뉴 4-2</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>tNav</em>&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 1&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 1-2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 1-3&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 2&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li class=&quot;<em>active</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-1&lt;/a&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-1-1&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-1-2&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 3-2&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 4&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 5&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 4-1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;메뉴 4-2&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Tree Navigation */
+.tNav{position:relative;margin:1em 0;zoom:1}
+.tNav ul{list-style:none;margin:0;padding:0}
+.tNav ul ul{margin:0 0 0 -3px}
+.tNav li{position:relative;padding:0 0 0 22px;white-space:nowrap;line-height:20px;background:url(img/lineTree.gif) no-repeat 9px 0;*zoom:1}
+.tNav li.last{background-position:9px -1766px}
+.tNav li.active a{font-weight:bold;color:#333}
+.tNav li.active li a{font-weight:normal;color:#767676}
+.tNav a{text-decoration:none;color:#767676}
+.tNav a:hover,
+.tNav a:active,
+.tNav a:focus{text-decoration:underline}
+.tNav .tNavToggle{position:absolute;top:0;left:0;width:19px;height:19px;padding:0;overflow:hidden;border:0;font-size:0;color:#fff;vertical-align:middle;text-indent:19px;*text-indent:0;background:transparent url(img/btnPlusMinus.gif) no-repeat;cursor:pointer}
+.tNav .tNavToggle.plus{background-position:5px -15px}
+.tNav .tNavToggle.minus{background-position:5px 5px}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Tree Navigation
+	var tNav = $('.tNav');
+	var tNavPlus = '&lt;button type="button" class="tNavToggle plus"&gt;+&lt;/button&gt;';
+	var tNavMinus = '&lt;button type="button" class="tNavToggle minus"&gt;-&lt;/button&gt;';
+	tNav.find('li&gt;ul').css('display','none');
+	tNav.find('ul&gt;li:last-child').addClass('last');
+	tNav.find('li&gt;ul:hidden').parent('li').prepend(tNavPlus);
+	tNav.find('li&gt;ul:visible').parent('li').prepend(tNavMinus);
+	tNav.find('li.active').addClass('open').parents('li').addClass('open');
+	tNav.find('li.open').parents('li').addClass('open');
+	tNav.find('li.open&gt;.tNavToggle').text('-').removeClass('plus').addClass('minus');
+	tNav.find('li.open&gt;ul').slideDown(100);
+	$('.tNav .tNavToggle').click(function(){
+		t = $(this);
+		t.parent('li').toggleClass('open');
+		if(t.parent('li').hasClass('open')){
+			t.text('-').removeClass('plus').addClass('minus');
+			t.parent('li').find('&gt;ul').slideDown(100);
+		} else {
+			t.text('+').removeClass('minus').addClass('plus');
+			t.parent('li').find('&gt;ul').slideUp(100);
+		}
+		return false;
+	});
+	$('.tNav a[href=#]').click(function(){
+		t = $(this);
+		t.parent('li').toggleClass('open');
+		if(t.parent('li').hasClass('open')){
+			t.prev('button.tNavToggle').text('-').removeClass('plus').addClass('minus');
+			t.parent('li').find('&gt;ul').slideDown(100);
+		} else {
+			t.prev('button.tNavToggle').text('+').removeClass('minus').addClass('plus');
+			t.parent('li').find('&gt;ul').slideUp(100);
+		}
+		return false;
+	});
+});
+</pre>
+					<h3>Pagination</h3>
+					<form action="" class="pagination">
+						<a href="#" class="direction">&laquo; FIRST</a>
+						<a href="#">9</a>
+						<a href="#">10</a>
+						<strong>11</strong>
+						<a href="#">12</a>
+						<a href="#goTo" class="tgSimple" title="Go to">...</a>
+						<span id="goTo" class="tgContent">
+							<input title="Go to Page" /> 
+							<button type="submit">GO</button>
+						</span>
+						<a href="#">99</a>
+						<a href="#" class="direction">LAST &raquo;</a>
+					</form>
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;form action=&quot;&quot; class=&quot;<em>pagination</em>&quot;&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;&laquo; FIRST&lt;/a&gt;
+	&lt;a href=&quot;#&quot;&gt;9&lt;/a&gt;
+	&lt;a href=&quot;#&quot;&gt;10&lt;/a&gt;
+	&lt;strong&gt;11&lt;/strong&gt;
+	&lt;a href=&quot;#&quot;&gt;12&lt;/a&gt;
+	&lt;a href=&quot;#&quot;&gt;13&lt;/a&gt;
+	&lt;a href=&quot;<em>#goTo</em>&quot; class=&quot;<em>tgSimple</em>&quot; title=&quot;Go to&quot;&gt;...&lt;/a&gt;
+	&lt;span id=&quot;<em>goTo</em>&quot; class=&quot;<em>tgContent</em>&quot;&gt;
+		&lt;input title=&quot;Go to Page&quot; /&gt; 
+		&lt;button type=&quot;submit&quot;&gt;GO&lt;/button&gt;
+	&lt;/span&gt;
+	&lt;a href=&quot;#&quot;&gt;99&lt;/a&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>direction</em>&quot;&gt;LAST &raquo;&lt;/a&gt;
+&lt;/form&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Pagination */
+.pagination{margin:1em 0;text-align:center;line-height:normal}
+.pagination *{vertical-align:middle}
+.pagination a,
+.pagination strong{position:relative;display:inline-block;padding:2px 4px;font-weight:bold;text-decoration:none;line-height:normal;color:#333 !important;vertical-align:middle}
+.pagination a:hover,
+.pagination a:active,
+.pagination a:focus{border:1px solid #ddd;margin:0 -1px}
+.pagination strong{color:#e00 !important;font-size:20px}
+.pagination .direction{font-weight:normal;white-space:nowrap}
+.pagination .direction:hover,
+.pagination .direction:active,
+.pagination .direction:focus{border:0;margin:0;text-decoration:underline}
+.pagination input{width:30px;text-align:center}
+.pagination button{overflow:visible}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Toggle
+	var tgContent = $('.tgContent');
+	var tgBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;tgBlur&quot;&gt;&lt;/button&gt;';
+	tgContent.hide().prepend(tgBlurHtml).mouseleave(function(){closeTg()});
+	var tgBlur = $('.tgBlur');
+	tgBlur.eq(0).clone().appendTo(tgContent);
+	$('.tgSimple').click(function(){
+		$($(this).attr('href')).toggle().find('a, input, select, textarea').eq(0).focus();
+		return false;
+	});
+	function closeTg() {
+		var closeId = tgContent.filter(':visible').attr('id');
+		if(closeId) $('.tgSimple, .tgSlide, .tgFade').filter('[href=&quot;#'+closeId+'&quot;]').focus();
+		tgContent.prev('input').focus();
+		tgContent.fadeOut(200);
+	}
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true; // ESC
+		return closeTg();
+	});
+	$('.tgBlur').focusin(closeTg);
+});
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="table">
+				<h2>Table</h2>
+				<div class="container">
+					<p>Every table must exist header cell element necessarily. The '<strong>caption</strong>, <strong>tfoot</strong>' element is optional. But '<strong>caption</strong>' element is recommended, and '<strong>thead</strong>, <strong>tbody</strong>' element must be exist.</p>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Table */
+.table{margin:1em 0}
+.table table{width:100%;border:0;border-collapse:collapse;border-top:2px solid #ccc}
+.table caption{padding:8px 0;font-weight:bold;text-align:left;line-height:32px}
+.table caption:after{content:"";display:block;clear:both}
+.table caption a{font-weight:normal}
+.table caption em{float:right;font-style:normal;font-weight:normal;color:#e00;margin-left:1em}
+.table caption strong{color:#e00}
+.table caption .side{float:right;font-weight:normal;margin-left:1em}
+.table th,.table td{border:0;padding:8px;vertical-align:top;text-align:left;border-bottom:1px solid #ddd;white-space:nowrap}
+.table th{background:#f8f8f8}
+.table thead th{border-bottom:1px solid #999}
+.table tfoot td{font-weight:bold;background:#f8f8f8}
+.table.even tbody tr:nth-of-type(even) td{background-color:#fafafa}
+.table input[type=text]{margin:-1px 0 -3px 0;vertical-align:middle}
+.table img{vertical-align:middle}
+.table .title,
+.table .text{white-space:normal}
+.table .h1 + table,
+.table .h2 + table,
+.table .h3 + table,
+.table .h4 + table,
+.h1 + .table table,
+.h2 + .table table,
+.h3 + .table table,
+.h4 + .table table{border-top:0}
+</pre>
+					<h3>Preview</h3>
+					<div class="table">
+						<table width="100%" border="1" cellspacing="0">
+							<caption>Top &amp; Left header. <em>Emphasize Text.</em> <span class="side">Sort by <a href="#">Date</a> | <a href="#">Name</a></span></caption>
+							<thead>
+								<tr>
+									<th scope="col">th</th>
+									<th scope="col">th</th>
+									<th scope="col">th</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+<pre class="codeBlock">
+&lt;div class="<em>table</em>">
+	&lt;table width=&quot;100%&quot; border=&quot;1&quot; cellspacing=&quot;0&quot;&gt;
+		&lt;caption&gt;caption &lt;em&gt;Emphasize Text.&lt;/em&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;Sort by &lt;a href=&quot;#&quot;&gt;Date&lt;/a&gt; | &lt;a href=&quot;#&quot;&gt;Name&lt;/a&gt;&lt;/span&gt;&lt;/caption&gt;
+		&lt;thead&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;col&quot;&gt;th&lt;/th&gt;
+				&lt;th scope=&quot;col&quot;&gt;th&lt;/th&gt;
+				&lt;th scope=&quot;col&quot;&gt;th&lt;/th&gt;
+			&lt;/tr&gt;
+		&lt;/thead&gt;
+		&lt;tfoot&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tfoot&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;
+</pre>
+					<div class="table even">
+						<table width="100%" border="1" cellspacing="0">
+							<caption>Top header + even tr background.<em>Emphasize Text.</em> <span class="side">Sort by <a href="#">Date</a> | <a href="#">Name</a></span></caption>
+							<thead>
+								<tr>
+									<th scope="col">th</th>
+									<th scope="col">th</th>
+									<th scope="col">th</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td>th</td>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>td</td>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<td>td</td>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<td>td</td>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<td>td</td>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>table even</em>&quot;&gt;
+	&lt;table width=&quot;100%&quot; border=&quot;1&quot; cellspacing=&quot;0&quot;&gt;
+		&lt;caption&gt;caption &lt;em&gt;Emphasize Text.&lt;/em&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;Sort by &lt;a href=&quot;#&quot;&gt;Date&lt;/a&gt; | &lt;a href=&quot;#&quot;&gt;Name&lt;/a&gt;&lt;/span&gt;&lt;/caption&gt;
+		&lt;thead&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;col&quot;&gt;th&lt;/th&gt;
+				&lt;th scope=&quot;col&quot;&gt;th&lt;/th&gt;
+				&lt;th scope=&quot;col&quot;&gt;th&lt;/th&gt;
+			&lt;/tr&gt;
+		&lt;/thead&gt;
+		&lt;tfoot&gt;
+			&lt;tr&gt;
+				&lt;td&gt;th&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tfoot&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;
+</pre>
+					<div class="table">
+						<table width="100%" border="1" cellspacing="0">
+							<caption>Left header. <em>Emphasize Text.</em> <span class="side">Sort by <a href="#">Date</a> | <a href="#">Name</a></span></caption>
+							<tfoot>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+								<tr>
+									<th scope="row">th</th>
+									<td>td</td>
+									<td>td</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>table</em>&quot;&gt;
+	&lt;table width=&quot;100%&quot; border=&quot;1&quot; cellspacing=&quot;0&quot;&gt;
+		&lt;caption&gt;caption &lt;em&gt;Emphasize Text.&lt;/em&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;Sort by &lt;a href=&quot;#&quot;&gt;Date&lt;/a&gt; | &lt;a href=&quot;#&quot;&gt;Name&lt;/a&gt;&lt;/span&gt;&lt;/caption&gt;
+		&lt;tfoot&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tfoot&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;th scope=&quot;row&quot;&gt;th&lt;/th&gt;
+				&lt;td&gt;td&lt;/td&gt;
+				&lt;td&gt;td&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="form">
+				<h2>Form</h2>
+				<div class="container">
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Form */
+.form{margin:0;padding:0}
+.form,.form label,.form input,.form textarea,.form select,.form button{font-size:12px}
+.form fieldset{margin:0 0 2em 0;padding:0;border:0}
+.form em{font-style:normal;color:#e00}
+.form label{margin:0 10px 0 0}
+.form input[type=checkbox]+label,.form input[type=radio]+label,.form input[type=file]{cursor:pointer}
+.form ul{position:relative;margin:0;padding:0;list-style:none;border-top:2px solid #999;border-bottom:1px solid #ccc;zoom:1}
+.form li{list-style:none;border:1px solid #ddd;border-left:0;border-right:0;margin:-1px 0;padding:8px 0;vertical-align:top;zoom:1}
+.form li:first-child{border-top:0}
+.form li>label:first-child{display:block;font-weight:bold}
+.form li label em{font-weight:normal}
+.form input[type=text],.form input[type=password],.form input[type=file],textarea{position:relative;width:280px;margin:2px 10px 2px 0;border:1px solid #b7b7b7;border-right-color:#e1e1e1;border-bottom-color:#e1e1e1;background:transparent}
+.form input[type=text],.form input[type=password],.form input[type=file]{height:22px;line-height:22px;vertical-align:middle;padding:0 4px}
+.form input[type=checkbox],.form input[type=radio]{margin:0;padding:0;width:13px;height:13px;vertical-align:middle}
+.form *[disabled=disabled]{background:#ddd;text-shadow:1px 1px 0 #fff}
+.form textarea{padding:3px 4px;vertical-align:top}
+.form span.desc{line-height:22px;vertical-align:middle}
+.form p.desc{margin:.25em 0;line-height:1.4}
+.form .q{font-weight:bold;color:#333;margin:0 0 5px 0}
+.form .a{margin:0 0 5px 0}
+.form .h1 + ul,
+.form .h2 + ul,
+.form .h3 + ul,
+.form .h4 + ul{border-top:0}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Form Label Overlapping
+	var overlapLabel = $('.form li').find('&gt;:text,&gt;:password,&gt;textarea').prev('label');
+	var overlapInput = overlapLabel.next(':text,:password,textarea');
+	overlapLabel.css({'position':'absolute','top':'15px','left':'5px'}).parent().css('position','relative');
+	overlapInput
+		.focus(function(){
+			$(this).prev(overlapLabel).css('visibility','hidden');
+		})
+		.blur(function(){
+			if($(this).val() == ''){
+				$(this).prev(overlapLabel).css('visibility','visible');
+			} else {
+				$(this).prev(overlapLabel).css('visibility','hidden');
+			}
+		})
+		.change(function(){
+			if($(this).val() == ''){
+				$(this).prev(overlapLabel).css('visibility','visible');
+			} else {
+				$(this).prev(overlapLabel).css('visibility','hidden');
+			}
+		})
+		.blur();
+	// Input Checked
+	var inputRC = $('input[type=radio], input[type=checkbox]');
+	inputRC.change(function(){
+		var myName = $(this).attr('name');
+		$('.form .tgForm').hide();
+		inputRC.filter('[name='+myName+']').not(':checked').next('label').css('fontWeight','normal');
+		inputRC.filter(':checked').next('label').css('fontWeight','bold').next('.tgForm').show();
+		inputRC.parent().find(':not(:checked)').next('label').next('.tgForm').hide();
+	});
+	inputRC.change();
+	// Input Check All
+	var formThCheck = $('.form th&gt;:checkbox');
+	formThCheck.change(function(){
+		var formTdCheck = $(this).parents('table').find('td&gt;:checkbox');
+		if($(this).is(':checked')){
+			formTdCheck.attr('checked','checked').change();
+		} else {
+			formTdCheck.removeAttr('checked').change();
+		}
+	});
+	formThCheck.change();
+});
+</pre>
+					<h3>input type=&quot;text&quot; + label basic</h3>
+					<form action="#" method="post" class="form">
+						<fieldset>
+							<ul>
+								<li>
+									<p class="q"><label for="id">ID <em>*</em></label></p>
+									<p class="a">
+										<input name="" type="text" id="id" style="width:200px" /> 
+										<button type="button">Duplication Check</button>
+									</p>
+									<p class="desc">ID must have to <em>3-20</em> alphabetic or numeric characters and the first letter should be alphabetic character.</p>
+								</li>
+								<li>
+									<p class="q"><label for="pw1">Password <em>*</em></label></p>
+									<p class="a">
+										<input name="" type="password" id="pw1" style="width:200px" />
+										<span class="desc">Requires <em>6-20</em> characters.</span>
+									</p>
+								</li>
+								<li>
+									<p class="q"><label for="pw2">Password Confirm <em>*</em></label></p> 
+									<p class="a">
+										<input name="" type="password" id="pw2" style="width:200px" />
+										<span class="desc">Please enter your password once more.</span>
+									</p>
+								</li>
+								<li>
+									<p class="q"><label for="name">Name <em>*</em></label></p> 
+									<p class="a">
+										<input name="" type="text" id="name" style="width:200px" />
+										<span class="desc">Requires <em>2-20</em> characters.</span>
+									</p>
+								</li>
+								<li>
+									<p class="q"><label for="nick">Nickname <em>*</em></label></p> 
+									<p class="a">
+										<input name="" type="text" id="nick" style="width:200px" />
+										<span class="desc">Requires <em>2-20</em> characters.</span>
+									</p>
+								</li>
+								<li>
+									<p class="q"><label for="email">Email <em>*</em></label></p> 
+									<p class="a">
+										<input name="" type="text" id="email" style="width:200px" />
+										<span class="desc">Required to change your password and Find.</span>
+									</p>
+								</li>
+								<li>
+									<p class="q"><label for="phone">Phone</label></p> 
+									<p class="a">
+										<input name="" type="text" id="phone" style="width:200px" />
+										<span class="desc">'-' Include or not does not matter.</span>
+									</p>
+								</li>
+							</ul>
+						</fieldset>
+					</form>
+<pre class="codeBlock">
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;<em>form</em>&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;label for=&quot;id&quot;&gt;ID &lt;em&gt;*&lt;/em&gt;&lt;/label&gt;&lt;/p&gt;
+				&lt;p class=&quot;<em>a</em>&quot;&gt;
+					&lt;input name=&quot;&quot; type=&quot;text&quot; id=&quot;id&quot; style=&quot;width:200px&quot; /&gt; 
+					&lt;button type=&quot;button&quot;&gt;Duplication Check&lt;/button&gt;
+				&lt;/p&gt;
+				&lt;p class=&quot;<em>desc</em>&quot;&gt;ID must have to &lt;em&gt;3-20&lt;/em&gt; alphabetic or numeric characters and the first letter should be alphabetic character.&lt;/p&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;label for=&quot;pw1&quot;&gt;Password &lt;em&gt;*&lt;/em&gt;&lt;/label&gt;&lt;/p&gt;
+				&lt;p class=&quot;<em>a</em>&quot;&gt;
+					&lt;input name=&quot;&quot; type=&quot;password&quot; id=&quot;pw1&quot; style=&quot;width:200px&quot; /&gt;
+					&lt;span class=&quot;<em>desc</em>&quot;&gt;Requires &lt;em&gt;6-20&lt;/em&gt; characters.&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;label for=&quot;pw2&quot;&gt;Password Confirm &lt;em&gt;*&lt;/em&gt;&lt;/label&gt;&lt;/p&gt; 
+				&lt;p class=&quot;<em>a</em>&quot;&gt;
+					&lt;input name=&quot;&quot; type=&quot;password&quot; id=&quot;pw2&quot; style=&quot;width:200px&quot; /&gt;
+					&lt;span class=&quot;<em>desc</em>&quot;&gt;Please enter your password once more.&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;label for=&quot;name&quot;&gt;Name &lt;em&gt;*&lt;/em&gt;&lt;/label&gt;&lt;/p&gt; 
+				&lt;p class=&quot;<em>a</em>&quot;&gt;
+					&lt;input name=&quot;&quot; type=&quot;text&quot; id=&quot;name&quot; style=&quot;width:200px&quot; /&gt;
+					&lt;span class=&quot;<em>desc</em>&quot;&gt;Requires &lt;em&gt;2-20&lt;/em&gt; characters.&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;label for=&quot;nick&quot;&gt;Nickname &lt;em&gt;*&lt;/em&gt;&lt;/label&gt;&lt;/p&gt; 
+				&lt;p class=&quot;<em>a</em>&quot;&gt;
+					&lt;input name=&quot;&quot; type=&quot;text&quot; id=&quot;nick&quot; style=&quot;width:200px&quot; /&gt;
+					&lt;span class=&quot;<em>desc</em>&quot;&gt;Requires &lt;em&gt;2-20&lt;/em&gt; characters.&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;label for=&quot;email&quot;&gt;Email &lt;em&gt;*&lt;/em&gt;&lt;/label&gt;&lt;/p&gt; 
+				&lt;p class=&quot;<em>a</em>&quot;&gt;
+					&lt;input name=&quot;&quot; type=&quot;text&quot; id=&quot;email&quot; style=&quot;width:200px&quot; /&gt;
+					&lt;span class=&quot;<em>desc</em>&quot;&gt;Required to change your password and Find.&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;label for=&quot;phone&quot;&gt;Phone&lt;/label&gt;&lt;/p&gt; 
+				&lt;p class=&quot;<em>a</em>&quot;&gt;
+					&lt;input name=&quot;&quot; type=&quot;text&quot; id=&quot;phone&quot; style=&quot;width:200px&quot; /&gt;
+					&lt;span class=&quot;<em>desc</em>&quot;&gt;'-' Include or not does not matter.&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+					<h3>input type=&quot;text&quot; + label overlapping</h3>
+					<form action="#" method="post" class="form">
+						<fieldset>
+							<ul>
+								<li>
+									<label for="id">ID <em>*</em></label>
+									<input name="" type="text" id="id" style="width:200px" /> 
+									<button type="button">Duplication Check</button>
+									<p class="desc">ID must have to <em>3-20</em> alphabetic or numeric characters and the first letter should be alphabetic character.</p>
+								</li>
+								<li>
+									<label for="pw1">Password <em>*</em></label>
+									<input name="" type="password" id="pw1" style="width:200px" />
+									<span class="desc">Requires <em>6-20</em> characters.</span>
+								</li>
+								<li>
+									<label for="pw2">Password Confirm <em>*</em></label>
+									<input name="" type="password" id="pw2" style="width:200px" />
+									<span class="desc">Please enter your password once more.</span>
+								</li>
+								<li>
+									<label for="name">Name <em>*</em></label>
+									<input name="" type="text" id="name" style="width:200px" />
+									<span class="desc">Requires <em>2-20</em> characters.</span>
+								</li>
+								<li>
+									<label for="nick">Nickname <em>*</em></label>
+									<input name="" type="text" id="nick" style="width:200px" />
+									<span class="desc">Requires <em>2-20</em> characters.</span>
+								</li>
+								<li>
+									<label for="email">Email <em>*</em></label>
+									<input name="" type="text" id="email" style="width:200px" />
+									<span class="desc">Required to change your password and Find.</span>
+								</li>
+								<li>
+									<label for="phone">Phone</label>
+									<input name="" type="text" id="phone" style="width:200px" />
+									<span class="desc">'-' Include or not does not matter.</span>
+								</li>
+							</ul>
+						</fieldset>
+					</form>
+<pre class="codeBlock">
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;<em>form</em>&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;id&quot;&gt;ID &lt;em&gt;*&lt;/em&gt;&lt;/label&gt; 
+				&lt;input name=&quot;&quot; type=&quot;text&quot; id=&quot;id&quot; style=&quot;width:200px&quot; /&gt; 
+				&lt;button type=&quot;button&quot;&gt;Duplication Check&lt;/button&gt;
+				&lt;p class=&quot;<em>desc</em>&quot;&gt;ID must have to &lt;em&gt;3-20&lt;/em&gt; alphabetic or numeric characters and the first letter should be alphabetic character.&lt;/p&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;pw1&quot;&gt;Password &lt;em&gt;*&lt;/em&gt;&lt;/label&gt; 
+				&lt;input name=&quot;&quot; type=&quot;password&quot; id=&quot;pw1&quot; style=&quot;width:200px&quot; /&gt;
+				&lt;span class=&quot;<em>desc</em>&quot;&gt;Requires &lt;em&gt;6-20&lt;/em&gt; characters.&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;pw2&quot;&gt;Password Confirm &lt;em&gt;*&lt;/em&gt;&lt;/label&gt; 
+				&lt;input name=&quot;&quot; type=&quot;password&quot; id=&quot;pw2&quot; style=&quot;width:200px&quot; /&gt;
+				&lt;span class=&quot;<em>desc</em>&quot;&gt;Please enter your password once more.&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;name&quot;&gt;Name &lt;em&gt;*&lt;/em&gt;&lt;/label&gt; 
+				&lt;input name=&quot;&quot; type=&quot;text&quot; id=&quot;name&quot; style=&quot;width:200px&quot; /&gt;
+				&lt;span class=&quot;<em>desc</em>&quot;&gt;Requires &lt;em&gt;2-20&lt;/em&gt; characters.&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;nick&quot;&gt;Nickname &lt;em&gt;*&lt;/em&gt;&lt;/label&gt; 
+				&lt;input name=&quot;&quot; type=&quot;text&quot; id=&quot;nick&quot; style=&quot;width:200px&quot; /&gt;
+				&lt;span class=&quot;<em>desc</em>&quot;&gt;Requires &lt;em&gt;2-20&lt;/em&gt; characters.&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;email&quot;&gt;Email &lt;em&gt;*&lt;/em&gt;&lt;/label&gt; 
+				&lt;input name=&quot;&quot; type=&quot;text&quot; id=&quot;email&quot; style=&quot;width:200px&quot; /&gt;
+				&lt;span class=&quot;<em>desc</em>&quot;&gt;Required to change your password and Find.&lt;/span&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;phone&quot;&gt;Phone&lt;/label&gt;
+				&lt;input name=&quot;&quot; type=&quot;text&quot; id=&quot;phone&quot; style=&quot;width:200px&quot; /&gt;
+				&lt;span class=&quot;<em>desc</em>&quot;&gt;'-' Include or not does not matter.&lt;/span&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+					<h3>input type=&quot;radio|checkbox&quot;</h3>
+					<form action="#" method="post" class="form">
+						<fieldset>
+							<ul>
+								<li>
+									<p class="q">Name or nickname, what do you want to display?</p>
+									<p class="a">
+										<input name="authorName" type="radio" id="useName" checked="checked" /> 
+										<label for="useName">Name</label> 
+										<input name="authorName" type="radio" id="useNick" /> 
+										<label for="useNick">Nickname</label>
+										<span class="tgForm">
+											<label for="nickname">What's your nickname?</label> <input id="nickname" value="" />
+										</span>
+									</p>
+								</li>
+								<li>
+									<p class="q">What are your interests?</p>
+									<p class="a">
+										<input name="interest" type="checkbox" id="humanities" checked="checked" /> 
+										<label for="humanities">Humanities</label> 
+										<input name="interest" type="checkbox" id="science" /> 
+										<label for="science">Science</label>
+										<span class="tgForm">
+											<label for="whatKindOf">What kind of?</label> <input id="whatKindOf" value="" />
+										</span>
+									</p>
+								</li>
+							</ul>
+						</fieldset>
+					</form>
+<pre class="codeBlock">
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;<em>form</em>&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;Name or nickname, what do you want to display?&lt;/p&gt;
+				&lt;p class=&quot;<em>a</em>&quot;&gt;
+					&lt;input name=&quot;authorName&quot; type=&quot;radio&quot; id=&quot;useName&quot; checked=&quot;checked&quot; /&gt; 
+					&lt;label for=&quot;useName&quot;&gt;Name&lt;/label&gt; 
+					&lt;input name=&quot;authorName&quot; type=&quot;radio&quot; id=&quot;useNick&quot; /&gt; 
+					&lt;label for=&quot;useNick&quot;&gt;Nickname&lt;/label&gt;
+					&lt;span class=&quot;<em>tgForm</em>&quot;&gt;
+						&lt;label for=&quot;nickname&quot;&gt;What's your nickname?&lt;/label&gt; &lt;input id=&quot;nickname&quot; value=&quot;&quot; /&gt;
+					&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;What are your interests?&lt;/p&gt;
+				&lt;p class=&quot;<em>a</em>&quot;&gt;
+					&lt;input name=&quot;interest&quot; type=&quot;checkbox&quot; id=&quot;humanities&quot; checked=&quot;checked&quot; /&gt; 
+					&lt;label for=&quot;humanities&quot;&gt;Humanities&lt;/label&gt; 
+					&lt;input name=&quot;interest&quot; type=&quot;checkbox&quot; id=&quot;science&quot; /&gt; 
+					&lt;label for=&quot;science&quot;&gt;Science&lt;/label&gt;
+					&lt;span class=&quot;<em>tgForm</em>&quot;&gt;
+						&lt;label for=&quot;whatKindOf&quot;&gt;What kind of?&lt;/label&gt; &lt;input id=&quot;whatKindOf&quot; value=&quot;&quot; /&gt;
+					&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+					<h3>select</h3>
+					<form action="#" method="post" class="form">
+						<fieldset>
+							<ul>
+								<li>
+									<p class="q"><label for="select">Select &gt; Optgroup &gt; Option</label></p>
+									<p class="a">
+										<select id="select">
+											<optgroup label="Optgroup">
+												<option value="">Option</option>
+												<option value="">Option</option>
+											</optgroup>
+											<optgroup label="Optgroup">
+												<option value="">Option</option>
+												<option value="">Option</option>
+											</optgroup>
+										</select>
+									</p>
+								</li>
+							</ul>
+						</fieldset>
+					</form>
+<pre class="codeBlock">
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;<em>form</em>&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;label for=&quot;select&quot;&gt;Select &gt; Optgroup &gt; Option&lt;/label&gt;&lt;/p&gt;
+				&lt;p class=&quot;<em>a</em>&quot;&gt;
+					&lt;select id=&quot;select&quot;&gt;
+						&lt;optgroup label=&quot;Optgroup&quot;&gt;
+							&lt;option value=&quot;&quot;&gt;Option&lt;/option&gt;
+							&lt;option value=&quot;&quot;&gt;Option&lt;/option&gt;
+						&lt;/optgroup&gt;
+						&lt;optgroup label=&quot;Optgroup&quot;&gt;
+							&lt;option value=&quot;&quot;&gt;Option&lt;/option&gt;
+							&lt;option value=&quot;&quot;&gt;Option&lt;/option&gt;
+						&lt;/optgroup&gt;
+					&lt;/select&gt;
+				&lt;/p&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+					<h3>input type=&quot;file&quot;</h3>
+					<form action="#" method="post" class="form">
+						<fieldset>
+							<ul>
+								<li>
+									<p class="q"><label for="userProfile">User Profile</label></p>
+									<p class="a"><input name="" type="file" id="userProfile" /></p>
+								</li>
+							</ul>
+						</fieldset>
+					</form>
+<pre class="codeBlock">
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;<em>form</em>&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;label for=&quot;userProfile&quot;&gt;User Profile&lt;/label&gt;&lt;/p&gt;
+				&lt;p class=&quot;<em>a</em>&quot;&gt;&lt;input name=&quot;&quot; type=&quot;file&quot; id=&quot;userProfile&quot; /&gt;&lt;/p&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+					<h3>textarea + label basic</h3>
+					<form action="#" method="post" class="form">
+						<fieldset>
+							<ul>
+								<li>
+									<p class="q"><label for="signature">Signature: <em>If you create a signature it will be displayed at the bottom of the posts.</em></label></p>
+									<p class="a"><textarea rows="5" cols="50" id="signature" style="width:600px"></textarea></p>
+								</li>
+							</ul>
+						</fieldset>
+					</form>
+<pre class="codeBlock">
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;<em>form</em>&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;label for=&quot;signature&quot;&gt;Signature: &lt;<em>em</em>&gt;If you create a signature it will be displayed at the bottom of the posts.&lt;/<em>em</em>&gt;&lt;/label&gt;&lt;/p&gt;
+				&lt;p class=&quot;<em>a</em>&quot;&gt;&lt;textarea rows=&quot;5&quot; cols=&quot;50&quot; id=&quot;signature&quot; style=&quot;width:600px&quot;&gt;&lt;/textarea&gt;&lt;/p&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+					<h3>textarea + label overlapping</h3>
+					<form action="#" method="post" class="form">
+						<fieldset>
+							<ul>
+								<li>
+									<label for="signature">Signature: <em>If you create a signature it will be displayed at the bottom of the posts.</em></label>
+									<textarea rows="5" cols="50" id="signature" style="width:600px"></textarea>
+								</li>
+							</ul>
+						</fieldset>
+					</form>
+<pre class="codeBlock">
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;<em>form</em>&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;label for=&quot;signature&quot;&gt;Signature: &lt;<em>em</em>&gt;If you create a signature it will be displayed at the bottom of the posts.&lt;/<em>em</em>&gt;&lt;/label&gt;
+				&lt;textarea rows=&quot;5&quot; cols=&quot;50&quot; id=&quot;signature&quot; style=&quot;width:600px&quot;&gt;&lt;/textarea&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+					<h3>table + checkbox : check all</h3>
+					<form action="#" method="post" class="form">
+						<fieldset>
+							<div class="table">
+								<table width="100%" border="1" cellspacing="0">
+									<thead>
+										<tr>
+											<th scope="col">Title</th>
+											<th scope="col"><input type="checkbox" title="Check All" /></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>The quick brown fox jumps over the lazy dog.</td>
+											<td><input type="checkbox" /></td>
+										</tr>
+										<tr>
+											<td>The quick brown fox jumps over the lazy dog.</td>
+											<td><input type="checkbox" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</fieldset>
+					</form>
+<pre class="codeBlock">
+&lt;form action=&quot;#&quot; method=&quot;post&quot; class=&quot;<em>form</em>&quot;&gt;
+	&lt;fieldset&gt;
+		&lt;div class=&quot;table&quot;&gt;
+			&lt;table width=&quot;100%&quot; border=&quot;1&quot; cellspacing=&quot;0&quot;&gt;
+				&lt;thead&gt;
+					&lt;tr&gt;
+						&lt;th scope=&quot;col&quot;&gt;Title&lt;/th&gt;
+						&lt;th scope=&quot;col&quot;&gt;&lt;input type=&quot;checkbox&quot; title=&quot;Check All&quot; /&gt;&lt;/th&gt;
+					&lt;/tr&gt;
+				&lt;/thead&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td&gt;The quick brown fox jumps over the lazy dog.&lt;/td&gt;
+						&lt;td&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/td&gt;
+					&lt;/tr&gt;
+					&lt;tr&gt;
+						&lt;td&gt;The quick brown fox jumps over the lazy dog.&lt;/td&gt;
+						&lt;td&gt;&lt;input type=&quot;checkbox&quot; /&gt;&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+		&lt;/div&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="button">
+				<h2>Button</h2>
+				<div class="container">
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Button */
+.btn{position:relative;display:inline-block;margin:2px;vertical-align:top}
+.btn *{display:inline-block;padding:0 8px;font-size:14px;height:24px;line-height:22px;margin:0;font-weight:bold !important;color:#fff;text-decoration:none !important;border:1px solid;cursor:pointer;overflow:visible;border-radius:3px;box-shadow:inset 0 0 1px #fff;-moz-box-shadow:inset 0 0 1px #fff;-webkit-box-shadow:inset 0 0 1px #fff;background-color:#666;text-shadow:0 -1px 0 #333;zoom:1}
+.btn a, 
+.btn button[type=button]{border-color:#ccc;color:#333 !important;background:#eee -webkit-gradient(linear,0% 0%,0% 100%,from(#fff),to(#ddd));background:#eee -moz-linear-gradient(top,#fff,#ddd);background-color:#eee;text-shadow:1px 1px 0 #fff;filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#ffffff, endColorStr=#dddddd)}
+.btn input, .btn button[type=submit]{border-color:#666;background:#333 -webkit-gradient(linear,0% 0%,0% 100%,from(#777),to(#777),color-stop(0.5,#333),color-stop(0.5,#000));background:#333 -moz-linear-gradient(top,#777,#000);background-color:#333;color:#ffc;filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#777777, endColorStr=#333333)}
+.btn a{height:22px}
+.btn.medium *{padding:0 12px;font-size:18px;height:30px;line-height:28px}
+.btn.medium a{height:28px}
+.btn.large *{padding:0 18px;font-size:24px;height:36px;line-height:34px}
+.btn.large a{height:34px}
+</pre>
+					<h3>For inline</h3>
+					<p>Recommended for use with inline content. Please use the 'a' element, if the button you must refer to other resources. Please use the 'input' element, if the button you must submit a form. Please use the 'button' element, if the button is not 'refer' or 'submit'.</p>
+					<p><a href="#">anchor/앵커</a> <button type="button">button/버튼</button> <input type="submit" value="submit/서밋" /> // If there are two or more buttons in a row, you have to use this.</p>
+<pre class="codeBlock">
+&lt;a href=&quot;#&quot;&gt;anchor/앵커&lt;/a&gt;
+&lt;button type=&quot;button&quot;&gt;button/버튼&lt;/button&gt;
+&lt;input type=&quot;submit&quot; value=&quot;submit/서밋&quot; /&gt;
+</pre>
+					<p><span class="btn"><a href="#">anchor/앵커</a></span> <span class="btn"><button type="button">button/버튼</button></span> <span class="btn"><input type="submit" value="submit/서밋" /></span> // If there are only one buttons in a row, you can use this.</p>
+<pre class="codeBlock">
+&lt;span class=&quot;<em>btn</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;anchor/앵커&lt;/a&gt;&lt;/span&gt; 
+&lt;span class=&quot;<em>btn</em>&quot;&gt;&lt;button type=&quot;button&quot;&gt;button/버튼&lt;/button&gt;&lt;/span&gt; 
+&lt;span class=&quot;<em>btn</em>&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;submit/서밋&quot; /&gt;&lt;/span&gt;
+</pre>
+					<h3>For section or fieldset</h3>
+					<p>Recommended for use with section or fieldset content. Please use the 'a' element, if the button you must refer to other resources. Please use the 'input' element, if the button you must submit a form. Please use the 'button' element, if the button is not 'refer' or 'submit'.</p>
+					<p><span class="btn medium"><a href="#">anchor/앵커</a></span> <span class="btn medium"><button type="button">button/버튼</button></span> <span class="btn medium"><input type="submit" value="submit/서밋" /></span> // Do not use this inline.</p>
+<pre class="codeBlock">
+&lt;span class=&quot;<em>btn medium</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;anchor/앵커&lt;/a&gt;&lt;/span&gt; 
+&lt;span class=&quot;<em>btn medium</em>&quot;&gt;&lt;button type=&quot;button&quot;&gt;button/버튼&lt;/button&gt;&lt;/span&gt; 
+&lt;span class=&quot;<em>btn medium</em>&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;submit/서밋&quot; /&gt;&lt;/span&gt;
+</pre>
+					<h3>For page</h3>
+					<p>Recommended for use with full page content. Once in the page footer is better to use. Please use the 'a' element, if the button you must refer to other resources. Please use the 'input' element, if the button you must submit a form. Please use the 'button' element, if the button is not 'refer' or 'submit'.</p>
+					<p><span class="btn large"><a href="#">anchor/앵커</a></span> <span class="btn large"><button type="button">button/버튼</button></span> <span class="btn large"><input type="submit" value="submit/서밋" /></span> // Do not use this inline.</p>
+<pre class="codeBlock">
+&lt;span class=&quot;<em>btn large</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;anchor/앵커&lt;/a&gt;&lt;/span&gt; 
+&lt;span class=&quot;<em>btn large</em>&quot;&gt;&lt;button type=&quot;button&quot;&gt;button/버튼&lt;/button&gt;&lt;/span&gt; 
+&lt;span class=&quot;<em>btn large</em>&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;submit/서밋&quot; /&gt;&lt;/span&gt;
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="portlet">
+				<h2>Portlet</h2>
+				<div class="container">
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Portlet */
+.portlet{position:relative;border:1px solid #e9e9e9;margin:1em 0;padding:0;background:#fff;zoom:1;overflow:hidden;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
+.portlet h2, .portlet h3{margin:0;padding:.5em 1em;font-size:14px;border:1px solid #fff;border-bottom:1px solid #e9e9e9;background:#f7f7f7;border-radius:5px 5px 0 0;-moz-border-radius:5px 5px 0 0;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px}
+.portlet p{margin:1em 1.2em}
+.portlet li{position:relative;padding-right:8em}
+.portlet .lined{margin:1px;padding:0;list-style:none}
+.portlet .lined li{padding:.5em 8em .5em 1em;border-top:1px solid #eee;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis}
+.portlet .lined li:first-child{border:0}
+.portlet .side{position:absolute;top:0;_top:1px;right:0;color:#666;background:#fff;padding:0 1em}
+.portlet .lined .side{padding:.5em 1em}
+.portlet .more{position:absolute;top:.5em;right:1em;text-decoration:none !important;color:#666}
+.portlet .more span{color:#999}
+.portlet .action{text-align:right;top:0;right:0;padding:.5em 1em .5em 3em;background:#fff;background:-webkit-gradient(linear, 0% 0%, 100% 0%, from(rgba(255,255,255,0)), to(rgba(255,255,255,1)), color-stop(15%, #fff));background:-moz-linear-gradient(left, rgba(255,255,255,0) 0, rgba(255,255,255,1) 15%)}
+.portlet .action a,
+.portlet .action button{margin-left:1em}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Action
+	var action = $('.portlet .action');
+	var action_li = action.parent('li');
+	action.hide().css({'position':'absolute'});
+	action_li.mouseleave(function(){
+		action.fadeOut(100);
+		return false;
+	});
+	action_li.mouseenter(function(){
+		action_li.mouseleave();
+		$(this).find('&gt;.action').fadeIn(100);
+		return false;
+	});
+	action_li.find('*:first-child').focusin(function(){
+		$(this).parent('li').mouseenter();
+	});
+});
+</pre>
+					<h3>Heading + Paragraph</h3>
+					<div class="portlet">
+						<h2>Heading</h2>
+						<p>First Paragraph</p>
+						<p>Second Paragraph</p>
+						<a href="#" class="more"><span>&rsaquo;</span> MORE</a>
+					</div>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>portlet</em>&quot;&gt;
+	&lt;h2&gt;Heading&lt;/h2&gt;
+	&lt;p&gt;First Paragraph&lt;/p&gt;
+	&lt;p&gt;Second Paragraph&lt;/p&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>more</em>&quot;&gt;&lt;span&gt;&rsaquo;&lt;/span&gt; MORE&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+					<h3>Heading + Unordered List Item</h3>
+					<div class="portlet">
+						<h2>Heading</h2>
+						<ul>
+							<li>First Item <span class="side">2012-12-24</span></li>
+							<li><a href="#">Second Item</a> <span class="side">2012-12-24</span></li>
+						</ul>
+						<a href="#" class="more"><span>&rsaquo;</span> MORE</a>
+					</div>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>portlet</em>&quot;&gt;
+	&lt;h2&gt;Heading&lt;/h2&gt;
+	&lt;ul&gt;
+		&lt;li&gt;First Item &lt;span class=&quot;<em>side</em>&quot;&gt;2012-12-24&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Second Item&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2012-12-24&lt;/span&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>more</em>&quot;&gt;&lt;span&gt;&rsaquo;&lt;/span&gt; MORE&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+					<h3>Heading + Ordered List Item</h3>
+					<div class="portlet">
+						<h2>Heading</h2>
+						<ol>
+							<li>First Item <span class="side">2012-12-24</span></li>
+							<li><a href="#">Second Item</a> <span class="side">2012-12-24</span></li>
+						</ol>
+						<a href="#" class="more"><span>&rsaquo;</span> MORE</a>
+					</div>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>portlet</em>&quot;&gt;
+	&lt;h2&gt;Heading&lt;/h2&gt;
+	&lt;ol&gt;
+		&lt;li&gt;First Item &lt;span class=&quot;<em>side</em>&quot;&gt;2012-12-24&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Second Item&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2012-12-24&lt;/span&gt;&lt;/li&gt;
+	&lt;/ol&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>more</em>&quot;&gt;&lt;span&gt;&rsaquo;&lt;/span&gt; MORE&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+					<h3>Heading + Lined Item + Action Item</h3>
+					<div class="portlet">
+						<h2>Heading</h2>
+						<ul class="lined">
+							<li>First Item <span class="side">2012-12-24</span> <span class="action"><a href="#">Edit</a> <a href="#">Spam</a> <a href="#">Trash</a></span></li>
+							<li><a href="#">Second Item</a> <span class="side">2012-12-24</span> <span class="action"><a href="#">Edit</a> <a href="#">Spam</a> <a href="#">Trash</a></span></li>
+						</ul>
+						<a href="#" class="more"><span>&rsaquo;</span> MORE</a>
+					</div>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>portlet</em>&quot;&gt;
+	&lt;h2&gt;Heading&lt;/h2&gt;
+	&lt;ul class=&quot;<em>lined</em>&quot;&gt;
+		&lt;li&gt;First Item &lt;span class=&quot;<em>side</em>&quot;&gt;2012-12-24&lt;/span&gt; &lt;span class=&quot;<em>action</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;Edit&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;Spam&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;Trash&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Second Item&lt;/a&gt; &lt;span class=&quot;<em>side</em>&quot;&gt;2012-12-24&lt;/span&gt; &lt;span class=&quot;<em>action</em>&quot;&gt;&lt;a href=&quot;#&quot;&gt;Edit&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;Spam&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;Trash&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;a href=&quot;#&quot; class=&quot;<em>more</em>&quot;&gt;&lt;span&gt;&rsaquo;&lt;/span&gt; MORE&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="faq">
+				<h2>FAQ</h2>
+				<div class="container">
+					<h3>Preview</h3>
+					<div class="faq">
+						<div class="faqHeader">
+							<h1>FAQ</h1>
+							<button type="button" class="showAll">Show/Hide All</button>
+						</div>
+						<ul class="faqBody">
+							<li class="article" id="a1">
+								<p class="q"><a href="#a1">Q: First Question</a></p>
+								<p class="a">A: First Answer</p>
+							</li>
+							<li class="article" id="a2">
+								<p class="q"><a href="#a2">Q: Second Question</a></p>
+								<p class="a">A: Second Answer</p>
+							</li>
+							<li class="article" id="a3">
+								<p class="q"><a href="#a3">Q: Third Question</a></p>
+								<p class="a">A: Third Answer</p>
+							</li>
+						</ul>
+					</div>
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>faq</em>&quot;&gt;
+	&lt;div class=&quot;<em>faqHeader</em>&quot;&gt;
+		&lt;h1&gt;FAQ&lt;/h1&gt;
+		&lt;button type=&quot;button&quot; class=&quot;<em>showAll</em>&quot;&gt;Show All&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;ul class=&quot;<em>faqBody</em>&quot;&gt;
+		&lt;li class=&quot;<em>article</em>&quot; id=&quot;<em>a1</em>&quot;&gt;
+			&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;a href=&quot;<em>#a1</em>&quot;&gt;Q: First Question&lt;/a&gt;&lt;/p&gt;
+			&lt;p class=&quot;<em>a</em>&quot;&gt;A: First Answer&lt;/p&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;<em>article</em>&quot; id=&quot;<em>a2</em>&quot;&gt;
+			&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;a href=&quot;<em>#a2</em>&quot;&gt;Q: Second Question&lt;/a&gt;&lt;/p&gt;
+			&lt;p class=&quot;<em>a</em>&quot;&gt;A: Second Answer&lt;/p&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;<em>article</em>&quot; id=&quot;<em>a3</em>&quot;&gt;
+			&lt;p class=&quot;<em>q</em>&quot;&gt;&lt;a href=&quot;<em>#a3</em>&quot;&gt;Q: Third Question&lt;/a&gt;&lt;/p&gt;
+			&lt;p class=&quot;<em>a</em>&quot;&gt;A: Third Answer&lt;/p&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* FAQ */
+.faq{border-bottom:1px solid #ddd;margin:1em 0}
+.faq .faqHeader{position:relative;zoom:1}
+.faq .faqHeader .showAll{position:absolute;bottom:0;right:0;border:0;padding:0;overflow:visible;background:none;cursor:pointer}
+.faq .faqBody{margin:0;padding:0}
+.faq .faqBody .article{list-style:none}
+.faq .q{margin:0;border-top:1px solid #ddd}
+.faq .q a{display:block;padding:.5em 1em;text-align:left;font-weight:bold;background:#fafafa;color:#000;text-decoration:none !important}
+.faq .q a:hover, .faq .q a:active, .faq .q a:focus{background:#f8f8f8}
+.faq .a{margin:0;padding:1em;line-height:1.5}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Frequently Asked Question
+	var article = $('.faq&gt;.faqBody&gt;.article');
+	article.addClass('hide');
+	article.find('.a').hide();
+	article.eq(0).removeClass('hide');
+	article.eq(0).find('.a').show();
+	$('.faq&gt;.faqBody&gt;.article&gt;.q&gt;a').click(function(){
+		var myArticle = $(this).parents('.article:first');
+		if(myArticle.hasClass('hide')){
+			article.addClass('hide').removeClass('show');
+			article.find('.a').slideUp(100);
+			myArticle.removeClass('hide').addClass('show');
+			myArticle.find('.a').slideDown(100);
+		} else {
+			myArticle.removeClass('show').addClass('hide');
+			myArticle.find('.a').slideUp(100);
+		}
+		return false;
+	});
+	$('.faq&gt;.faqHeader&gt;.showAll').click(function(){
+		var hidden = $('.faq&gt;.faqBody&gt;.article.hide').length;
+		if(hidden &gt; 0){
+			article.removeClass('hide').addClass('show');
+			article.find('.a').slideDown(100);
+		} else {
+			article.removeClass('show').addClass('hide');
+			article.find('.a').slideUp(100);
+		}
+	});
+});
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="graph">
+				<h2>Graph</h2>
+				<div class="container">
+					<h3>Horizontal Bar Graph</h3>
+					<div class="hGraph"> 
+						<ul> 
+							<li><span class="gTerm">SUN</span><span class="gBar" style="width:0%"><span>0%</span></span></li> 
+							<li><span class="gTerm">MON</span><span class="gBar" style="width:20%"><span>20%</span></span></li> 
+							<li><span class="gTerm">TUE</span><span class="gBar" style="width:30%"><span>30%</span></span></li> 
+							<li><span class="gTerm">WED</span><span class="gBar" style="width:40%"><span>40%</span></span></li> 
+							<li><span class="gTerm">THU</span><span class="gBar" style="width:50%"><span>50%</span></span></li> 
+							<li><span class="gTerm">FRI</span><span class="gBar" style="width:60%"><span>60%</span></span></li> 
+							<li><span class="gTerm">SAT</span><span class="gBar" style="width:100%"><span>100%</span></span></li> 
+						</ul> 
+					</div>
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>hGraph</em>&quot;&gt;  
+	&lt;ul&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;SUN&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;width:0%&quot;&gt;&lt;span&gt;0%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;MON&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;width:20%&quot;&gt;&lt;span&gt;20%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;TUE&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;width:30%&quot;&gt;&lt;span&gt;30%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;WED&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;width:40%&quot;&gt;&lt;span&gt;40%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;THU&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;width:50%&quot;&gt;&lt;span&gt;50%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;FRI&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;width:60%&quot;&gt;&lt;span&gt;60%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;SAT&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;width:100%&quot;&gt;&lt;span&gt;100%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+	&lt;/ul&gt; 
+&lt;/div&gt; 
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Horizontal Bar Graph */
+.hGraph ul{margin:0 50px 0 50px;padding:1px 0 0 0;border:1px solid #ddd;border-top:0;border-right:0;list-style:none}
+.hGraph li{position:relative;margin:10px 0;white-space:nowrap;vertical-align:top}
+.hGraph .gTerm{position:absolute;width:40px;top:0;left:-50px;line-height:20px;text-align:right;font-weight:bold}
+.hGraph .gBar{position:relative;display:inline-block;height:20px;border:1px solid #ccc;border-left:0;background:#e9e9e9}
+.hGraph .gBar span{position:absolute;width:40px;line-height:20px;top:0;right:-50px;color:#767676}
+</pre>
+					<h3>Vertical Bar Graph</h3>
+					<div class="vGraph"> 
+						<ul> 
+							<li><span class="gTerm">SUN</span><span class="gBar" style="height:0%"><span>0%</span></span></li> 
+							<li><span class="gTerm">MON</span><span class="gBar" style="height:20%"><span>20%</span></span></li> 
+							<li><span class="gTerm">TUE</span><span class="gBar" style="height:30%"><span>30%</span></span></li> 
+							<li><span class="gTerm">WED</span><span class="gBar" style="height:40%"><span>40%</span></span></li> 
+							<li><span class="gTerm">THU</span><span class="gBar" style="height:50%"><span>50%</span></span></li> 
+							<li><span class="gTerm">FRI</span><span class="gBar" style="height:60%"><span>60%</span></span></li> 
+							<li><span class="gTerm">SAT</span><span class="gBar" style="height:100%"><span>100%</span></span></li> 
+						</ul> 
+					</div>
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;div class=&quot;<em>vGraph</em>&quot;&gt;  
+	&lt;ul&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;SUN&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;height:0%&quot;&gt;&lt;span&gt;0%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;MON&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;height:20%&quot;&gt;&lt;span&gt;20%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;TUE&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;height:30%&quot;&gt;&lt;span&gt;30%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;WED&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;height:40%&quot;&gt;&lt;span&gt;40%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;THU&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;height:50%&quot;&gt;&lt;span&gt;50%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;FRI&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;height:60%&quot;&gt;&lt;span&gt;60%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+		&lt;li&gt;&lt;span class=&quot;<em>gTerm</em>&quot;&gt;SAT&lt;/span&gt;&lt;span class=&quot;<em>gBar</em>&quot; style=&quot;height:100%&quot;&gt;&lt;span&gt;100%&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
+	&lt;/ul&gt; 
+&lt;/div&gt; 
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Vertical Bar Graph */
+.vGraph{margin:1em 0;padding:20px 0}
+.vGraph ul{margin:0;padding:0;height:200px;border:1px solid #ddd;border-top:0;border-right:0;list-style:none}
+.vGraph ul:after{content:"";display:block;clear:both}
+.vGraph li{float:left;display:inline;width:8%;height:100%;margin:0 3%;position:relative;text-align:center;white-space:nowrap}
+.vGraph .gTerm{position:relative;display:inline-block;width:100%;height:20px;line-height:20px;margin:0 -100% -20px 0;padding:200px 0 0 0;vertical-align:bottom;font-weight:bold}
+.vGraph .gBar{position:relative;display:inline-block;width:100%;margin:-1px 0 0 0;border:1px solid #ccc;border-bottom:0;background:#e9e9e9;vertical-align:bottom}
+.vGraph .gBar span{position:absolute;width:100%;top:-20px;left:0}
+</pre>
+					<h3>Star Rating</h3>
+					<p>별점: <span class="starRating"><span style="width:60%">6점</span></span></p> 
+					<p>별점: <span class="starRating"><span style="width:70%">7점</span></span></p> 
+					<p>별점: <span class="starRating"><span style="width:100%">10점</span></span></p> 
+					<h3>XHTML</h3>
+<pre class="codeBlock">
+&lt;p&gt;&lt;span class=&quot;<em>starRating</em>&quot;&gt;&lt;span style=&quot;width:60%&quot;&gt;6점&lt;/span&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span class=&quot;<em>starRating</em>&quot;&gt;&lt;span style=&quot;width:70%&quot;&gt;7점&lt;/span&gt;&lt;/span&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;span class=&quot;<em>starRating</em>&quot;&gt;&lt;span style=&quot;width:100%&quot;&gt;10점&lt;/span&gt;&lt;/span&gt;&lt;/p&gt; 
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Star Rating */
+.starRating, .starRating span{display:inline-block;height:14px;height:14px;background:transparent url(img/iconStarRating.gif) no-repeat;overflow:hidden}
+.starRating{width:79px;vertical-align:middle}
+.starRating span{font-size:0;line-height:0;vertical-align:top;text-indent:-100px;*text-indent:0;background-position:0 -14px}
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="progress">
+				<h2>Progress</h2>
+				<div class="container">
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Progress */
+.prgrs{white-space:nowrap;line-height:normal;vertical-align:middle}
+.prgrs *{vertical-align:middle}
+.prgrs .pBar{position:relative;display:inline-block;background:#e9e9e9;margin:0 5px 0 0}
+.prgrs .pAction{display:inline-block;vertical-align:top;background:#99a6b6}
+.prgrs .pNum{position:absolute;width:100%;left:0;top:0;text-align:center;text-shadow:1px 1px 0 #fff}
+.prgrs.prgrsSmall{font-size:14px;line-height:14px}
+.prgrs.prgrsSmall .pBar,
+.prgrs.prgrsSmall .pAction,
+.prgrs.prgrsSmall .pNum{height:16px;line-height:16px;font-size:11px}
+.prgrs.prgrsMedium {font-size:24px;line-height:24px}
+.prgrs.prgrsMedium .pBar,
+.prgrs.prgrsMedium .pAction,
+.prgrs.prgrsMedium .pNum{height:22px;line-height:22px;font-size:12px}
+.prgrs.prgrsLarge{font-size:38px;line-height:38px}
+.prgrs.prgrsLarge .pBar,
+.prgrs.prgrsLarge .pAction,
+.prgrs.prgrsLarge .pNum{height:34px;line-height:34px;font-size:14px}
+</pre>
+					<h3>Progress - Small Size</h3>
+					<p>
+						<span class="prgrs prgrsSmall"> 
+							<strong>Installation: </strong>
+							<span class="pBar" style="width:200px">
+								<span class="pAction" style="width:50%"></span>
+								<span class="pNum">123/1234</span>
+							</span> 
+							<strong>50%</strong>
+						</span>
+					</p>
+<pre class="codeBlock">
+&lt;p&gt;
+	&lt;span class=&quot;<em>prgrs prgrsSmall</em>&quot;&gt; 
+		&lt;strong&gt;Installation: &lt;/strong&gt;
+		&lt;span class=&quot;<em>pBar</em>&quot; style=&quot;width:<em>200px</em>&quot;&gt;
+			&lt;span class=&quot;<em>pAction</em>&quot; style=&quot;width:50%&quot;&gt;&lt;/span&gt;
+			&lt;span class=&quot;<em>pNum</em>&quot;&gt;123/1234&lt;/span&gt;
+		&lt;/span&gt; 
+		&lt;strong&gt;50%&lt;/strong&gt; 
+	&lt;/span&gt;
+&lt;/p&gt;
+</pre>
+					<h3>Progress - Medium Size</h3>
+					<p>
+						<span class="prgrs prgrsMedium"> 
+							<strong>Installation: </strong>
+							<span class="pBar" style="width:300px">
+								<span class="pAction" style="width:50%"></span>
+								<span class="pNum">123/1234</span>
+							</span> 
+							<strong>50%</strong>
+						</span>
+					</p>
+<pre class="codeBlock">
+&lt;p&gt;
+	&lt;span class=&quot;<em>prgrs prgrsMedium</em>&quot;&gt; 
+		&lt;strong&gt;Installation: &lt;/strong&gt;
+		&lt;span class=&quot;<em>pBar</em>&quot; style=&quot;width:<em>300px</em>&quot;&gt;
+			&lt;span class=&quot;<em>pAction</em>&quot; style=&quot;width:50%&quot;&gt;&lt;/span&gt;
+			&lt;span class=&quot;<em>pNum</em>&quot;&gt;123/1234&lt;/span&gt;
+		&lt;/span&gt; 
+		&lt;strong&gt;50%&lt;/strong&gt; 
+	&lt;/span&gt;
+&lt;/p&gt;
+</pre>
+					<h3>Progress - Large Size</h3>
+					<p>
+						<span class="prgrs prgrsLarge"> 
+							<strong>Installation: </strong>
+							<span class="pBar" style="width:400px">
+								<span class="pAction" style="width:50%"></span>
+								<span class="pNum">123/1234</span>
+							</span> 
+							<strong>50%</strong>
+						</span>
+					</p>
+<pre class="codeBlock">
+&lt;p&gt;
+	&lt;span class=&quot;<em>prgrs prgrsLarge</em>&quot;&gt; 
+		&lt;strong&gt;Installation: &lt;/strong&gt;
+		&lt;span class=&quot;<em>pBar</em>&quot; style=&quot;width:<em>400px</em>&quot;&gt;
+			&lt;span class=&quot;<em>pAction</em>&quot; style=&quot;width:50%&quot;&gt;&lt;/span&gt;
+			&lt;span class=&quot;<em>pNum</em>&quot;&gt;123/1234&lt;/span&gt;
+		&lt;/span&gt; 
+		&lt;strong&gt;50%&lt;/strong&gt; 
+	&lt;/span&gt;
+&lt;/p&gt;
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="layer">
+				<h2>Layer</h2>
+				<div class="container">
+					<h3>Preview</h3>
+					<a href="#firstLayer" class="layerAnchor">Show me the first layer!</a>
+					<div class="layer" id="firstLayer">
+						<h2 class="h2">First Layer</h2>
+						<p>Layer content. Test Anchor <a href="#">#1</a>. Test Anchor <a href="#">#2</a>.</p>
+						<p>Click background or press the ESC key when you close this window.</p>
+					</div>
+					|
+					<a href="#secondLayer" class="layerAnchor">Show me the second layer!</a>
+					<div class="layer" id="secondLayer">
+						<h2 class="h2">Second Layer</h2>
+						<p>Layer content. Test Anchor <a href="#">#1</a>. Test Anchor <a href="#">#2</a>.</p>
+						<p>Click background or press the ESC key when you close this window.</p>
+					</div>
+					<h3>HTML</h3>
+<pre class="codeBlock">
+&lt;a href=&quot;<em>#firstLayer</em>&quot; class=&quot;<em>layerAnchor</em>&quot;&gt;Show me the first layer!&lt;/a&gt;
+&lt;div class=&quot;<em>layer</em>&quot; id=&quot;<em>firstLayer</em>&quot;&gt;
+	&lt;h2 class=&quot;<em>h2</em>&quot;&gt;First Layer&lt;/h2&gt;
+	&lt;p&gt;Layer content. Test Anchor &lt;a href=&quot;#&quot;&gt;#1&lt;/a&gt;. Test Anchor &lt;a href=&quot;#&quot;&gt;#2&lt;/a&gt;.&lt;/p&gt;
+	&lt;p&gt;Click background or press the ESC key when you close this window.&lt;/p&gt;
+&lt;/div&gt;
+|
+&lt;a href=&quot;<em>#secondLayer</em>&quot; class=&quot;<em>layerAnchor</em>&quot;&gt;Show me the second layer!&lt;/a&gt;
+&lt;div class=&quot;<em>layer</em>&quot; id=&quot;<em>secondLayer</em>&quot;&gt;
+	&lt;h2 class=&quot;<em>h2</em>&quot;&gt;Second Layer&lt;/h2&gt;
+	&lt;p&gt;Layer content. Test Anchor &lt;a href=&quot;#&quot;&gt;#1&lt;/a&gt;. Test Anchor &lt;a href=&quot;#&quot;&gt;#2&lt;/a&gt;.&lt;/p&gt;
+	&lt;p&gt;Click background or press the ESC key when you close this window.&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Layer */
+.layer{position:absolute;background:#fff;padding:0 1em;*padding:1em;border:8px solid #ddd;z-index:2;zoom:1;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5pxbox-shadow:0 0 6px #666;-moz-box-shadow:0 0 6px #666;-webkit-box-shadow:0 0 6px #666;filter:progid:DXImageTransform.Microsoft.Shadow(color=#999999,direction=135, strength=5)}
+.layer h2{margin-top:1em}
+.layer ul, .layer ol, .layer .lined, .layer .table{margin-bottom:1em}
+.layerClose{position:absolute;right:-8px;top:-8px;border:0;background:#ddd;padding:0;width:28px;height:28px;font-size:14px;font-weight:bold;cursor:pointer;color:#999;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
+.layerBlur{position:absolute;top:0;right:0;border:0;background:none;padding:0;width:1px;height:1px;overflow:hidden}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Layer
+	var layerAnchor = $('.layerAnchor[href^=#]');
+	var layer = $('.layer');
+	var layerCloseHtml = '&lt;button type=&quot;button&quot; class=&quot;layerClose&quot; title=&quot;Close this layer&quot;&gt;X&lt;/button&gt;';
+	var layerBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;layerBlur&quot;&gt;&lt;/button&gt;';
+	layer.hide().prepend(layerCloseHtml);
+	var layerClose = $('.layerClose');
+	layerClose.eq(0).clone().appendTo(layer);
+	layer.prepend(layerBlurHtml);
+	var layerBlur = $('.layerBlur');
+	layerBlur.eq(0).clone().appendTo(layer);
+	layerAnchor
+		.click(function(){
+			$($(this).attr('href')).fadeToggle(200).find('&gt;.layerClose:first').focus();
+			return false;
+		})
+		.keypress(function(){
+			if(event.keyCode != 32) return true;
+			$(this).click();
+			return false;
+		});
+	function closeLayer() {
+		var closeId = layer.filter(':visible').attr(&quot;id&quot;);
+		if(closeId) layerAnchor.filter('[href=&quot;#'+closeId+'&quot;]').focus();
+		layer.fadeOut(200);
+		return false;
+	}
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true; // ESC
+		return closeLayer();
+	});
+	$('.layerClose').click(closeLayer);
+	$('.layerBlur').focusin(function(event){
+		layerClose.click();
+	});
+});
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="modalWindow">
+				<h2>Modal Window</h2>
+				<div class="container">
+					<h3>Preview</h3>
+					<a href="#myLove" class="modalAnchor">Show me the modal window!</a>
+					<div class="modal" id="myLove">
+						<div class="fg">
+							<h2 class="h2">Heading</h2>
+							<p>Modal windowed content. Test Anchor <a href="#">#1</a>. Test Anchor <a href="#">#2</a>.</p>
+							<p>Click background or press the ESC key when you close this window.</p>
+						</div>
+					</div>
+					<h3>HTML</h3>
+<pre class="codeBlock">
+&lt;a href=&quot;<em>#myLove</em>&quot; class=&quot;<em>modalAnchor</em>&quot;&gt;Show me the modal window!&lt;/a&gt;
+&lt;div class=&quot;<em>modal</em>&quot; id=&quot;<em>myLove</em>&quot;&gt;
+	&lt;div class=&quot;<em>fg</em>&quot;&gt;
+		&lt;h2 class=&quot;<em>h2</em>&quot;&gt;Heading&lt;/h2&gt;
+		&lt;p&gt;Modal windowed content. Test Anchor &lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;. Test Anchor &lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/p&gt;
+		&lt;p&gt;Click background or press the ESC key when you close this window.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Modal Window */
+.modal .bg{position:absolute;background:#000;_background:none;width:100%;height:100%;opacity:.5;z-index:2;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);zoom:1}
+.modal .fg{position:relative;width:50%;margin:5em auto;background:#fff;padding:0 1em;*padding:1em;border:8px solid #ddd;z-index:3;zoom:1;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5pxbox-shadow:0 0 6px #000;-moz-box-shadow:0 0 6px #000;-webkit-box-shadow:0 0 6px #000}
+.modal h2{margin-top:1em}
+.modal ul, .modal ol, .modal .lined, .modal .table{margin-bottom:1em}
+.modal .ie6{position:absolute;left:0;top:0;width:100%;height:100%;border:0;opacity:0;filter:alpha(opacity=0);z-index:1}
+.modalActive{position:absolute;top:0;left:0;width:100%;_height:100%;min-height:100%;z-index:100}
+.modalClose{position:absolute;right:-8px;top:-8px;border:0;background:#ddd;padding:0;width:28px;height:28px;font-size:14px;font-weight:bold;cursor:pointer;color:#999;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
+.modalBlur{position:absolute;top:0;right:0;border:0;background:none;padding:0;width:1px;height:1px;overflow:hidden}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Modal Window
+	var htmlBody = $('html,body');
+	var modalAnchor = $('.modalAnchor');
+	var modal = $('.modal');
+	var modalBg = modal.find('&gt;.bg');
+	var modalFg = modal.find('&gt;.fg');
+	var modalCloseHtml = '&lt;button type=&quot;button&quot; class=&quot;modalClose&quot; title=&quot;Close this layer&quot;&gt;X&lt;/button&gt;';
+	var modalBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;modalBlur&quot;&gt;&lt;/button&gt;';
+	var docHeight = $(document).height();
+	modal
+		.hide()
+		.appendTo('body')
+		.height(docHeight)
+		.prepend('&lt;span class=&quot;bg&quot;&gt;&lt;/span&gt;')
+		.append('&lt;!--[if IE 6]&gt;&lt;iframe class=&quot;ie6&quot;&gt;&lt;/iframe&gt;&lt;![endif]--&gt;');
+	modalFg
+		.prepend(modalCloseHtml)
+		.prepend(modalBlurHtml);
+	var modalClose = $('.modalClose');
+	var modalBlur = $('.modalBlur');
+	modalClose.eq(0).clone().appendTo(modalFg);
+	modalBlur.eq(0).clone().appendTo(modalFg);
+	modalAnchor
+		.click(function(){
+			if(typeof document.body.style.maxHeight == &quot;undefined&quot;){
+				htmlBody.css({'width':'100%','height':'100%'});
+			}
+			var myTarget = $($(this).attr('href'));
+			myTarget.fadeToggle(200).toggleClass('modalActive');
+			myTarget.find('>.fg>.modalClose:first').focus();
+			$(this).addClass('active');
+		})
+		.keypress(function(){
+			if(event.keyCode != 32) return true;
+			$(this).click();
+			return false;
+		});
+	function closeModal() {
+		if(typeof document.body.style.maxHeight == &quot;undefined&quot;){
+			htmlBody.removeAttr('style');
+		}
+		modal.fadeOut(200).removeClass('modalActive');
+		$('.modalAnchor.active').focus().removeClass('active');
+		return false;
+	}
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true; // ESC
+		if(modal.find('.tgContent:visible').length == 0) return closeModal();
+	});
+	$('.modal&gt;.bg, .modalClose, .modal .cancel').click(closeModal);
+	$('.modalBlur').focusin(function(event){
+		modalClose.click();
+	});
+});
+</pre>
+				</div>
+			</article>
+			<hr />
+			<article class="item" id="toggle">
+				<h2>Toggle</h2>
+				<div class="container">
+					<h3>Preview</h3>
+					<p><a href="#tg1" class="tgSimple">Show me the simple toggle!</a></p>
+					<p id="tg1" class="tgContent">Simple toggle. <a href="#">#1</a> <a href="#">#2</a> #3</p>
+					<p><a href="#tg2" class="tgSlide">Show me the slide toggle!</a></p>
+					<p id="tg2" class="tgContent">Slide toggle. <a href="#">#1</a> <a href="#">#2</a> #3</p>
+					<p><a href="#tg3" class="tgFade">Show me the fade toggle!</a></p>
+					<p id="tg3" class="tgContent">Fade toggle. <a href="#">#1</a> <a href="#">#2</a> #3</p>
+					<h3>HTML</h3>
+<pre class="codeBlock">
+&lt;p&gt;&lt;a href=&quot;<em>#tg1</em>&quot; class=&quot;<em>tgSimple</em>&quot;&gt;Show me the simple toggle!&lt;/a&gt;&lt;/p&gt;
+&lt;p id=&quot;<em>tg1</em>&quot; class=&quot;<em>tgContent</em>&quot;&gt;Simple toggle. &lt;a href=&quot;#&quot;&gt;#1&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;#2&lt;/a&gt; #3&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;<em>#tg2</em>&quot; class=&quot;<em>tgSlide</em>&quot;&gt;Show me the slide toggle!&lt;/a&gt;&lt;/p&gt;
+&lt;p id=&quot;<em>tg2</em>&quot; class=&quot;<em>tgContent</em>&quot;&gt;Slide toggle. &lt;a href=&quot;#&quot;&gt;#1&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;#2&lt;/a&gt; #3&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;<em>#tg3</em>&quot; class=&quot;<em>tgFade</em>&quot;&gt;Show me the fade toggle!&lt;/a&gt;&lt;/p&gt;
+&lt;p id=&quot;<em>tg3</em>&quot; class=&quot;<em>tgContent</em>&quot;&gt;Fade toggle. &lt;a href=&quot;#&quot;&gt;#1&lt;/a&gt; &lt;a href=&quot;#&quot;&gt;#2&lt;/a&gt; #3&lt;/p&gt;
+</pre>
+					<h3>CSS</h3>
+<pre class="codeBlock">
+/* Toggle Content */
+.tgBlur{position:absolute;top:0;right:0;border:0;background:none;padding:0;width:1px;height:1px;overflow:hidden}
+</pre>
+					<h3>JS</h3>
+<pre class="codeBlock">
+jQuery(function($){
+	// Toggle
+	var tgContent = $('.tgContent');
+	var tgBlurHtml = '&lt;button type=&quot;button&quot; class=&quot;tgBlur&quot;&gt;&lt;/button&gt;';
+	tgContent.hide().prepend(tgBlurHtml).mouseleave(function(){closeTg()});
+	var tgBlur = $('.tgBlur');
+	tgBlur.eq(0).clone().appendTo(tgContent);
+	function offsetToggle(){
+		tgContent.filter(':visible').parent().css('position','relative');
+		setTimeout(function(){
+			tgContent.filter(':hidden').parent().css('position','');
+		}, 300);
+	}
+	$('.tgSimple').click(function(){
+		$($(this).attr('href')).toggle().find('a, input, button:not(.tgBlur), select, textarea').eq(0).focus();
+		offsetToggle();
+		return false;
+	});
+	$('.tgSlide').click(function(){
+		$($(this).attr('href')).slideToggle(100).find('a, input, button:not(.tgBlur), select, textarea').eq(0).focus();
+		offsetToggle();
+		return false;
+	});
+	$('.tgFade').click(function(){
+		$($(this).attr('href')).fadeToggle(200).find('a, input, button:not(.tgBlur), select, textarea').eq(0).focus();
+		offsetToggle();
+		return false;
+	});
+	$('.tgSimple, .tgSlide, .tgFade').keypress(function(){
+		if(event.keyCode != 32) return true;
+		$(this).click();
+		return false;
+	});
+	function closeTg() {
+		var closeId = tgContent.filter(':visible').attr('id');
+		if(closeId) $('.tgSimple, .tgSlide, .tgFade').filter('[href=&quot;#'+closeId+'&quot;]').focus();
+		tgContent.prev('input').focus();
+		tgContent.fadeOut(200);
+	}
+	$(document).keydown(function(event){
+		if(event.keyCode != 27) return true; // ESC
+		return closeTg();
+	});
+	$('.tgBlur').focusin(closeTg);
+});
+</pre>
+				</div>
+			</article>
+		</section>
+	</section>
+	<hr />
+	<footer class="footer">
+		<p>Powered by <a href="http://xpressengine.com/">XE</a>.</p>
+	</footer>
+</div>
+<script src="./js/jquery-1.7.2.min.js"></script>
+<!--[if lt IE 9]><script src="./js/respond.min.js"></script><![endif]-->
+<script src="./js/xeui.js"></script>
+</body>
+</html>
