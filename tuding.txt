@@ -1,3 +1,10 @@
+此外，更多的例子是 OUIF | XEUI 页面链接。
+이 밖에 더 많은 예제들이 OUIF | XEUI 페이지에 링크되어 있습니다.
+http://naradesign.net/ouif/
+http://naradesign.net/xeui/
+
+
+
 #bhead(#bhead-top,…,#bhead-mid,…,#bhead-btm)
 #bbody(#bbody-top,…,#bbody-mid,…,#bbody-btm)
 #bfoot(#bfoot-top,…,#bfoot-mid,…,#bfoot-btm)
