@@ -1,7 +1,7 @@
 @charset "utf-8";
 //编码保持
-.b { font-weight:bold; }
-.i { font-style:italic; }
+.b, .strong, b, strong{ font-weight:bold; }
+.i, .em, i, em{ font-style:italic; }
 //position:
 .poss { position:static; }
 .posr { position:relative; }
@@ -30,9 +30,9 @@
 .taj { text-align:justify; }
 //
 .tdn{ text-decoration:none; }
-.tdu{ text-decoration:underline; }
+.tdu, .u{ text-decoration:underline; }
 .tdo{ text-decoration:overline; }
-.tdl{ text-decoration:line-through; }
+.tdl, .s{ text-decoration:line-through; }
 //
 .tdn, .tdn:hover, a.tdl:hover { text-decoration:none; }
 //
