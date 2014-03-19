@@ -1,7 +1,7 @@
 @charset "utf-8";
 //编码保持
-.b, .strong, b, strong{ font-weight:bold; }
-.i, .em, i, em{ font-style:italic; }
+.b{ font-weight:bold; }
+.i{ font-style:italic; }
 //position:
 .poss { position:static; }
 .posr { position:relative; }
@@ -32,9 +32,10 @@
 .tdn{ text-decoration:none; }
 .tdu, .u{ text-decoration:underline; }
 .tdo{ text-decoration:overline; }
-.tdl, .s{ text-decoration:line-through; }
+.tdl, .del, .s{ text-decoration:line-through; }
 //
-.tdn, .tdn:hover, a.tdl:hover { text-decoration:none; }
+.tdn, .tdn:hover{  }
+.a.tdl:hover { text-decoration:none; }
 //
 .fln { float:none; }
 .fll { float:left; }
@@ -86,6 +87,23 @@
 .cd { color:#ddd; }
 .ce { color:#eee; }
 .cf, .white { color:#fff; }
+.aqua    { color:#00FFFF; }
+.black   { color:#000000; }
+.blue    { color:#0000FF; }
+.fuchsia { color:#FF00FF; }
+.gray    { color:#808080; }
+.green   { color:#008000; }
+.lime    { color:#00FF00; }
+.maroon  { color:#800000; }
+.navy    { color:#000080; }
+.olive   { color:#808000; }
+.orange  { color:#FFA500; }
+.purple  { color:#800080; }
+.red     { color:#FF0000; }
+.silver  { color:#C0C0C0; }
+.teal    { color:#008080; }
+.white   { color:#FFFFFF; }
+.yellow  { color:#FFFF00; }
 //
 .bgct { background-color:transparent; }
 .bgc0 { background-color:#000; }
@@ -104,11 +122,6 @@
 .bgcd { background-color:#ddd; }
 .bgce { background-color:#eee; }
 .bgcf { background-color:#fff; }
-//
-.red { color:red; }
-.green { color:green; }
-.blue { color:blue; }
-.gray { color:gray; }
 //
 .fz0 { font-size:0; }
 .fz10 { font-size:10px; }
