@@ -1,0 +1,69 @@
+@charset "utf-8";
+//编码保持
+@import "E:/tuding/css/layout";
+@import "E:/tuding/css/table";
+$layout:'h';
+$rowo:96%;
+$n1:160px;
+$n2:160px;
+$space:10px;
+$incInner:true;
+$v1:160px;
+$v2:160px;
+
+
+
+@include tuding_by_h_mn($selectorMN:'.mn-1',$selectorMING:'.ming',$selectorN1:'.n1-1',$selectorN2:null,$row:null,$n1:40px, $n2:null,$space:0px);
+@include tuding_by_h_mn($selectorMN:'.mn-2',$selectorMING:'.ming',$selectorN1:'.n1-2',$selectorN2:null,$row:null,$n1:80px, $n2:null,$space:0px);
+@include tuding_by_h_mn($selectorMN:'.mn-3',$selectorMING:'.ming',$selectorN1:'.n1-3',$selectorN2:null,$row:null,$n1:120px,$n2:null,$space:0px);
+@include tuding_by_h_mn($selectorMN:'.mn-4',$selectorMING:'.ming',$selectorN1:'.n1-4',$selectorN2:null,$row:null,$n1:160px,$n2:null,$space:0px);
+@include tuding_by_h_mn($selectorMN:'.mn-5',$selectorMING:'.ming',$selectorN1:'.n1-5',$selectorN2:null,$row:null,$n1:200px,$n2:null,$space:0px);
+@include tuding_by_h_mn($selectorMN:'.mn-6',$selectorMING:'.ming',$selectorN1:'.n1-6',$selectorN2:null,$row:null,$n1:240px,$n2:null,$space:0px);
+@include tuding_by_h_mn($selectorMN:'.mn-7',$selectorMING:'.ming',$selectorN1:'.n1-7',$selectorN2:null,$row:null,$n1:280px,$n2:null,$space:0px);
+@include tuding_by_h_mn($selectorMN:'.mn-8',$selectorMING:'.ming',$selectorN1:'.n1-8',$selectorN2:null,$row:null,$n1:320px,$n2:null,$space:0px);
+//
+@include tuding_by_h_nm($selectorNM:'.nm-1',$selectorMING:'.ming',$selectorN1:'.n1-1',$selectorN2:null,$row:null,$n1:40px, $n2:null,$space:0px);
+@include tuding_by_h_nm($selectorNM:'.nm-2',$selectorMING:'.ming',$selectorN1:'.n1-2',$selectorN2:null,$row:null,$n1:80px, $n2:null,$space:0px);
+@include tuding_by_h_nm($selectorNM:'.nm-3',$selectorMING:'.ming',$selectorN1:'.n1-3',$selectorN2:null,$row:null,$n1:120px,$n2:null,$space:0px);
+@include tuding_by_h_nm($selectorNM:'.nm-4',$selectorMING:'.ming',$selectorN1:'.n1-4',$selectorN2:null,$row:null,$n1:160px,$n2:null,$space:0px);
+@include tuding_by_h_nm($selectorNM:'.nm-5',$selectorMING:'.ming',$selectorN1:'.n1-5',$selectorN2:null,$row:null,$n1:200px,$n2:null,$space:0px);
+@include tuding_by_h_nm($selectorNM:'.nm-6',$selectorMING:'.ming',$selectorN1:'.n1-6',$selectorN2:null,$row:null,$n1:240px,$n2:null,$space:0px);
+@include tuding_by_h_nm($selectorNM:'.nm-7',$selectorMING:'.ming',$selectorN1:'.n1-7',$selectorN2:null,$row:null,$n1:280px,$n2:null,$space:0px);
+@include tuding_by_h_nm($selectorNM:'.nm-8',$selectorMING:'.ming',$selectorN1:'.n1-8',$selectorN2:null,$row:null,$n1:320px,$n2:null,$space:0px);
+//
+@include tuding_by_h_mnn($selectorMNN:'.mnn-1',$selectorMING:'.ming',$selectorN1:'.n1-1',$selectorN2:'.n2-1',$row:null,$n1:100px,$n2:100px,$space:0px);
+@include tuding_by_h_mnn($selectorMNN:'.mnn-2',$selectorMING:'.ming',$selectorN1:'.n1-2',$selectorN2:'.n2-2',$row:null,$n1:100px,$n2:100px,$space:0px);
+@include tuding_by_h_mnn($selectorMNN:'.mnn-3',$selectorMING:'.ming',$selectorN1:'.n1-3',$selectorN2:'.n2-3',$row:null,$n1:100px,$n2:100px,$space:0px);
+@include tuding_by_h_mnn($selectorMNN:'.mnn-4',$selectorMING:'.ming',$selectorN1:'.n1-4',$selectorN2:'.n2-4',$row:null,$n1:100px,$n2:100px,$space:0px);
+@include tuding_by_h_mnn($selectorMNN:'.mnn-5',$selectorMING:'.ming',$selectorN1:'.n1-5',$selectorN2:'.n2-5',$row:null,$n1:100px,$n2:100px,$space:0px);
+@include tuding_by_h_mnn($selectorMNN:'.mnn-6',$selectorMING:'.ming',$selectorN1:'.n1-6',$selectorN2:'.n2-6',$row:null,$n1:100px,$n2:100px,$space:0px);
+@include tuding_by_h_mnn($selectorMNN:'.mnn-7',$selectorMING:'.ming',$selectorN1:'.n1-7',$selectorN2:'.n2-7',$row:null,$n1:100px,$n2:100px,$space:0px);
+@include tuding_by_h_mnn($selectorMNN:'.mnn-8',$selectorMING:'.ming',$selectorN1:'.n1-8',$selectorN2:'.n2-8',$row:null,$n1:100px,$n2:100px,$space:0px);
+//
+@media screen and (max-width:1100px) {
+	//@include tuding_h_2cols($rowo,$v1,$v2,$space,null,1,-1);
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space);
+	//@include tuding_1col(1);
+	//@include tuding_1col();
+}
+
+@media screen and (max-width:900px) {
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space,1);
+	//@include tuding_h_2cols($rowo,$v1,$v2,$space,'',0,-1);
+	//@include tuding_1col(1);
+	//@include tuding_1col();
+}
+
+@media screen and (max-width:700px) {
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space,1);
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space);
+	//@include tuding_1col('',1);
+	//@include tuding_1col();
+}
+
+@media screen and (max-width:400px) {
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space,1);
+	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space);
+	//@include tuding_1col(1);
+	//@include tuding_1col('',0);
+}
