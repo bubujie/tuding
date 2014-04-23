@@ -1,5 +1,7 @@
 @charset "utf-8";
+//编码保持
 @import "E:/tuding/css/layout";
+@import "E:/tuding/css/split";
 @import "E:/tuding/css/table";
 $layout:'h';
 $rowo:96%;
@@ -12,8 +14,8 @@ $v2:160px;
 
 
 
-//乱码测试
 @include tuding($layout,$rowo,$n1,$n2,$space,$incInner,$v1,$v2);
+@include split();
 //@include tuding_by_h_nmn($selectorNMN:'.container',$selectorMING:'.main',$selectorN1:'.sidebar1',$selectorN2:'.sidebar2',$rowo:NULL,$n1:100px,$n2:100px,$space:20px);
 //IE6 || IE7 || IE8
 //@include tuding_h_2cols($rowo,$v1,$v2,-1,$space,1);
@@ -47,4 +49,5 @@ $v2:160px;
 	//@include tuding_h_2cols($rowo,$v1,$v2,-1,$space);
 	//@include tuding_1col(1);
 	@include tuding_1col('',0);
+	@include split_1col();
 }
