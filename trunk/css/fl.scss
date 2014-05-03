@@ -12,7 +12,7 @@ $space:5px;
 $incInner:true;
 $v1:200px;
 $v2:200px;
-//乱码测试
+
 @include layout($layout,$wrapping,$n1,$n2,$space,$incInner,$v1,$v2);
 
 @include layout_f_mn_reset($wrapping,40px,$n2,$space,'#mn-n40');

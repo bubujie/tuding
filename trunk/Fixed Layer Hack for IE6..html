@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0056)http://naradesign.net/open_content/reference/fixedLayer/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>CSS Hack을 이용하여 IE6에서 Fixed Layer 띄우기. Fixed Layer Hack for IE6.</title>
+<style type="text/css">
+* { margin:0; padding:0; font-family:Tahoma;}
+html { _overflow:hidden;}
+body{ _height:100%; _width:100%; _overflow:auto;}
+h1 { margin-bottom:1em;}
+h2 { margin-top:1em;}
+code { display:block; padding:10px; font-size:11px; color:#666666; background:#dddddd;}
+code strong { color:#FF0000;}
+#content { width:780px; height:1000px; margin:20px; padding:20px; background:#eeeeee;}
+#aside { position:fixed; _position:absolute; /*_z-index:-1;*/ left:860px; top:20px; width:120px; height:300px; padding:10px; background:#dddddd;}
+</style>
+</head>
+<body>
+<div id="content">
+  <h1>Fixed Layer Hack for IE6</h1>
+  <h2>CSS Code</h2>
+  <code><strong>*</strong> {<strong> margin:0; padding:0;</strong>}<br>
+  <strong>html</strong> { <strong>_overflow:hidden;</strong>}<br>
+  <strong>body</strong>{ <strong>_height:100%; _width:100%; _overflow:auto;</strong>}<br>
+  #content { width:580px; height:1000px; margin:20px; padding:10px; background:#eeeeee;}<br>
+  <strong>#aside</strong> { <strong>position:fixed; _position:absolute; _z-index:-1;</strong> left:650px; top:20px; width:100px; height:300px; padding:10px; background:#dddddd;}<br>
+  </code>
+  <h2>HTML Code</h2>
+  <code>&lt;div id="content"&gt;<br>
+  &lt;h1&gt;Fixed Layer Hack for IE6&lt;/h1&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;div <strong>id="aside"</strong>&gt;<br>
+  &lt;h2&gt;Example&lt;/h2&gt;<br>
+  &lt;/div&gt;<br>
+  </code></div>
+<div id="aside">
+  <h2>Example</h2>
+  <p><a href="http://naradesign.net/open_content/reference/fixedLayer/#">Fixed Layer</a></p>
+</div>
+
+
+</body></html>
