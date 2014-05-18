@@ -1,0 +1,37 @@
+[OPTIONS]
+Title=Tuding Layout System v2.0
+Compiled file=Tuding_Layout.chm
+Error log file=_errorlog.txt
+Default topic=Tuding_Layout_System.html
+Language=0x0804 中文(简体，中国)
+Full text search stop list file=StopList.txt
+Contents file=Contents.hhc
+Index file=Index.hhk
+Binary TOC=Yes
+Auto index=No
+Binary Index=Yes
+Create CHI file=No
+Full-text search=Yes
+Display compile progress=Yes
+Display compile notes=Yes
+Default window=
+Enhanced decompilation=Yes
+Flat=No
+Compatibility=1.1 or later
+Default Font=宋体,8,0
+
+[FILES]
+tuding\fixed_L.css
+tuding\fixed_T7.css
+tuding\js\fl.js
+tuding\js\ft7.js
+css\grid.css
+tuding\img\grid_text.png
+tuding\js\h.js
+tuding\hybrid.css
+tuding\liquid_L.css
+tuding\liquid_T7.css
+tuding\js\ll.js
+tuding\img\logo_16px.gif
+tuding\js\lt7.js
+
