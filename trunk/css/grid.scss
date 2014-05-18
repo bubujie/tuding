@@ -1,0 +1,6 @@
+@charset "utf-8";
+//@import "F:/thumbtack/css/layout";
+@import "F:/thumbtack/css/split";
+//@include layout($layout:'h',$row:auto,$n1:200px,$n2:200px,$space:200px,$incInner:0,$v1:200px,$v2:200px);
+$halfSpace : (1em / 96em / 2) * 100%;
+@include split();
