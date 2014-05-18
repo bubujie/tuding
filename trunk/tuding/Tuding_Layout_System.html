@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Tuding布局系统参数速查</title>
 <style type="text/css">
 h1{ line-height:2em;margin:0; }
@@ -13,19 +13,14 @@ img { border:0; }
 table, th, td { border-width:.1em; border-color:#ABD4E6; border-style:solid; }
 table { border-collapse:collapse; border-spacing:0; border-width:.2em; }
 th, td { padding:0.2em 0.6em; }
-th { font-weight:normal; background-color:#EFF8FC; color:#509AAF; text-align:right; }
+th { font-weight:bold; background-color:#EFF8FC; color:#509AAF; }
 td { color:#666666; }
 address * { vertical-align:middle; font-family:Dotum; }
 pre { margin:0; padding:0.2em; font-family: Consolas "Courier New", Courier, monospace; text-align:left; }
 </style>
-<!--[if lt IE 9]>
-<script src="./js/respond.min.js"></script>
-<![endif]-->
 </head>
 
 <body>
-<div class="rowo">
-	<div class="fillo">
 <table class="tbl" summary="Tuding布局系统参数速查">
   <caption>
   <h1>Tuding布局系统参数速查</h1>
@@ -315,147 +310,12 @@ pre { margin:0; padding:0.2em; font-family: Consolas "Courier New", Courier, mon
   </tbody>
 </table>
 <hr />
-<table summary="">
-  <caption>
-  <h1>Tuding布局系统功能规划</h1></caption>
-  <tr>
-    <th scope="col">&nbsp;
-    <th scope="col">三列
-    <th scope="col">&nbsp;
-    <th scope="col">二列变形
-    <th scope="col">&nbsp;
-    <th scope="col">一列变形
-    <th scope="col">&nbsp;
-  <tr>
-    <th rowspan="3"><p>常规<br />精简<br />重设</p>
-    <th>三列普遍设置
-    <th><ul>
-        <li>tuding_h(<span style="color:red;">√</span>);</li>
-        <li>tuding_fl(<span style="color:red;">√</span>);</li>
-        <li>tuding_ft7(<span style="color:red;">√</span>);</li>
-      </ul>
-    <th>二列变形普遍设置
-    <td>
-      <ul>
-        <li>tuding_h_2cols(<span style="color:red;">√</span>);</li>
-        <li>tuding_fl_2cols(<span style="color:red;">√</span>);</li>
-        <li>tuding_ft7_2cols(<span style="color:red;">√</span>);</li>
-      </ul>
-    <th rowspan="3">一列变形
-    <td rowspan="3">
-      <ul>
-        <li>tuding_h_mn_1col(<span style="color:red;">√</span>);</li>
-        <li>tuding_h_nm_1col(<span style="color:red;">√</span>);</li>
-        <li>tuding_f_mn_1col(<span style="color:red;">√</span>);</li>
-        <li>tuding_f_nm_1col(<span style="color:red;">√</span>);</li>
-        <li>tuding_1col(<span style="color:red;">√</span>);</li>
-      </ul>
-  <tr>
-    <th>三列特殊页面
-    <td>
-      <ul>
-        <li>tuding_h_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_fl_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_ft7_reset(<span style="color:red;">√</span>);</li>
-      </ul>
-    <th>二列变形特殊页面<br />（仅重设参数）
-    <td>
-      <ul>
-        <li>tuding_h_2cols_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_fl_2cols_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_ft7_2cols_reset(<span style="color:red;">√</span>);</li>
-      </ul>
-  <tr>
-    <th>三列特殊区域
-    <td>
-      <ul>
-        <li>tuding_h_mn_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_h_nm_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_h_mnn_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_h_nmn_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_h_nnm_reset(<span style="color:red;">√</span>);</li>
-      </ul>
-      <hr />
-      <ul>
-        <li>tuding_f_mn_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_f_nm_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_fl_mnn_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_ft7_mnn_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_fl_nmn_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_ft7_nmn_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_f_nnm_reset(<span style="color:red;">√</span>);</li>
-      </ul>
-    <th>二列变形特殊区域
-    <p>仅重设参数？<br />还是完整属性？</p>
-    <td>
-      <ul>
-        <li>tuding_h_mnn_2cols_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_h_nmn_2cols_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_h_nnm_2cols_reset(<span style="color:red;">√</span>);</li>
-      </ul>
-      <hr />
-      <ul>
-        <li>tuding_fl_mnn_2cols_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_ft7_mnn_2cols_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_fl_nmn_2cols_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_ft7_nmn_2cols_reset(<span style="color:red;">√</span>);</li>
-        <li>tuding_f_nnm_2cols_reset(<span style="color:red;">√</span>);</li>
-      </ul>
-  <tr>
-    <th>附加<br />完整<br />采用
-    <th>三列附加采用
-    <td>
-      <ul>
-        <li>tuding_by_h_mn(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_h_nm(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_h_mnn(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_h_nmn(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_h_nnm(<span style="color:red;">√</span>);</li>
-      </ul>
-    <hr>
-      <ul>
-        <li>tuding_by_f_mn(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_f_nm(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_fl_mnn(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_ft7_mnn(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_fl_nmn(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_ft7_nmn(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_f_nnm(<span style="color:red;">√</span>);</li>
-      </ul>
-    <th>二列变形附加采用
-    <td>
-      <ul>
-        <li>tuding_by_h_mnn_2cols(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_h_nmn_2cols(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_h_nnm_2cols(<span style="color:red;">√</span>);</li>
-      </ul>
-      <hr />
-      <ul>
-        <li>tuding_by_fl_mnn_2cols(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_ft7_mnn_2cols(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_fl_nmn_2cols(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_ft7_nmn_2cols(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_f_nnm_2cols(<span style="color:red;">√</span>);</li>
-      </ul>
-    <th>一列变形
-    <td>
-      <ul>
-        <li>tuding_by_h_mn_1col(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_h_nm_1col(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_f_mn_1col(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_f_nm_1col(<span style="color:red;">√</span>);</li>
-        <li>tuding_by_1col(<span style="color:red;">√</span>);</li>
-      </ul>
-  <tr>
-    <th>备注
-    <td colspan="6">需特别注意常规使用时.n2、.v2作为补充项的情况！！！没有必要从“三列普遍设置”直接附加“二列变形特殊区域”变换！！！一列不需要Reset，其作用为否定之前！！！
-</table>
-<hr />
+<div class="wrapping">
   <div id="colophon">
     <address style="text-align:center;">
-    <img src="./img/logo_16px.gif" alt="">&nbsp;<em>Copyright ©</em> <span><a href="http://www.bubujie.net/" target="_blank">步步街工作室</a> 2008-2012 All Rights Reserved.</span>
+    <img src="./img/logo_16px.gif" alt="" />&nbsp;<em>Copyright ©</em> <span><a href="http://www.bubujie.net/" target="_blank">步步街工作室</a> 2008-2012 All Rights Reserved.</span>
     </address>
   </div>
-</div></div>
+</div>
 </body>
 </html>

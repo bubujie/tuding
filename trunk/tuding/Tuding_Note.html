@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+h1{ line-height:2em;margin:0; }
+</style>
+</head>
+<body>
+<h2>兼容界限</h2>
+<p>IE6、IE7，和除此之外的其他（IE8+和多种现代浏览器）。</p>
+<p>一些可用的兼容代码</p>
+<pre>min-width:200px;
+*min-width:none;</pre>
+<h2>最小偏移</h2>
+<p>对无法方便应用Inner外框的部分则不使用Inner外框，该保留相可以预留给特殊部分使用，比如PrestaShop、OpenCart的产品详情页部分，而Joomla!的灵活性便于同时应用Outer和Inner外框。</p>
+<h2>Tuding设计思想</h2>
+<p>各式各样的网页设计，通常只需进行2次3列以内的拆分，就可到达最终要显示的模块区域。</p>
+<p>除了通常的情况，还有一些特殊的超过3列的多列平均拆分、或不平均的拆分，Tuding借鉴了多个著名框架做了特殊处理，也完善了其功能。</p>
+<p>Tuding擅长的3列拆分，并不只是拆分，还可以自由调整3列的排布顺序。可以说，Tuding再造了一个CSS禅意花园。</p>
+<p>Tuding同时考虑到了原始文档流顺序的区别，无论原始文档流是L型、T型、7型，Tuding都有对应的解决方案。</p>
+<p>Tuding可以方便的套用在不同的内容管理系统（CMS）之上，并展现其能力。</p>
+<p>Tuding包含全系列浏览器兼容的解决方案。</p>
+<p>Tuding是小巧、高效的，仅3kb核心源代码，展现强大功能。</p>
+<h2>兼容性</h2>
+<p>Fixed（定宽）布局、Hybrid（混合）布局兼容包括IE6在内的当前主流浏览器。</p>
+<p>Liquid（全变宽）布局百分比的宽度计算，在IE6和IE7中，分数除不尽时会因为子元素总宽度超出很小的几像素而发生折行现象。960px是个可被除尽的分母，但子列不一定仍能被除尽，这一点需格外注意。</p>
+<p>内部布局在无空隙时存在IE6、IE7兼容问题，无空隙时建议使用外部布局。</p>
+<h2>外部排版与内部排版各自的优势</h2>
+<p>外部排版会根据内部排版内容的有无自动开关，而内部排版可以进行复杂的组合、拆分。</p>
+<hr />
+<h2>列的空隙</h2>
+<p>纵向空隙：当前内容的margin-top</p>
+<p>不要随意对布局框定义margin。</p>
+<hr />
+<h2>为什么没用类似.clr{clear:right;}，而是像这样.xcr{clear:right;}的命名？</h2>
+<p>.clr在一些应用中是clear的缩写，如VirtueMart中.clr{clear:both;overflow:hidden;}</p>
+<hr />
+<h2>为什么动态列宽度前要加“.wrapping ”</h2>
+<p>动态列宽“.wrapping .w-1-24{}”才有权限改变“.nm .n1{}”，而“.w-1-24”不能改变“.nm .n1{}”。</p>
+<hr />
+<h2>双层外套</h2>
+<p>确保任何最终模块都有2层外套，除非模块内的内容恒为1列（或者区域内只有一个模块）。通常除了“component”区域，没有哪个区域是恒为1列的。</p>
+<p>外层外套，通常仅用于计算宽度，禁止定义其x方向的margin、padding、border，换言之仅可以定义其纵向的margin、padding、border。</p>
+<p>内层外套，可通过它的margin值定义空隙。</p>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>步步街Fixed布局7模式演示</title>
+<link rel="stylesheet" href="../fixed_T7.css" />
+<style type="text/css">
+body{font-size:12px;line-height:20px;}
+h1{ line-height:2em;margin:0; }
+.wrapping{width:480px;}
+/* Fixed M */
+.m .ming {  }
+/* Fixed MN */
+.mn .n1, .mn .n2 { width:100px; float:right; } /*add(.mn .n2)*/
+.mn .ming { width:380px; float:left; }
+/* Fixed NM */
+.nm .n1, .nm .n2 { width:100px; float:left; } /*add(.nm .n2)*/
+.nm .ming { width:380px; float:right; }
+/* Fixed MNN */
+.mnn .n1 { width:100px; float:left; margin-right:-100%; left:280px; }
+.mnn .ming { width:280px; float:left; }
+.mnn .n2 { width:100px; float:right; }
+/* Fixed NMN */
+.nmn .n1 { width:100px; float:left; margin-right:0px; }
+.nmn .ming { width:280px; float:left; }
+.nmn .n2 { width:100px; float:right; }
+/* Fixed NNM */
+.nnm .n1 { width:100px; float:left; margin-right:0px; }
+.nnm .ming { width:280px; float:right; }
+.nnm .n2 { width:100px; float:left; }
+/* Width 1/2 */
+.wrapping .w-1     {  }
+.wrapping .w-1-2   { width:240px; }
+.wrapping .w-1-3   { width:160px; }
+.wrapping .w-2-3   { width:320px; }
+.wrapping .w-1-4   { width:120px; }
+.wrapping .w-3-4   { width:360px; }
+.wrapping .w-1-5   { width:96px;  }
+.wrapping .w-2-5   { width:192px; }
+.wrapping .w-3-5   { width:288px; }
+.wrapping .w-4-5   { width:384px; }
+.wrapping .w-1-6   { width:80px;  }
+.wrapping .w-5-6   { width:400px; }
+.wrapping .w-1-8   { width:60px;  }
+.wrapping .w-3-8   { width:180px; }
+.wrapping .w-5-8   { width:300px; }
+.wrapping .w-7-8   { width:420px; }
+.wrapping .w-1-12  { width:40px;  }
+.wrapping .w-5-12  { width:200px; }
+.wrapping .w-7-12  { width:280px; }
+.wrapping .w-11-12 { width:440px; }
+.wrapping .w-1-24  { width:20px;  }
+.wrapping .w-5-24  { width:100px; }
+.wrapping .w-7-24  { width:140px; }
+.wrapping .w-11-24 { width:220px; }
+.wrapping .w-13-24 { width:260px; }
+.wrapping .w-17-24 { width:340px; }
+.wrapping .w-19-24 { width:380px; }
+.wrapping .w-23-24 { width:460px; }
+
+div.content {
+	display:block;
+	border:1px solid #666666;
+	overflow:hidden;
+	text-align:center;
+	background:#F1F1F1;
+	font-weight: bold;
+	background:#F9F9F4 url(../img/grid_text.png) 1px 0 repeat;
+	margin-right:0;
+}
+.wrapping {
+	padding:3px 0;
+}
+.mnn .n1{color:red;}
+address *{vertical-align:middle;font-family:Dotum;}
+</style>
+</head>
+<body>
+<div class="wrapping m">
+  <h1>步步街Fixed布局7模式演示(1/2缩放)</h1>
+</div>
+<hr />
+<div class="wrapping m">
+  <div class="ming"><div class="content">m-default</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1"><div class="content">n-default</div></div>
+  <div class="ming"><div class="content">m-default</div></div>
+</div>
+<div class="wrapping nm">
+  <div class="n1"><div class="content">n-default</div></div>
+  <div class="ming"><div class="content">m-default</div></div>
+</div>
+<div class="wrapping mnn">
+  <div class="n1"><div class="content">n1-default</div></div>
+  <div class="n2"><div class="content">n2-default</div></div>
+  <div class="ming"><div class="content">m-default</div></div>
+</div>
+<div class="wrapping nmn">
+  <div class="n1"><div class="content">n1-default</div></div>
+  <div class="n2"><div class="content">n2-default</div></div>
+  <div class="ming"><div class="content">m-default</div></div>
+</div>
+<div class="wrapping nnm">
+  <div class="n1"><div class="content">n1-default</div></div>
+  <div class="n2"><div class="content">n2-default</div></div>
+  <div class="ming"><div class="content">m-default</div></div>
+</div>
+<hr />
+<div class="wrapping mn">
+  <div class="n1 w-1-24"><div class="content">n40</div></div>
+  <div class="ming w-23-24"><div class="content">m920</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-12"><div class="content">n80</div></div>
+  <div class="ming w-11-12"><div class="content">m880</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-8"><div class="content">n120</div></div>
+  <div class="ming w-7-8"><div class="content">m840</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-6"><div class="content">n160</div></div>
+  <div class="ming w-5-6"><div class="content">m800</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-5-24"><div class="content">n200</div></div>
+  <div class="ming w-19-24"><div class="content">m760</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-4"><div class="content">n240</div></div>
+  <div class="ming w-3-4"><div class="content">m720</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-7-24"><div class="content">n280</div></div>
+  <div class="ming w-17-24"><div class="content">m680</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-3"><div class="content">n320</div></div>
+  <div class="ming w-2-3"><div class="content">m640</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-3-8"><div class="content">n360</div></div>
+  <div class="ming w-5-8"><div class="content">m600</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-5-12"><div class="content">n400</div></div>
+  <div class="ming w-7-12"><div class="content">m560</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-11-24"><div class="content">n440</div></div>
+  <div class="ming w-13-24"><div class="content">m520</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-2"><div class="content">n480</div></div>
+  <div class="ming w-1-2"><div class="content">m480</div></div>
+</div>
+<hr />
+<div class="wrapping mn">
+  <div class="n1 w-1-24"><div class="content">n40</div></div>
+  <div class="ming w-23-24"><div class="content">m920</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-12"><div class="content">n80</div></div>
+  <div class="ming w-11-12"><div class="content">m880</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-8"><div class="content">n120</div></div>
+  <div class="ming w-7-8"><div class="content">m840</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-6"><div class="content">n160</div></div>
+  <div class="ming w-5-6"><div class="content">m800</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-5-24"><div class="content">n200</div></div>
+  <div class="ming w-19-24"><div class="content">m760</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-4"><div class="content">n240</div></div>
+  <div class="ming w-3-4"><div class="content">m720</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-7-24"><div class="content">n280</div></div>
+  <div class="ming w-17-24"><div class="content">m680</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-3"><div class="content">n320</div></div>
+  <div class="ming w-2-3"><div class="content">m640</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-3-8"><div class="content">n360</div></div>
+  <div class="ming w-5-8"><div class="content">m600</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-5-12"><div class="content">n400</div></div>
+  <div class="ming w-7-12"><div class="content">m560</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-11-24"><div class="content">n440</div></div>
+  <div class="ming w-13-24"><div class="content">m520</div></div>
+</div>
+<div class="wrapping mn">
+  <div class="n1 w-1-2"><div class="content">n480</div></div>
+  <div class="ming w-1-2"><div class="content">m480</div></div>
+</div>
+<hr />
+<div class="wrapping mnn">
+  <div class="n1 w-1-3" style="left:160px; color:red;">
+    <div class="content">n320
+      <hr />
+      <div>demo</div>
+      <div>demo</div>
+    </div>
+  </div>
+  <div class="n2 w-1-3">
+    <div class="content">n320
+      <hr />
+      <div>demo</div>
+      <div>demo</div>
+      <div>demo</div>
+    </div>
+  </div>
+  <div class="ming w-1-3">
+    <div class="content">m320
+      <hr />
+      <div>demo</div>
+    </div>
+  </div>
+</div>
+<div class="wrapping nmn">
+  <div class="n1 w-1-3">
+    <div class="content">n320
+      <hr />
+      <div>demo</div>
+    </div>
+  </div>
+  <div class="n2 w-1-3">
+    <div class="content">n320
+      <hr />
+      <div>demo</div>
+      <div>demo</div>
+      <div>demo</div>
+    </div>
+  </div>
+  <div class="ming w-1-3">
+    <div class="content">m320
+      <hr />
+      <div>demo</div>
+      <div>demo</div>
+    </div>
+  </div>
+</div>
+<div class="wrapping nnm">
+  <div class="n1 w-1-3">
+    <div class="content">n320
+    <hr />
+      <div>demo</div>
+    </div>
+  </div>
+  <div class="n2 w-1-3">
+    <div class="content">n320
+    <hr />
+      <div>demo</div>
+      <div>demo</div>
+    </div>
+  </div>
+  <div class="ming w-1-3">
+    <div class="content">m320
+      <hr />
+      <div>demo</div>
+      <div>demo</div>
+      <div>demo</div>
+    </div>
+  </div>
+</div>
+<hr />
+<div class="wrapping mnn">
+  <div class="n1 w-1-4" style="left:240px; color:red;"><div class="content">n240</div></div>
+  <div class="n2 w-1-4"><div class="content">n240</div></div>
+  <div class="ming w-1-2"><div class="content">m480</div></div>
+</div>
+<div class="wrapping nmn">
+  <div class="n1 w-1-4"><div class="content">n240</div></div>
+  <div class="n2 w-1-4"><div class="content">n240</div></div>
+  <div class="ming w-1-2"><div class="content">m480</div></div>
+</div>
+<div class="wrapping nnm">
+  <div class="n1 w-1-4"><div class="content">n240</div></div>
+  <div class="n2 w-1-4"><div class="content">n240</div></div>
+  <div class="ming w-1-2"><div class="content">m480</div></div>
+</div>
+<hr />
+<div class="wrapping">
+  <div id="colophon">
+    <address style="text-align:center;">
+      <img src="../img/logo_16px.gif" alt="" />&nbsp;<em>Copyright ©</em> <span><a href="http://www.bubujie.net/" target="_blank">步步街工作室</a> 2008-2012 All Rights Reserved.</span>
+    </address>
+  </div>
+</div>
+</body>
+</html>
