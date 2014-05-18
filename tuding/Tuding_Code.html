@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>步步街Tuding布局系统</title>
+<style type="text/css">
+pre { border:1px dashed #3E62A6; background:#ECECEC; padding:.5em 1em;font-family: Consolas;font-size:12px; }
+</style>
+</head>
+<body>
+<h1>步步街Tuding布局系统</h1>
+<pre><span style="color:Green;">/* Body */</span>
+<span style="color:#A31515;">body </span>{ <span style="color:Red;">height</span>:<span style="color:Blue;">100%</span>; <span style="color:Red;">margin</span>:<span style="color:Blue;">0</span>; <span style="color:Red;">padding</span>:<span style="color:Blue;">0</span>; }<span style="color:Green;">
+/* bHead &amp; bBody &amp; bFoot &amp; Wrapping &amp; Filling &amp; Wrap &amp; Fill */</span>
+<span style="color:#A31515;">#bhead</span>, <span style="color:#A31515;">#bbody</span>, <span style="color:#A31515;">#bfoot</span>, <span style="color:#A31515;">.wrapping</span>, <span style="color:#A31515;">.filling</span>, <span style="color:#A31515;">.wrap</span>, <span style="color:#A31515;">.fill </span>{ <span style="color:Red;">position</span>:<span style="color:Blue;">relative</span>; <span style="color:Red;">clear</span>:<span style="color:Blue;">both</span>; *<span style="color:Red;">zoom</span>:<span style="color:Blue;">1</span>; }
+<span style="color:#A31515;">#bhead:after</span>, <span style="color:#A31515;">#bbody:after</span>, <span style="color:#A31515;">#bfoot:after</span>, <span style="color:#A31515;">.wrapping:after</span>, <span style="color:#A31515;">.filling:after</span>, <span style="color:#A31515;">.wrap:after</span>, <span style="color:#A31515;">.fill:after </span>{ <span style="color:Red;">content</span>:<span style="color:Blue;">&quot;&quot;</span>; <span style="color:Red;">display</span>:<span style="color:Blue;">block</span>; <span style="color:Red;">clear</span>:<span style="color:Blue;">both</span>; }<span style="color:Green;">
+/* Wrapping width */</span>
+<span style="color:#A31515;">.wrapping </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">960px</span>; <span style="color:Red;">margin-left</span>:<span style="color:Blue;">auto</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">auto</span>; }<span style="color:Green;">
+/* Wrapping align */</span>
+<span style="color:#A31515;">.lefting .wrapping </span>{ <span style="color:Red;">margin-left</span>:<span style="color:Blue;">0</span>; }
+<span style="color:#A31515;">.righting .wrapping </span>{ <span style="color:Red;">margin-right</span>:<span style="color:Blue;">0</span>; }<span style="color:Green;">
+/* Ming &amp; Ning &amp; Wing &amp; Ving &amp; Ding */</span>
+<span style="color:#A31515;">.ming</span>, <span style="color:#A31515;">.n1</span>, <span style="color:#A31515;">.n2</span>, <span style="color:#A31515;">.wing</span>, <span style="color:#A31515;">.v1</span>, <span style="color:#A31515;">.v2</span>, <span style="color:#A31515;">.ding </span>{ <span style="color:Red;">position</span>:<span style="color:Blue;">relative</span>; *<span style="color:Red;">zoom</span>:<span style="color:Blue;">1</span>; }
+<span style="color:#A31515;">.ming:after</span>, <span style="color:#A31515;">.n1:after</span>, <span style="color:#A31515;">.n2:after</span>, <span style="color:#A31515;">.wing:after</span>, <span style="color:#A31515;">.v1:after</span>, <span style="color:#A31515;">.v2:after</span>, <span style="color:#A31515;">.ding:after </span>{ <span style="color:Red;">content</span>:<span style="color:Blue;">&quot;&quot;</span>; <span style="color:Red;">display</span>:<span style="color:Blue;">block</span>; <span style="color:Red;">clear</span>:<span style="color:Blue;">both</span>; }<span style="color:Green;">
+/* bHead li &amp; bFoot li */</span>
+<span style="color:#A31515;">#bhead ul</span>, <span style="color:#A31515;">#bfoot ul </span>{ <span style="color:Red;">position</span>:<span style="color:Blue;">relative</span>; }
+<span style="color:#A31515;">#bhead li</span>, <span style="color:#A31515;">#bfoot li </span>{ <span style="color:Red;">position</span>:<span style="color:Blue;">relative</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">list-style</span>:<span style="color:Blue;">none</span>; }
+</pre>
+<hr />
+<pre><span style="color:Green;">/* Fixed L Mode - Tuding Layout System v2.0 - copyright(c)bubujie.net */</span><span style="color:Green;">
+/* n1=200px; n2=200px; wrapping=960px; */</span><span style="color:Green;">
+/* ######### ######### ######### BEGIN::Fixed L ######### ######### ######### */</span><span style="color:Green;">
+/* …… */</span><span style="color:Green;">
+/* Fixed M */</span>
+<span style="color:#A31515;">.m .ming </span>{  }<span style="color:Green;">
+/* Fixed MN */</span>
+<span style="color:#A31515;">.mn .ming </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">760px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }
+<span style="color:#A31515;">.mn .n1</span>, <span style="color:#A31515;">.mn .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }<span style="color:Green;"> /*add(.mn .n2)*/</span><span style="color:Green;">
+/* Fixed NM */</span>
+<span style="color:#A31515;">.nm .ming </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">760px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }
+<span style="color:#A31515;">.nm .n1</span>, <span style="color:#A31515;">.nm .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }<span style="color:Green;"> /*add(.nm .n2)*/</span><span style="color:Green;">
+/* Fixed MNN */</span>
+<span style="color:#A31515;">.mnn .ming </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">560px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">0px</span>; }
+<span style="color:#A31515;">.mnn .n1 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }
+<span style="color:#A31515;">.mnn .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }<span style="color:Green;">
+/* Fixed NMN */</span>
+<span style="color:#A31515;">.nmn .ming </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">560px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">-100%</span>; <span style="color:Red;">left</span>:<span style="color:Blue;">200px</span>; }
+<span style="color:#A31515;">.nmn .n1 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }
+<span style="color:#A31515;">.nmn .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }<span style="color:Green;">
+/* Fixed NNM */</span>
+<span style="color:#A31515;">.nnm .ming </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">560px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }
+<span style="color:#A31515;">.nnm .n1 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">0px</span>; }
+<span style="color:#A31515;">.nnm .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }<span style="color:Green;">
+/* …… */</span><span style="color:Green;">
+/* ######### ######### ######### BEGIN::Fixed L ######### ######### ######### */</span>
+</pre>
+<hr />
+<pre><span style="color:Green;">/* Fixed T&amp;7 Mode - Tuding Layout System v2.0 - copyright(c)bubujie.net */</span><span style="color:Green;">
+/* n1=200px; n2=200px; wrapping=960px; */</span><span style="color:Green;">
+/* ######### ######### ######### BEGIN::Fixed T&amp;7 ######### ######### ######### */</span><span style="color:Green;">
+/* …… */</span><span style="color:Green;">
+/* Fixed M */</span>
+<span style="color:#A31515;">.m .ming </span>{  }<span style="color:Green;">
+/* Fixed MN */</span>
+<span style="color:#A31515;">.mn .n1</span>, <span style="color:#A31515;">.mn .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }<span style="color:Green;"> /*add(.mn .n2)*/</span>
+<span style="color:#A31515;">.mn .ming </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">760px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }<span style="color:Green;">
+/* Fixed NM */</span>
+<span style="color:#A31515;">.nm .n1</span>, <span style="color:#A31515;">.nm .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }<span style="color:Green;"> /*add(.nm .n2)*/</span>
+<span style="color:#A31515;">.nm .ming </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">760px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }<span style="color:Green;">
+/* Fixed MNN */</span>
+<span style="color:#A31515;">.mnn .n1 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">-100%</span>; <span style="color:Red;">left</span>:<span style="color:Blue;">560px</span>; }
+<span style="color:#A31515;">.mnn .ming </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">560px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }
+<span style="color:#A31515;">.mnn .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }<span style="color:Green;">
+/* Fixed NMN */</span>
+<span style="color:#A31515;">.nmn .n1 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">0px</span>; }
+<span style="color:#A31515;">.nmn .ming </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">560px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }
+<span style="color:#A31515;">.nmn .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }<span style="color:Green;">
+/* Fixed NNM */</span>
+<span style="color:#A31515;">.nnm .n1 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">0px</span>; }
+<span style="color:#A31515;">.nnm .ming </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">560px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }
+<span style="color:#A31515;">.nnm .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">200px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }
+<span style="color:Green;">/* …… */</span>
+<span style="color:Green;">/* ######### ######### ######### END::Fixed T&amp;7 ######### ######### ######### */</span></pre>
+<hr />
+<pre><span style="color:Green;">/* Hybrid Mode - Tuding Layout System v2.0 - copyright(c)bubujie.net */</span><span style="color:Green;">
+/* n1=240px; n2=240px; wrapping=auto; */</span><span style="color:Green;">
+/* ######### ######### ######### BEGIN::Hybrid ######### ######### ######### */</span><span style="color:Green;">
+/* …… */</span><span style="color:Green;">
+/* Hybrid M */</span>
+<span style="color:#A31515;">.m .ming </span>{  }<span style="color:Green;">
+/* Hybrid MN */</span>
+<span style="color:#A31515;">.mn .filling </span>{ <span style="color:Red;">padding-right</span>:<span style="color:Blue;">240px</span>; }
+<span style="color:#A31515;">.mn .ming </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">100%</span>; }
+<span style="color:#A31515;">.mn .n1</span>, <span style="color:#A31515;">.mn .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">240px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; <span style="color:Red;">margin-left</span>:<span style="color:Blue;">-240px</span>; <span style="color:Red;">right</span>:<span style="color:Blue;">-240px</span>; }<span style="color:Green;"> /*add(.mn .n2)*/</span><span style="color:Green;">
+/* Hybrid NM */</span>
+<span style="color:#A31515;">.nm .filling </span>{ <span style="color:Red;">padding-left</span>:<span style="color:Blue;">240px</span>; }
+<span style="color:#A31515;">.nm .ming </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">100%</span>; }
+<span style="color:#A31515;">.nm .n1</span>, <span style="color:#A31515;">.nm .n2 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">240px</span>; <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">-240px</span>; <span style="color:Red;">left</span>:<span style="color:Blue;">-240px</span>; }<span style="color:Green;"> /*add(.nm .n2)*/</span><span style="color:Green;">
+/* Hybrid MNN */</span>
+<span style="color:#A31515;">.mnn .filling </span>{ <span style="color:Red;">padding-right</span>:<span style="color:Blue;">480px</span>; }
+<span style="color:#A31515;">.mnn .ming </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">100%</span>; }
+<span style="color:#A31515;">.mnn .n1 </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">240px</span>; <span style="color:Red;">margin-left</span>:<span style="color:Blue;">-240px</span>; <span style="color:Red;">right</span>:<span style="color:Blue;">-240px</span>; }
+<span style="color:#A31515;">.mnn .n2 </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">240px</span>; <span style="color:Red;">margin-left</span>:<span style="color:Blue;">-240px</span>; <span style="color:Red;">right</span>:<span style="color:Blue;">-480px</span>; }<span style="color:Green;">
+/* Hybrid NMN */</span>
+<span style="color:#A31515;">.nmn .filling </span>{ <span style="color:Red;">padding-left</span>:<span style="color:Blue;">240px</span>; <span style="color:Red;">padding-right</span>:<span style="color:Blue;">240px</span>; }
+<span style="color:#A31515;">.nmn .ming </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">-100%</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">100%</span>; }
+<span style="color:#A31515;">.nmn .n1 </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">240px</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">-240px</span>; <span style="color:Red;">left</span>:<span style="color:Blue;">-240px</span>; }
+<span style="color:#A31515;">.nmn .n2 </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">240px</span>; <span style="color:Red;">margin-left</span>:<span style="color:Blue;">-240px</span>; <span style="color:Red;">right</span>:<span style="color:Blue;">-240px</span>; }<span style="color:Green;">
+/* Hybrid NNM */</span>
+<span style="color:#A31515;">.nnm .filling </span>{ <span style="color:Red;">padding-left</span>:<span style="color:Blue;">480px</span>; }
+<span style="color:#A31515;">.nnm .ming </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">100%</span>; }
+<span style="color:#A31515;">.nnm .n1 </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">240px</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">-240px</span>; <span style="color:Red;">left</span>:<span style="color:Blue;">-480px</span>; }
+<span style="color:#A31515;">.nnm .n2 </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; <span style="color:Red;">width</span>:<span style="color:Blue;">240px</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">-240px</span>; <span style="color:Red;">left</span>:<span style="color:Blue;">-240px</span>; }
+<span style="color:Green;">/* …… */</span><span style="color:Green;">
+/* ######### ######### ######### END::Hybrid ######### ######### ######### */</span>
+</pre>
+<hr />
+<pre><span style="color:Green;">/* Width */</span>
+<span style="color:#A31515;">.wrapping .w-1     </span>{  }
+<span style="color:#A31515;">.wrapping .w-1-2   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">50%</span>; }
+<span style="color:#A31515;">.wrapping .w-1-3   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">33.33333%</span>; }
+<span style="color:#A31515;">.wrapping .w-2-3   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">66.66666%</span>; }
+<span style="color:#A31515;">.wrapping .w-1-4   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">25%</span>; }
+<span style="color:#A31515;">.wrapping .w-3-4   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">75%</span>; }
+<span style="color:#A31515;">.wrapping .w-1-5   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">20%</span>; }
+<span style="color:#A31515;">.wrapping .w-2-5   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">40%</span>; }
+<span style="color:#A31515;">.wrapping .w-3-5   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">60%</span>; }
+<span style="color:#A31515;">.wrapping .w-4-5   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">80%</span>; }
+<span style="color:#A31515;">.wrapping .w-1-6   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">16.656%</span>; }
+<span style="color:#A31515;">.wrapping .w-5-6   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">83.33%</span>; }
+<span style="color:#A31515;">.wrapping .w-1-8   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">12.5%</span>; }
+<span style="color:#A31515;">.wrapping .w-3-8   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">37.5%</span>; }
+<span style="color:#A31515;">.wrapping .w-5-8   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">62.5%</span>; }
+<span style="color:#A31515;">.wrapping .w-7-8   </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">87.5%</span>; }
+<span style="color:#A31515;">.wrapping .w-1-12  </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">8.3333%</span>; }
+<span style="color:#A31515;">.wrapping .w-5-12  </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">41.6666%</span>; }
+<span style="color:#A31515;">.wrapping .w-7-12  </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">58.3333%</span>; }
+<span style="color:#A31515;">.wrapping .w-11-12 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">91.6666%</span>; }
+<span style="color:#A31515;">.wrapping .w-1-24  </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">4.1666%</span>; }
+<span style="color:#A31515;">.wrapping .w-5-24  </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">20.8333%</span>; }
+<span style="color:#A31515;">.wrapping .w-7-24  </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">29.1666%</span>; }
+<span style="color:#A31515;">.wrapping .w-11-24 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">45.8333%</span>; }
+<span style="color:#A31515;">.wrapping .w-13-24 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">54.1666%</span>; }
+<span style="color:#A31515;">.wrapping .w-17-24 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">70.8333%</span>; }
+<span style="color:#A31515;">.wrapping .w-19-24 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">79.1666%</span>; }
+<span style="color:#A31515;">.wrapping .w-23-24 </span>{ <span style="color:Red;">width</span>:<span style="color:Blue;">95.8333%</span>; }<span style="color:Green;">
+/* X (Horizontal) */</span>
+<span style="color:#A31515;">.xcn </span>{ <span style="color:Red;">clear</span>:<span style="color:Blue;">none</span>; }
+<span style="color:#A31515;">.xcl </span>{ <span style="color:Red;">clear</span>:<span style="color:Blue;">left</span>; }
+<span style="color:#A31515;">.xcr </span>{ <span style="color:Red;">clear</span>:<span style="color:Blue;">right</span>; }
+<span style="color:#A31515;">.xcb </span>{ <span style="color:Red;">clear</span>:<span style="color:Blue;">both</span>; }
+<span style="color:#A31515;">.xfn </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">none</span>; }
+<span style="color:#A31515;">.xfl </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">left</span>; }
+<span style="color:#A31515;">.xfr </span>{ <span style="color:Red;">float</span>:<span style="color:Blue;">right</span>; }
+<span style="color:#A31515;">.xfc </span>{ <span style="color:Red;">margin-left</span>:<span style="color:Blue;">auto</span>; <span style="color:Red;">margin-right</span>:<span style="color:Blue;">auto</span>; }<span style="color:Green;">
+</pre>
+</body>
+</html>

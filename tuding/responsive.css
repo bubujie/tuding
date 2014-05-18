@@ -1,0 +1,27 @@
+/* Tuding Layout System v2.0 - copyright(c)bubujie.net */
+@media (max-width: 480px) {
+	.wrapping{ width:auto; }
+	.mn .filling, .nm .filling, .mnn .filling, .nmn .filling, .nnm .filling{ padding:0; }
+	.mn  .ming, .mn  .n1, .mn  .n2,
+	.nm  .ming, .nm  .n1, .nm  .n2,
+	.mnn .ming, .mnn .n1, .mnn .n2,
+	.nmn .ming, .nmn .n1, .nmn .n2,
+	.nnm .ming, .nnm .n1, .nnm .n2 {
+		width:auto; float:none; margin-left:0; margin-right:0; left:0; right:0; clear:both;
+	}
+	.wv .fill, .vw .fill, .wvv .fill, .vwv .fill, .vvw .fill{ padding:0; }
+	.wv  .wing, .wv  .v1, .wv  .v2,
+	.vw  .wing, .vw  .v1, .vw  .v2,
+	.wvv .wing, .wvv .v1, .wvv .v2,
+	.vwv .wing, .vwv .v1, .vwv .v2,
+	.vvw .wing, .vvw .v1, .vvw .v2 {
+		width:auto; float:none; margin-left:0; margin-right:0; left:0; right:0; clear:both;
+	}
+	.wrapping .w-1,    .wrapping .w-1-2,  .wrapping .w-1-3,  .wrapping .w-2-3,   .wrapping .w-1-4,   .wrapping .w-3-4,
+	.wrapping .w-1-5,  .wrapping .w-2-5,  .wrapping .w-3-5,  .wrapping .w-4-5,
+	.wrapping .w-1-6,  .wrapping .w-5-6,  .wrapping .w-1-8,  .wrapping .w-3-8,   .wrapping .w-5-8,   .wrapping .w-7-8,
+	.wrapping .w-1-12, .wrapping .w-5-12, .wrapping .w-7-12, .wrapping .w-11-12,
+	.wrapping .w-1-24, .wrapping .w-5-24, .wrapping .w-7-24, .wrapping .w-11-24, .wrapping .w-13-24, .wrapping .w-17-24, .wrapping .w-19-24, .wrapping .w-23-24 {
+		width:auto; float:none;
+	}
+}

@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>无标题文档</title>
+<!--[if lt IE 6]>  
+    <script src="./js/respond.min.js"></script>  
+<![endif]-->
+<link rel="stylesheet" href="./hybrid.css" />
+<style type="text/css">
+html { color:#000; background:#FFF; }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin:0; padding:0; }
+table { border-collapse:collapse; border-spacing:0; }
+fieldset, img { border:0; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal; }
+ol, ul { list-style:none; }
+caption, th { text-align:left; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal; }
+q:before, q:after { content:''; }
+abbr, acronym { border:0; font-variant:normal; }
+sup { vertical-align:text-top; }
+sub { vertical-align:text-bottom; }
+input, textarea, select { font-family:inherit; font-size:inherit; font-weight:inherit; }
+input, textarea, select { *font-size:100%;
+}
+legend { color:#000; }
+p { }
+h1 { line-height:2em; margin:0; }
+.wrapping { width:auto; padding-left:10px; }
+/* ######### ######### ######### 注释 ######### ######### ######### */
+/* ######### ######### ######### 注释 ######### ######### ######### */
+/* ######### ######### ######### 注释 ######### ######### ######### */
+
+/* [Hybrid Mode] - Tuding Layout System v2.0 - copyright(c)bubujie.net */
+/* wrapping=auto; n1=200px; n2=200px; incInner=true; v1=200px; v2=200px; */
+/* Body */
+body { height: 100%; margin: 0; padding: 0; }
+
+/* bHead & bBody & bFoot & Wrapping & Filling & Wrap & Fill */
+#bhead, #bbody, #bfoot, .wrapping, .filling, .wrap, .fill { position: relative; clear: both; *zoom: 1; }
+
+#bhead:after, #bbody:after, #bfoot:after, .wrapping:after, .filling:after, .wrap:after, .fill:after { content: ""; display: block; clear: both; }
+
+/* Wrapping width */
+.wrapping { width: auto; margin-left: auto; margin-right: auto; }
+
+/* Wrapping align */
+.lefting .wrapping { margin-left: 0; }
+
+.righting .wrapping { margin-right: 0; }
+
+/* Ming & Ning & Wing & Ving & Ding */
+.ming, .n1, .n2, .wing, .v1, .v2, .ding { position: relative; *zoom: 1; }
+
+.ming:after, .n1:after, .n2:after, .wing:after, .v1:after, .v2:after, .ding:after { content: ""; display: block; clear: both; }
+
+/* bHead li & bFoot li */
+#bhead ul, #bfoot ul { position: relative; }
+
+#bhead li, #bfoot li { position: relative; float: left; list-style: none; }
+
+/* Hybrid MN */
+.mn { padding-right: 200px; }
+
+.mn .ming { float: left; width: 100%; }
+
+.mn .n1, .mn .n2 { float: right; width: 200px; margin-left: -200px; right: -200px; }
+
+/* Hybrid NM */
+.nm { padding-left: 200px; }
+
+.nm .ming { float: right; width: 100%; }
+
+.nm .n1, .nm .n2 { float: left; width: 200px; margin-right: -200px; left: -200px; }
+
+/* Hybrid MNN */
+.mnn { padding-right: 400px; }
+
+.mnn .ming { float: left; width: 100%; }
+
+.mnn .n1 { float: right; width: 200px; margin-left: -200px; right: -200px; }
+
+.mnn .n2 { float: right; width: 200px; margin-left: -200px; right: -400px; }
+
+/* Hybrid NMN */
+.nmn { padding-left: 200px; padding-right: 200px; }
+
+.nmn .ming { float: left; margin-right: -100%; width: 100%; }
+
+.nmn .n1 { float: left; width: 200px; margin-right: -200px; left: -200px; }
+
+.nmn .n2 { float: right; width: 200px; margin-left: -200px; right: -200px; }
+
+/* Hybrid NNM */
+.nnm { padding-left: 400px; }
+
+.nnm .ming { float: right; width: 100%; }
+
+.nnm .n1 { float: left; width: 200px; margin-right: -200px; left: -400px; }
+
+.nnm .n2 { float: left; width: 200px; margin-right: -200px; left: -200px; }
+
+/* Inner WV */
+.wv { padding-right: 200px; }
+
+.wv .wing { float: left; width: 100%; }
+
+.wv .v1, .wv .v2 { float: right; width: 200px; margin-left: -200px; right: -200px; }
+
+/* Inner VW */
+.vw { padding-left: 200px; }
+
+.vw .wing { float: right; width: 100%; }
+
+.vw .v1, .vw .v2 { float: left; width: 200px; margin-right: -200px; left: -200px; }
+
+/* Inner WVV */
+.wvv { padding-right: 400px; }
+
+.wvv .wing { float: left; width: 100%; }
+
+.wvv .v1 { float: right; width: 200px; margin-left: -200px; right: -200px; }
+
+.wvv .v2 { float: right; width: 200px; margin-left: -200px; right: -400px; }
+
+/* Inner VWV */
+.vwv { padding-left: 200px; padding-right: 200px; }
+
+.vwv .wing { float: left; margin-right: -100%; width: 100%; }
+
+.vwv .v1 { float: left; width: 200px; margin-right: -200px; left: -200px; }
+
+.vwv .v2 { float: right; width: 200px; margin-left: -200px; right: -200px; }
+
+/* Inner VVW */
+.vvw { padding-left: 400px; }
+
+.vvw .wing { float: right; width: 100%; }
+
+.vvw .v1 { float: left; width: 200px; margin-right: -200px; left: -400px; }
+
+.vvw .v2 { float: left; width: 200px; margin-right: -200px; left: -200px; }
+
+/* Width */
+.wrapping .w-1-2 { width: 50%; }
+
+.wrapping .w-1-3 { width: 33.33333%; }
+
+.wrapping .w-2-3 { width: 66.66666%; }
+
+.wrapping .w-1-4 { width: 25%; }
+
+.wrapping .w-3-4 { width: 75%; }
+
+.wrapping .w-1-5 { width: 20%; }
+
+.wrapping .w-2-5 { width: 40%; }
+
+.wrapping .w-3-5 { width: 60%; }
+
+.wrapping .w-4-5 { width: 80%; }
+
+.wrapping .w-1-6 { width: 16.656%; }
+
+.wrapping .w-5-6 { width: 83.33%; }
+
+.wrapping .w-1-8 { width: 12.5%; }
+
+.wrapping .w-3-8 { width: 37.5%; }
+
+.wrapping .w-5-8 { width: 62.5%; }
+
+.wrapping .w-7-8 { width: 87.5%; }
+
+.wrapping .w-1-12 { width: 8.3333%; }
+
+.wrapping .w-5-12 { width: 41.6666%; }
+
+.wrapping .w-7-12 { width: 58.3333%; }
+
+.wrapping .w-11-12 { width: 91.6666%; }
+
+.wrapping .w-1-24 { width: 4.1666%; }
+
+.wrapping .w-5-24 { width: 20.8333%; }
+
+.wrapping .w-7-24 { width: 29.1666%; }
+
+.wrapping .w-11-24 { width: 45.8333%; }
+
+.wrapping .w-13-24 { width: 54.1666%; }
+
+.wrapping .w-17-24 { width: 70.8333%; }
+
+.wrapping .w-19-24 { width: 79.1666%; }
+
+.wrapping .w-23-24 { width: 95.8333%; }
+
+/* X (Horizontal) */
+.xcn { clear: none; }
+
+.xcl { clear: left; }
+
+.xcr { clear: right; }
+
+.xcb { clear: both; }
+
+.xfn { float: none; }
+
+.xfl { float: left; }
+
+.xfr { float: right; }
+
+.xfc { margin-left: auto; margin-right: auto; }
+
+@media screen and (max-width: 768px) { .wrapping { width: auto; }
+  /* Hybrid MN */
+  .mn { padding-right: 0; }
+  .mn .ming { float: none; width: auto; }
+  .mn .n1, .mn .n2 { float: none; width: auto; margin-left: 0; right: 0; }
+  /* Hybrid NM */
+  .nm { padding-left: 0; }
+  .nm .ming { float: none; width: auto; }
+  .nm .n1, .nm .n2 { float: none; width: auto; margin-right: 0; left: 0; }
+  /* Hybrid MNN */
+  .mnn { padding-right: 200px; }
+  .mnn .ming { float: left; width: 100%; }
+  .mnn .n1 { float: right; width: 200px; margin-left: -200px; right: -200px; }
+  .mnn .n2 { float: left; width: 100%; margin-left: 0; right: 0; }
+  /* Hybrid NMN */
+  .nmn { padding-left: 200px; padding-right: 0; }
+  .nmn .ming { float: right; margin-right: 0; width: 100%; }
+  .nmn .n1 { float: left; width: 200px; margin-right: -200px; left: -200px; }
+  .nmn .n2 { float: right; width: 100%; margin-left: 0; right: 0; }
+  /* Hybrid NNM */
+  .nnm { padding-left: 200px; }
+  .nnm .ming { float: right; width: 100%; }
+  .nnm .n1 { float: left; width: 200px; margin-right: -200px; left: -200px; }
+  .nnm .n2 { float: right; width: 100%; margin-right: 0; left: 0; }
+  .wv, .vw, .wvv, .vwv, .vvw { padding: 0; }
+  .wv .wing, .wv .v1, .wv .v2, .vw .wing, .vw .v1, .vw .v2, .wvv .wing, .wvv .v1, .wvv .v2, .vwv .wing, .vwv .v1, .vwv .v2, .vvw .wing, .vvw .v1, .vvw .v2 { width: auto; float: none; margin-left: 0; margin-right: 0; left: 0; right: 0; clear: both; } }
+@media screen and (max-width: 480px) { .wrapping { width: auto; }
+  .mn, .nm, .mnn, .nmn, .nnm { padding-left: 0; padding-right: 0; }
+  .mn .ming, .mn .n1, .mn .n2, .nm .ming, .nm .n1, .nm .n2, .mnn .ming, .mnn .n1, .mnn .n2, .nmn .ming, .nmn .n1, .nmn .n2, .nnm .ming, .nnm .n1, .nnm .n2 { width: auto; float: none; margin-left: 0; margin-right: 0; left: 0; right: 0; clear: both; } }
+
+
+/* ######### ######### ######### 注释 ######### ######### ######### */
+/* ######### ######### ######### 注释 ######### ######### ######### */
+/* ######### ######### ######### 注释 ######### ######### ######### */
+div.content { border: 2px solid #426FD9; background-color: #F2F2F2; min-height: 20px; padding: .25em; margin-right: 10px; margin-bottom:10px; }
+.wrap{background-color:#ccc;}
+p{margin:0;}
+</style>
+</head>
+<body>
+<form action="">
+</form>
+<hr />
+<div id="bhead">
+  <div id="bh1st">
+    <div class="wrapping">
+      <div class="filling">
+        <div class="content">#bhead-top</div>
+      </div>
+    </div>
+  </div>
+  <div id="bh5th">
+    <div class="wrapping">
+      <div class="filling">
+        <div class="content">#bhead-mid</div>
+      </div>
+    </div>
+  </div>
+  <div id="bh9th">
+    <div class="wrapping">
+      <div class="filling">
+        <div class="content">#bhead-btm</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ######### ######### ######### bbody ######### ######### ######### -->
+<div id="bbody">
+  <div id="bb1st">
+    <div class="wrapping">
+      <div class="filling">
+        <div class="content">#bbody-top</div>
+      </div>
+    </div>
+  </div>
+  <div id="bb5th">
+    <div class="wrapping">
+      <div class="filling nmn">
+        <div class="ming">
+          <div id="main-top" class="ding">
+            <div class="content">#main-top<br />
+              <br />
+            </div>
+          </div>
+          <div id="com-wrap" class="wrap">
+            <div id="com-fill" class="fill w">
+              <div id="com-main" class="wing">
+                <div id="com-top" class="ding">
+                  <div class="content">#com-top</div>
+                </div>
+                <div id="component" class="ding">
+                  <div class="content">#component <br />
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat.</p>
+                  </div>
+                </div>
+                <div id="com-btm" class="ding">
+                  <div class="content">#com-btm</div>
+                </div>
+              </div>
+              <div id="com-side" class="v1" style="display:none;">
+                <div class="content">#com-side <br />
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat.</p>
+                </div>
+              </div>
+              <div id="com-aside" class="v2" style="display:none;">
+                <div class="content">#com-aside <br />
+                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="main-btm" class="ding">
+            <div class="content">#main-btm<br />
+              <br />
+            </div>
+          </div>
+        </div>
+        <div class="n1">
+          <div class="content">#side <br />
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat.</p>
+          </div>
+        </div>
+        <div class="n2">
+          <div class="content">#aside <br />
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="bb9th">
+    <div class="wrapping">
+      <div class="filling">
+        <div class="content">#bbody-btm</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ######### ######### ######### /bbody ######### ######### ######### -->
+<div id="bfoot">
+  <div id="bf1st">
+    <div class="wrapping">
+      <div class="filling">
+        <div class="content">#bfoot-top</div>
+      </div>
+    </div>
+  </div>
+  <div id="bf5th">
+    <div class="wrapping">
+      <div class="filling">
+        <div class="content">#bfoot-mid</div>
+      </div>
+    </div>
+  </div>
+  <div id="bf9th">
+    <div class="wrapping">
+      <div class="filling">
+        <div class="content">#bfoot-btm</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

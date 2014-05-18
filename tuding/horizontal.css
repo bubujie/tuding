@@ -1,0 +1,9 @@
+/* X (Horizontal) */
+.xcn { clear:none; }
+.xcl { clear:left; }
+.xcr { clear:right; }
+.xcb { clear:both; }
+.xfn { float:none; }
+.xfl { float:left; }
+.xfr { float:right; }
+.xfc { margin-left:auto; margin-right:auto; }
